@@ -1,0 +1,63 @@
+@import '_dependencies';
+
+.radio-button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    text-transform: none;
+
+    font-family: $headings-font-family;
+    font-size: 0.8rem;
+    color: $font-color-medium-dark-grey;
+
+    input {
+        opacity: 0;
+        z-index: -1;
+        position: absolute;
+    }
+
+    &.has-label {
+        .indicator {
+            margin-right: 10px;
+        }
+
+        margin: 7px 0px;
+    }
+
+    .indicator {
+        position: relative;
+        width: 20px;
+        height: 20px;
+
+        .border {
+            position: absolute;
+            border-radius: 50%;
+            width: 17px;
+            height: 17px;
+            border: 2px solid $orange;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .check {
+            visibility: hidden;
+            border-radius: 50%;
+            border: none;
+            background: $orange;
+            width: 7px;
+            height: 7px;
+            position: absolute;
+
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &.selected {
+        .indicator .check {
+            visibility: visible;
+        }
+    }
+}

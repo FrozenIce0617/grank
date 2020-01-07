@@ -1,0 +1,72 @@
+@import '_dependencies';
+
+.form-keywords-input {
+    .Select-multi-value-wrapper {
+        display: inline-flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+    }
+
+    &.Select.is-open .Select-control {
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+    }
+
+    .Select-control {
+        width: 100%;
+        border-radius: 0px;
+        border: 1px solid $border-color-medium-grey;
+        color: $font-color-medium-dark-grey;
+        font-weight: 400;
+        font-size: 0.8rem;
+        font-family: $headings-font-family;
+
+        .Select-arrow-zone {
+            display: none;
+        }
+
+        .Select-clear-zone {
+            svg {
+                fill: $control-icon-color;
+                margin-right: 15px;
+            }
+        }
+
+        .value-item {
+            border: 1px solid $control-icon-color;
+            border-radius: 20px;
+            color: $font-color-medium-dark-grey;
+            padding: 3px 10px;
+            margin: 3px;
+
+            span {
+                white-space: nowrap;
+            }
+
+            svg {
+                cursor: pointer;
+                margin-left: 5px;
+                fill: $control-icon-color;
+            }
+        }
+    }
+
+    .Select-option {
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+
+        &-text {
+            margin-right: 10px;
+            font-size: 1.5rem;
+            font-weight: 400;
+            font-family: 'Raleway', sans-serif;
+        }
+    }
+
+    &.error {
+        .Select-control {
+            border-color: $error-color;
+        }
+    }
+}

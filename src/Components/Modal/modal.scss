@@ -1,0 +1,166 @@
+@import '_dependencies';
+
+.modal-content-container {
+    padding-top: 50px;
+    .modal-content-inner {
+        text-align: center;
+        color: $white;
+        width: initial;
+        .modal-title {
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+        .modal-main-text {
+            font-size: 13px;
+            max-width: 500px;
+            margin: 0 auto 50px;
+        }
+        .modal-sub-text {
+            font-size: 11px;
+        }
+        & > .btn {
+            margin-top: 10px;
+        }
+        .custom-link {
+            font-size: 13px;
+        }
+        ul {
+            list-style: none;
+        }
+    }
+
+    &.plans-modal {
+        font-family: $controls-font-family;
+
+        .plans-container {
+            background: white;
+            color: $dark-blue;
+            @include border-radius(4px);
+
+            &.plans-featured {
+                margin-top: 50px;
+            }
+
+            .plan {
+                color: $dark-blue;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+
+                .plan-select-button-container {
+                    flex: 1;
+                    display: flex;
+                    justify-content: flex-end;
+                    flex-direction: column;
+
+                    hr {
+                        width: 100%;
+                    }
+
+                    .btn {
+                        align-self: center;
+                        margin-top: 10px;
+                    }
+                }
+
+                h2.plan-name {
+                    color: $font-color-medium-light-grey;
+                    font-size: 16px;
+                    font-weight: 400;
+                    text-transform: uppercase;
+                }
+                h4.plan-price {
+                    color: $font-color-dark-blue;
+                    font-size: 25px;
+                    font-weight: 400;
+                    .suffix {
+                        color: $font-color-medium-light-grey;
+                        text-transform: uppercase;
+                        font-size: 12px;
+                    }
+                }
+
+                .plan-features {
+                    flex: 1;
+                    min-height: 310px;
+                }
+
+                .yearly-discount {
+                    color: $brand-color-orange;
+                    display: block;
+                    font-size: 11px;
+                    margin-bottom: 12px;
+                }
+
+                .plan-description {
+                    & > span {
+                        border-top: 1px solid $border-color-medium-grey;
+                        font-size: 12px;
+                        display: block;
+                        padding: 7px 20px 7px 0;
+                        text-align: left;
+                        position: relative;
+                    }
+                }
+
+                .disclaimer {
+                    margin-top: 10px;
+                    margin-bottom: 0;
+                    font-size: 12px;
+                }
+
+                .alert {
+                    margin-top: 15px;
+                    font-size: 12px;
+                    padding: 10px;
+                }
+
+                &.featured {
+                    position: relative;
+                    background-color: $orange;
+                    margin: -10px !important;
+                    padding-top: 30px !important;
+
+                    border-radius: 4px;
+
+                    hr {
+                        background-color: rgba($color: #ffffff, $alpha: 0.5);
+                    }
+
+                    .plan-description > span {
+                        border-top: 1px solid rgba($color: #ffffff, $alpha: 0.5) !important;
+                        color: #ffffff;
+                    }
+
+                    h4,
+                    h4.plan-price,
+                    .suffix {
+                        color: #ffffff !important;
+                    }
+
+                    .btn-brand-orange {
+                        background-color: #ffffff;
+                        color: #000000;
+
+                        &:hover {
+                            background-color: rgba($color: #ffffff, $alpha: 0.9);
+                        }
+                    }
+
+                    .most-popular {
+                        position: absolute;
+                        top: -15px;
+                        left: 80px;
+                        background-color: $brand-color-green-dark;
+                        padding: 5px 10px;
+                        border-radius: 4px;
+                        color: #ffffff;
+                        margin-left: auto;
+                        margin-right: auto;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+@import '_dependencies';
+
+.add-domain-form {
+    font-family: $controls-font-family;
+
+    .form-label {
+        font-size: 0.8rem;
+        font-weight: normal;
+    }
+
+    .advanced-settings-link {
+        svg,
+        svg g,
+        svg .st0 {
+            fill: $control-icon-color !important;
+        }
+        svg {
+            height: 16px;
+            vertical-align: middle;
+            margin-left: 0.6rem;
+            margin-bottom: 0.09rem;
+        }
+    }
+}

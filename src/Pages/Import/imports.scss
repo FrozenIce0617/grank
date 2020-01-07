@@ -1,0 +1,15 @@
+@import '_dependencies';
+
+.gsc-keywords-table {
+    .exists {
+        color: $light-grey;
+    }
+}
+
+.imports-btn.disabled {
+    &,
+    &:hover {
+        color: $grey !important;
+        cursor: not-allowed;
+    }
+}

@@ -1,0 +1,51 @@
+div.chart-tooltip {
+    &-box {
+        z-index: 2;
+        background: $white;
+        border: 1px solid #e0e0e7;
+    }
+
+    &-table {
+        display: table;
+        margin-top: 20px;
+        margin-bottom: 14px;
+        font-family: $headings-font-family;
+        font-size: 0.7rem;
+
+        &-tr {
+            display: table-row;
+        }
+
+        &-th {
+            display: table-cell;
+            padding-left: 20px;
+            padding-bottom: 12px;
+            font-weight: normal;
+            color: $font-color-medium-light-grey !important;
+        }
+        &-td {
+            display: table-cell;
+            padding-bottom: 6px;
+            padding-left: 20px;
+            padding-right: 20px;
+            color: $font-color-medium-dark-grey;
+
+            &.chart-tooltip-table-right {
+                font-weight: 500;
+            }
+        }
+    }
+
+    &-label {
+        padding: 10px 20px;
+        font-family: $headings-font-family;
+        color: $font-color-medium-light-grey !important;
+        font-weight: normal;
+        font-size: 0.7rem;
+    }
+}
+
+div.chart-legend-item-container {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

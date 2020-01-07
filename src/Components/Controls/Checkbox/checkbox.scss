@@ -1,0 +1,116 @@
+@import '_dependencies';
+
+.checkbox {
+    cursor: pointer;
+    margin-bottom: 0;
+    line-height: 0;
+    text-transform: none;
+    display: flex;
+    align-items: center;
+
+    font-family: $headings-font-family;
+    font-size: 0.8rem;
+    color: $font-color-medium-dark-grey;
+    position: relative;
+
+    input {
+        display: none;
+    }
+
+    .ellipsis-tooltip {
+        height: 100%;
+        line-height: normal;
+    }
+
+    &.has-label {
+        margin: 7px 0px;
+
+        > :nth-child(2) {
+            margin-right: 10px;
+        }
+    }
+
+    &.disabled {
+        svg {
+            fill: $brand-color-grey;
+        }
+    }
+
+    &.checkbox-kind-default {
+        svg.checkbox-icon {
+            stroke: $brand-color-orange;
+        }
+
+        .check {
+            visibility: hidden;
+        }
+
+        input:checked + svg.checkbox-icon .check {
+            visibility: visible;
+        }
+
+        input:disabled + svg.checkbox-icon {
+            stroke: $brand-color-grey;
+        }
+    }
+
+    &.checkbox-kind-star {
+        fill: $brand-color-grey;
+
+        input:checked + svg {
+            fill: $brand-color-orange;
+        }
+    }
+
+    &.checkbox-kind-toggle {
+        font-weight: 500;
+
+        .toggle-button {
+            position: relative;
+            height: 22px;
+            width: 37px;
+
+            .slider {
+                position: absolute;
+                cursor: pointer;
+                top: 6px;
+                left: 0;
+                right: 0;
+                height: 10px;
+                border-radius: 5px;
+                background-color: $white;
+                transition: 0.4s;
+                border: 1px solid $light-grey;
+            }
+
+            .slider:before {
+                position: absolute;
+                content: '';
+                left: 0px;
+                bottom: -6px;
+                transition: 0.4s;
+                border-radius: 50%;
+                background-color: $white;
+                box-shadow: 0px 1px 3.88px 0.12px rgba(0, 0, 0, 0.32);
+                width: 21px;
+                height: 21px;
+            }
+        }
+
+        input:checked + .toggle-button .slider {
+            background-color: #5cb85c;
+        }
+
+        input:checked + .toggle-button .slider:before {
+            transform: translateX(15px);
+        }
+    }
+
+    &.checkbox-with-badge {
+        margin-bottom: 0;
+    }
+
+    .checkbox-icon {
+        flex: 0 0 auto;
+    }
+}

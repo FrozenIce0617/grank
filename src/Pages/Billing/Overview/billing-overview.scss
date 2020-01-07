@@ -1,0 +1,62 @@
+@import '_dependencies';
+
+.billing-overview {
+    .billing-box {
+        font-size: 14px;
+
+        .next-plan {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .billing-box-content {
+            display: flex;
+            flex-wrap: wrap;
+
+            &-left {
+                flex: 1;
+            }
+
+            &-right {
+                flex: 0;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+            }
+        }
+
+        strong {
+            font-weight: 600;
+        }
+
+        .cancel-button {
+            font-family: $headings-font-family;
+            font-size: 14px;
+            text-transform: none;
+            padding: 0 !important;
+        }
+
+        .info-row {
+            display: flex;
+            &.last-card-row {
+                &:not(:last-child) {
+                    margin-bottom: 10px;
+                }
+            }
+
+            .info-label-cell {
+                display: flex;
+                justify-content: flex-end;
+                flex: 0 0 120px;
+            }
+            .info-value-cell {
+                margin-left: 10px;
+                flex: 1;
+            }
+        }
+    }
+
+    .invoices-table {
+        padding: 0;
+    }
+}

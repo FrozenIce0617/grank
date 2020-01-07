@@ -1,0 +1,53 @@
+@import '_dependencies';
+
+.element-list-item {
+    border-radius: 3px;
+    background-color: $white;
+    border: 1px solid $border-color-medium-grey;
+    padding: 1rem;
+    margin: 10px 0;
+    position: relative;
+
+    .element-container {
+        padding: 0.5rem 0 0.5rem 2.2rem;
+    }
+
+    .header {
+        @extend %flex-row;
+        @extend %align-center;
+
+        .title {
+            font-family: $controls-font-family;
+            font-size: 1rem;
+            color: $font-color-medium-dark-grey;
+            font-weight: 500;
+        }
+
+        .drag-handle {
+            margin-right: 1rem;
+        }
+    }
+
+    .remove-button {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+
+        svg {
+            width: 10px;
+            height: 10px;
+            fill: $control-icon-color;
+        }
+    }
+
+    .drag-handle {
+        svg {
+            width: 20px;
+            height: 10px;
+            fill: $control-icon-color;
+        }
+
+        background: $white;
+        cursor: row-resize;
+    }
+}

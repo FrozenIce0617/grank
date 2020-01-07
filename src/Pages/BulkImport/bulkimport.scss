@@ -1,0 +1,62 @@
+@import '_dependencies';
+
+.bulk-import {
+    font-size: 0.8rem;
+    p {
+        margin-bottom: 0;
+    }
+
+    .bulk-import-table-container {
+        width: 100%;
+        overflow-x: auto;
+
+        .bulk-import-table {
+            margin-top: 20px;
+            border: 1px solid $border-color-medium-grey;
+
+            td,
+            th {
+                border-left: 1px dashed $border-color-medium-grey;
+            }
+
+            tr {
+                &:last-child {
+                    td {
+                        &.additional-field {
+                            border-bottom: 1px solid $brand-color-orange;
+                        }
+                    }
+                }
+            }
+
+            th.additional-field {
+                border-top: 1px solid $brand-color-orange;
+            }
+
+            .additional-field {
+                position: relative;
+
+                &.border-left {
+                    border-left: 1px solid $brand-color-orange;
+                }
+
+                &.border-right {
+                    border-right: 1px solid $brand-color-orange;
+                }
+
+                .additional-field-top-label {
+                    position: absolute;
+                    top: -20px;
+                    left: -1px;
+                    background: $brand-color-orange;
+                    font-size: 0.7rem;
+                    width: 115px;
+                    display: block;
+                    text-align: center;
+                    line-height: 20px;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

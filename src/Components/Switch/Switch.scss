@@ -1,0 +1,56 @@
+@import 'css/_dependencies.scss';
+
+.Switch {
+    position: relative;
+    background-color: $background-grey;
+    border: 1px solid $medium-grey-secondary;
+    border-radius: 50px;
+
+    &.small {
+        .Switch-text {
+            font-size: 11px;
+            padding: 1px 0;
+        }
+    }
+
+    &.toggle {
+        cursor: pointer;
+    }
+
+    &.disabled {
+        cursor: not-allowed;
+
+        .Switch-bar {
+            background-color: $gravatar-background;
+        }
+
+        .Switch-text {
+            cursor: not-allowed;
+        }
+    }
+
+    .Switch-bar {
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        height: calc(100% - 4px);
+        border-radius: 50px;
+        background-color: $orange;
+        transition: 0.3s;
+    }
+
+    .Switch-text {
+        position: relative;
+        display: inline-block;
+        padding: 6px 0;
+        text-align: center;
+        color: $gravatar-background;
+        font-size: 11px;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &.active {
+            color: white;
+        }
+    }
+}

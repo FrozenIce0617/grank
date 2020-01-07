@@ -1,0 +1,39 @@
+@import '_dependencies';
+@import '_table';
+
+.sales-organization {
+    .clickable {
+        cursor: pointer;
+    }
+
+    .btn-sm {
+        padding: 7px 10px;
+        color: #fff !important;
+    }
+
+    .delete-user-button-cell {
+        padding: 4px;
+    }
+}
+
+h1.sales-organization-title {
+    font-size: 34px;
+}
+
+.sales-organization-row {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.sales-organization-sidebar {
+    margin: 15px 0;
+}
+
+.sales-organization-main {
+    margin-bottom: 20px;
+}
+
+.sales-organization-block-title {
+    font-weight: bold;
+    margin-top: 15px;
+}

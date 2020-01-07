@@ -1,0 +1,17 @@
+@import '_dependencies';
+
+.tags-chart {
+    height: 240px;
+    position: relative;
+
+    .chart-area {
+        padding-top: 20px;
+        padding-left: 10px;
+        position: absolute;
+        width: 100%;
+        top: 0;
+    }
+    .highcharts-background {
+        fill: transparent;
+    }
+}

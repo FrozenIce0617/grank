@@ -1,0 +1,19 @@
+.add-inline-button {
+    line-height: 0;
+    display: inline-block;
+    height: auto;
+    width: auto;
+
+    svg {
+        fill: rgba(0, 0, 0, 0.6);
+        width: 20px;
+        height: 20px;
+        display: block;
+    }
+
+    &:hover {
+        svg {
+            fill: #000000;
+        }
+    }
+}

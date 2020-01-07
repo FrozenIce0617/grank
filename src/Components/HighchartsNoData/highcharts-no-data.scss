@@ -1,0 +1,10 @@
+@import '_dependencies';
+
+.highcharts-no-data {
+    text tspan {
+        font-size: 14px;
+        fill: $font-color-medium-dark-grey;
+        font-weight: normal;
+        font-family: $headings-font-family;
+    }
+}

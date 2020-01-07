@@ -1,0 +1,19 @@
+@import '_dependencies';
+
+.add-group {
+    width: 800px;
+
+    .footer {
+        margin-top: 1rem;
+        border-top: 1px solid $light-grey;
+        @extend %flex-row;
+        justify-content: flex-end;
+        padding-top: 1rem;
+        width: 100%;
+
+        .btn {
+            font-weight: 500;
+            margin-left: 0.5rem;
+        }
+    }
+}

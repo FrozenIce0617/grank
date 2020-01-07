@@ -1,0 +1,23 @@
+@import '_dependencies';
+
+.organic-analytics-chart {
+    height: 260px;
+    padding: 1rem 0;
+
+    .chart-area {
+        height: 100%;
+
+        .chart-content {
+            height: 100%;
+        }
+    }
+
+    &-empty {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $brand-color-grey;
+    }
+}

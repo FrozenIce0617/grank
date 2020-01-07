@@ -1,0 +1,123 @@
+@import './_dependencies.scss';
+@import './_fonts';
+@import './_icomoon';
+@import './_typography';
+@import './_buttons';
+@import './_forms';
+@import './_select.scss';
+@import './_tabs';
+@import './_panel';
+@import './_animations.scss';
+@import './_skeleton.scss';
+@import './_tooltips.scss';
+@import './_dropdown-menu.scss';
+@import './_pagination.scss';
+@import './_phone-input.scss';
+@import './_password.scss';
+@import './_charts.scss';
+@import './spinner.scss';
+@import './_content.scss';
+@import './_utilities.scss';
+@import './_sentry.scss';
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    position: relative;
+    min-height: 100%;
+    overflow: auto;
+}
+
+.container {
+    padding-left: 29px;
+    padding-right: 29px;
+    @include media('tablet') {
+        width: 750px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    @include media('laptop') {
+        width: 970px;
+    }
+}
+
+.view-controls {
+    @extend %flex-container;
+    @extend %space-between;
+    margin-top: 20px;
+    color: $icon-grey;
+    font-weight: 200;
+}
+
+* {
+    &:focus {
+        outline: none !important;
+    }
+}
+
+a,
+a:hover,
+a:visited,
+a:focus {
+    color: $brand-color-orange;
+    cursor: pointer;
+}
+
+.custom-link,
+.custom-link:hover,
+.custom-link:visited,
+.custom-link:focus {
+    color: $brand-color-orange;
+    text-transform: none;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+    &.spacing-top {
+        margin-top: 15px;
+    }
+}
+
+.masked-link {
+    color: $font-color-medium-dark-grey;
+    text-transform: none;
+    cursor: pointer;
+    &:visited,
+    &:focus {
+        color: $font-color-medium-dark-grey;
+        text-decoration: none;
+    }
+    &:hover {
+        color: $brand-color-orange;
+    }
+}
+
+//This is me being stuborn, I might wake up one morning with a good solution.
+.no-padding {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.chart-tooltip {
+    &-header {
+        font-size: 10px;
+    }
+    &-bullet {
+        margin-right: 4px;
+    }
+}
+
+// Disable tooltip flickering when it is covering element
+// https://github.com/valor-software/ngx-bootstrap/issues/3075
+.tooltip {
+    pointer-events: none;
+}

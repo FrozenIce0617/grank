@@ -1,0 +1,17 @@
+.report-element-header {
+    .title-row {
+        display: flex;
+        align-items: flex-end;
+        padding: 0 0.6rem;
+
+        .title {
+            flex-grow: 1;
+            margin-bottom: 0;
+        }
+    }
+
+    hr {
+        margin-top: 10px;
+        margin-bottom: 3px;
+    }
+}

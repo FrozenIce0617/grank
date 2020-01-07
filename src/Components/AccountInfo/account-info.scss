@@ -1,0 +1,61 @@
+@import '_dependencies';
+@import '_dropdown-menu.scss';
+
+.account-info-wrapper {
+    height: 40px;
+    text-align: right;
+
+    .dropdown-menu {
+        @extend .dropdown-menu-bubble;
+        min-width: 200px;
+        padding: 0;
+
+        .device-icon {
+            fill: $dark-placeholder-color;
+            height: 21px;
+        }
+    }
+
+    .account-info-button {
+        height: 100%;
+        border: 0;
+        cursor: pointer;
+        padding: 0;
+        background: transparent;
+        &:hover {
+            &:after {
+                border-top-color: $dark-blue;
+            }
+        }
+        &:after {
+            border-top-color: $icon-grey;
+            @include transition(all 0.3s ease);
+            margin-left: 0;
+            display: none;
+        }
+        &:focus,
+        &.active {
+            @include remove-box-shadow;
+            background-color: transparent;
+        }
+        .ico-wrapper {
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            background: $gravatar-background;
+            @include border-radius(50%);
+            vertical-align: middle;
+            line-height: 40px;
+            text-align: center;
+            overflow: hidden;
+            // Fix for #314
+            transform: translate3d(0, 0, 0);
+            img.react-gravatar {
+                position: relative;
+                height: 40px;
+                width: 40px;
+                vertical-align: initial;
+            }
+        }
+    }
+}

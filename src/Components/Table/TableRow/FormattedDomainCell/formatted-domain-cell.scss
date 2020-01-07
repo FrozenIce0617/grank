@@ -1,0 +1,20 @@
+.formatted-domain-cell {
+    &-favicon {
+        width: 15px;
+    }
+
+    &-title {
+        margin-left: 0.5rem;
+    }
+
+    &.with-display-name {
+        .formatted-domain-cell-favicon {
+            position: relative;
+            top: -10px;
+        }
+
+        .formatted-domain-cell-title {
+            display: inline-block;
+        }
+    }
+}

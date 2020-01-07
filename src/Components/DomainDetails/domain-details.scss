@@ -1,0 +1,53 @@
+@import '_dependencies';
+
+.domain-details {
+    @extend %flex-row;
+    flex-wrap: nowrap;
+    padding-top: 5px;
+    align-items: center;
+
+    .logo {
+        width: 24px;
+        height: 24px;
+        margin-right: 0.5rem;
+    }
+
+    .title {
+        color: $blue;
+        font-family: $headings-font-family;
+        font-size: 1.2rem;
+    }
+
+    .domain {
+        font-family: $controls-font-family;
+        color: $black;
+        font-weight: 600;
+    }
+
+    &-small {
+        padding-top: 0;
+
+        .logo {
+            width: 18px;
+            height: 18px;
+            margin-top: 2px;
+            margin-right: 15px;
+        }
+
+        .title {
+            font-size: 14px;
+            // color: black !important;
+            font-weight: bold;
+            display: inline;
+            vertical-align: bottom;
+        }
+
+        .domain {
+            display: inline;
+            color: $grey;
+            font-weight: normal;
+            vertical-align: bottom;
+            margin-left: 20px;
+        }
+    }
+}

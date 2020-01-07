@@ -1,0 +1,27 @@
+@import '_dependencies';
+
+.referral-page {
+    font-size: 0.8rem;
+    .btn-brand-orange {
+        color: #fff !important;
+    }
+
+    table {
+        td {
+            padding: 0.75rem;
+            vertical-align: middle;
+            border-left: 1px dashed $light-grey;
+
+            &:first-child {
+                border-left: 0;
+            }
+        }
+        tr:first-child td {
+            border-top: 0;
+        }
+    }
+
+    .skeleton-stats-number-cell {
+        width: 18%;
+    }
+}

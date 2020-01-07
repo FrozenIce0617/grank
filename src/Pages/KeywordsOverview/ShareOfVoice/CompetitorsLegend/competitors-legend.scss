@@ -1,0 +1,73 @@
+@import '_dependencies';
+
+$chart-legend-point-non-active-color: #ccc;
+$chart-legend-item-text-color: #333;
+
+.competitors-legend {
+    @extend %flex-column;
+    width: 100%;
+
+    .point {
+        min-width: 12px;
+        height: 12px;
+        margin-right: 7px;
+        border-radius: 6px;
+        background-color: $chart-legend-point-non-active-color;
+    }
+
+    .data-table {
+        flex: 1;
+    }
+
+    .legend-items-list {
+        height: auto;
+        max-height: 210px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        width: 240px;
+        text-overflow: ellipsis;
+
+        .legend-item {
+            font-family: $headings-font-family;
+            color: $chart-legend-item-text-color;
+            font-size: 0.725rem;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+
+            .legend-item-cell {
+                display: flex;
+                align-items: center;
+                padding: 0 0 12px;
+
+                border: none;
+
+                &.inactive {
+                    color: lighten($font-color-medium-light-grey, 40%);
+                }
+            }
+        }
+    }
+
+    .no-data {
+        font-family: $headings-font-family;
+        color: $chart-legend-item-text-color;
+        font-size: 0.725rem;
+        font-weight: 500;
+    }
+
+    .legend-item-header-row {
+        border: none;
+    }
+
+    .legend-item-title {
+        font-family: $headings-font-family;
+        font-size: 0.8rem;
+        border: none;
+        padding: 0 0 8px;
+    }
+
+    .table {
+        margin-bottom: 0.3rem;
+    }
+}

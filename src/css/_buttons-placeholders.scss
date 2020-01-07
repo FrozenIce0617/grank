@@ -1,0 +1,304 @@
+//Settings
+$btn-hover-darkness: 10%;
+$btn-outline-hover-darkness: 15%;
+
+//core
+%btn {
+    cursor: pointer;
+    font: 700 10px/14px 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    padding: 15px;
+    text-transform: uppercase;
+    text-decoration: none;
+    @include transition(all 0.2s ease-in-out);
+    position: relative;
+    span {
+        border: 0;
+        &:hover {
+            border: 0;
+        }
+    }
+    .loading-spinner {
+        position: absolute;
+        left: 20px;
+        font-size: 22px;
+        top: calc(50% - 10px);
+    }
+}
+
+%btn-disabled {
+    color: $dark-blue;
+}
+
+//Enhancements
+%btn-rounded {
+    @extend %btn;
+    @include border-radius(30px);
+}
+
+//colors
+%btn-brand-green {
+    background-color: $brand-color-green;
+    border-color: $brand-color-green;
+    color: $white;
+    fill: $white;
+    font-size: 0.8rem;
+    padding: 11px 18px;
+    text-transform: none;
+    @include box-shadow(3.5px, 3.5px, 9px, 0, rgba($black, 0.08));
+    &:hover {
+        background-color: darken($brand-color-green, $btn-hover-darkness);
+        color: $white;
+    }
+    &:visited {
+        color: $white;
+    }
+    &:disabled,
+    .disabled {
+        @extend %btn-disabled;
+        border: 0;
+        background-color: lighten($brand-color-green, 20%);
+    }
+}
+
+%btn-brand-orange {
+    background-color: $brand-color-orange;
+    border: none;
+    color: $white;
+    fill: $white;
+    font-size: 0.8rem;
+    padding: 11px 18px;
+    text-transform: none;
+    @include box-shadow(3.5px, 3.5px, 9px, 0, rgba($black, 0.08));
+    &:hover {
+        background-color: darken($brand-color-orange, $btn-hover-darkness);
+        color: $white;
+    }
+    &:visited {
+        color: $white;
+    }
+    &:disabled,
+    .disabled {
+        @extend %btn-disabled;
+        border: 0;
+        background-color: $brand-color-orange;
+        color: $white;
+    }
+}
+
+%btn-outline-brand-orange {
+    background-color: transparent;
+    border: 1px solid $orange;
+    color: $orange;
+    font-size: 0.8rem;
+    padding: 11px 18px;
+    text-transform: none;
+    @include box-shadow(3.5px, 3.5px, 9px, 0, rgba($black, 0.08));
+    &:hover {
+        border-color: darken($orange, $btn-outline-hover-darkness);
+        color: darken($orange, $btn-outline-hover-darkness);
+    }
+    &:visited {
+        color: $orange;
+    }
+    &:disabled,
+    .disabled {
+        @extend %btn-disabled;
+        border-color: $brand-color-grey;
+        color: $brand-color-grey;
+        background-color: transparent;
+    }
+}
+
+%btn-brand-orange-gradient {
+    @include gradient($brand-color-orange, $brand-color-orange-dark);
+    border: none;
+    color: $white;
+    fill: $white;
+    font-size: 0.8rem;
+    padding: 11px 18px;
+    text-transform: none;
+    box-sizing: border-box;
+    @include box-shadow(3.5px, 3.5px, 9px, 0, rgba($black, 0.08));
+    &:hover {
+        @include gradient(
+            darken($brand-color-orange, $btn-hover-darkness),
+            darken($brand-color-orange-dark, $btn-hover-darkness)
+        );
+        color: $white;
+    }
+    &:visited {
+        color: $white;
+    }
+    &:disabled,
+    .disabled {
+        @extend %btn-disabled;
+        border: 0;
+        background-color: $brand-color-orange;
+        color: $white;
+    }
+
+    > *:not(:last-child) {
+        margin-right: 5px;
+    }
+}
+
+%btn-brand-purple-gradient {
+    @include gradient($purple, $purple-dark);
+    border: none;
+    color: $white;
+    fill: $white;
+    font-size: 0.8rem;
+    padding: 11px 18px;
+    text-transform: none;
+    box-sizing: border-box;
+    @include box-shadow(3.5px, 3.5px, 9px, 0, rgba($black, 0.08));
+
+    &:hover {
+        @include gradient(
+            darken($purple, $btn-hover-darkness),
+            darken($purple-dark, $btn-hover-darkness)
+        );
+        color: $white;
+    }
+    &:visited {
+        color: $white;
+    }
+    &:disabled,
+    .disabled {
+        @extend %btn-disabled;
+        border: 0;
+        background-color: $purple;
+        color: $white;
+    }
+
+    > *:not(:last-child) {
+        margin-right: 5px;
+    }
+}
+
+%btn-red {
+    background-color: $flat-red;
+    border-color: $flat-red;
+    color: $white;
+    border: none;
+    font-size: 0.8rem;
+    padding: 11px 18px;
+    text-transform: none;
+    @include box-shadow(3.5px, 3.5px, 9px, 0, rgba($black, 0.08));
+    &:hover {
+        background-color: darken($flat-red, $btn-hover-darkness);
+        color: $white;
+    }
+    &:visited {
+        color: $white;
+    }
+    &:disabled,
+    .disabled {
+        @extend %btn-disabled;
+        border: 0;
+        background-color: lighten($flat-red, 20%);
+    }
+}
+
+%btn-outline-red {
+    background-color: white;
+    border: 1px solid $flat-red;
+    color: $flat-red;
+    font-size: 0.8rem;
+    padding: 11px 18px;
+    text-transform: none;
+    @include box-shadow(3.5px, 3.5px, 9px, 0, rgba($black, 0.08));
+    &:hover {
+        border-color: darken($flat-red, $btn-outline-hover-darkness);
+        color: darken($flat-red, $btn-outline-hover-darkness);
+    }
+    &:visited {
+        color: $flat-red;
+    }
+    &:disabled,
+    .disabled {
+        @extend %btn-disabled;
+        border-color: $brand-color-grey;
+        color: $brand-color-grey;
+        background-color: transparent;
+    }
+}
+
+%btn-brand-grey {
+    background-color: $brand-color-grey;
+    border: none;
+    font-size: 0.8rem;
+    color: $black;
+    padding: 11px 18px;
+    text-transform: none;
+
+    &:hover {
+        background-color: darken($brand-color-grey, $btn-hover-darkness);
+        color: $black;
+    }
+
+    &:visited {
+        color: $black;
+    }
+
+    &:disabled,
+    .disabled {
+        @extend %btn-disabled;
+        color: $white;
+        border: 0;
+        background-color: lighten($flat-red, 20%);
+    }
+}
+
+%btn-facebook {
+    color: #fff !important;
+    background-color: #3b5998;
+    border-color: #133783;
+    display: flex;
+    justify-content: center;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: #30487b;
+        border-color: #0b214e;
+    }
+}
+
+%btn-google-plus {
+    color: #fff !important;
+    background-color: #dd4b39;
+    border-color: #c53727;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: #ca3523;
+        border-color: #92291d;
+    }
+}
+
+//Sizes
+%btn-large {
+    width: 100%;
+    max-width: 356px;
+    padding: 20px 25px 19px;
+    font-size: 13px;
+    line-height: 18px;
+    @include media('tablet') {
+        min-width: 356px;
+        max-width: none;
+        width: auto;
+        padding: 24px 25px 21px;
+    }
+}
+
+%btn-small {
+    width: auto;
+    padding: 10px;
+}
+
+%btn-small-wide {
+    width: 100%;
+    padding: 10px;
+}

@@ -1,0 +1,87 @@
+// Common colors
+$black: #000;
+$white: #fff;
+$blue: #337ab7;
+$green: #6bc197;
+$red: #f25e57;
+$yellow: #f5d76e;
+$light-blue: #639be5;
+$orange: #f89537;
+$orange-dark: #f27a10;
+$orange-light: #fff0df;
+$purple: #9a6cc8;
+$purple-dark: #464c90;
+$purple-light: #f1e7fa;
+
+// Color definitions
+$dark-blue: #313445;
+$extra-dark-blue: #1a1c27;
+$extra-light-grey: #f5f7fa;
+$light-grey: #ebebeb;
+$background-grey: #f1f4f9;
+$medium-grey: #f5f7fa;
+$medium-grey-secondary: #d7d9e5;
+$grey: #757575;
+$flat-red: #ec644b;
+$flat-red-60: rgba($flat-red, 0.6);
+$gravatar-background: #c4c4c4;
+
+// Brand colors
+$brand-color-orange: $orange;
+$brand-color-orange-dark: #ec644b;
+$brand-color-purple: #6c7096;
+$brand-color-green: #a6cb52;
+$brand-color-green-dark: #95b647;
+$brand-color-red: #e85747;
+$brand-color-grey: #e0e0e7;
+$brand-color-grey-dark: rgb(190, 190, 197);
+
+// Font-colors
+$font-color-dark-blue: #2b2f33;
+$font-color-medium-dark-grey: #444; // rgb(50, 50, 50);
+$font-color-medium-light-grey: rgba(35, 39, 47, 0.65);
+$font-color-placeholder: rgba(#23272f, 0.3);
+
+// Border colors
+$border-color-light-grey: #eceff6;
+$border-color-medium-grey: #e4e8ee;
+$border-color-dark-grey: darken($border-color-medium-grey, 25%);
+$border-grey: #eceeef;
+
+// Braintree colors
+$braintree-background-color: #fafafa;
+$braintree-border-color: #b5b5b5;
+
+// Loader colors
+$loader-backdrop-dark: rgba(#252736, 0.95);
+$loader-backdrop-light: rgba(#252736, 0.6);
+
+// Skeleton colors
+$skeleton-background: #f0f0f0;
+
+// Tooltip
+$tooltip-background: rgba(#252736, 0.95);
+$tooltip: #313445;
+
+//Shadows
+$shadow-default: rgba(71, 77, 90, 0.24);
+
+//Dropdown
+$control-icon-color: #a4a6b3;
+$control-icon-color-dark: darken($control-icon-color, 10%);
+$dropdown-arrow-color: #a4a6b3;
+$dropdown-border-color: rgba(172, 172, 172, 0.2);
+$dropdown-placeholder-color: #a0a0a0;
+
+// Icon
+$icon-grey: #9395a4;
+$icon-hover-color: #444444;
+
+//Dark theme
+$dark-input-background: #666877;
+$dark-placeholder-color: #a4a6b3;
+
+//Indication
+$increase-color: #27ae60;
+$decrease-color: #f75b5b;
+$error-color: #f92544;

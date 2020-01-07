@@ -1,0 +1,17 @@
+@import '_dependencies';
+
+.generic-page {
+    background: $white;
+    padding: 40px;
+
+    border-left: 1px solid $border-color-medium-grey;
+    border-right: 1px solid $border-color-medium-grey;
+    border-bottom: 1px solid $border-color-medium-grey;
+
+    h1 {
+        font-size: 21px;
+        font-weight: bold;
+        line-height: 21px;
+        font-family: 'Raleway', sans-serif;
+    }
+}

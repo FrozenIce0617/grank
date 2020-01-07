@@ -1,0 +1,11 @@
+.keywords-number-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    .keywords-number-cell-title {
+        display: flex;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,35 @@
+@import '_dependencies';
+
+.template-params {
+    .text-input-container {
+        display: block;
+    }
+
+    input.text-input-control {
+        width: 300px;
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    .color-picker {
+        width: 80px;
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    .name-label {
+        font-size: 1rem;
+        font-family: $headings-font-family;
+        font-weight: 400;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .brand-label {
+        font-size: 1rem;
+        font-family: $headings-font-family;
+        font-weight: 400;
+        display: block;
+        margin-bottom: 4px;
+    }
+}

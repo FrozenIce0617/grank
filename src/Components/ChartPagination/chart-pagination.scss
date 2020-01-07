@@ -1,0 +1,20 @@
+@import '_dependencies';
+
+.chart-pagination {
+    .pagination-prev-page, .pagination-next-page {
+        cursor: pointer;
+
+        &.pagination-disabled {
+            cursor: auto;
+
+            svg g path {
+                fill: rgb(204, 204, 204);
+            }
+        }
+    }
+    .pagination-content {
+        margin: 0 3px;
+        font-size: 0.8rem;
+        user-select: none;
+    }
+}

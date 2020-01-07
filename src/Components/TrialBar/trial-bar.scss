@@ -1,0 +1,10 @@
+@import '_dependencies.scss';
+
+.trial-bar {
+    background: $red;
+    text-align: center;
+    font-size: 12px;
+    padding: 15px;
+    display: block;
+    color: $white !important;
+}

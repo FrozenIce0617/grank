@@ -1,0 +1,42 @@
+@import '_dependencies';
+
+.public-report-options {
+    &__input-container {
+        display: flex;
+        & > input {
+            flex-grow: 1;
+            line-height: normal;
+            border-radius: 0px;
+            border: 1px solid $border-color-medium-grey;
+            padding: 0.8rem;
+            color: $font-color-medium-dark-grey;
+            font-weight: 400;
+            font-size: 0.8rem;
+            font-family: $headings-font-family;
+            height: 40px;
+            background: $light-grey;
+        }
+        .copy-button {
+            border: 1px solid $brand-color-green-dark;
+            width: 50px;
+            text-align: center;
+            line-height: 38px;
+            background: $brand-color-green;
+            @include transition(all .2s ease);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &:hover {
+                background: $brand-color-green-dark;
+            }
+            svg {
+                fill: $white;
+                width: 15px;
+            }
+        }
+    }
+    .btn {
+        margin-bottom: 5px;
+    }
+}

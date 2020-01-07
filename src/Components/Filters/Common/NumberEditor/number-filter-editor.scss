@@ -1,0 +1,19 @@
+.number-filter-editor {
+    .error-message {
+        text-align: right;
+        margin-bottom: 5px;
+    }
+
+    .number-filter-row {
+        display: flex;
+
+        > div:first-child {
+            flex-grow: 1;
+        }
+
+        .form-text-input {
+            margin-left: 10px;
+            width: 75px;
+        }
+    }
+}

@@ -1,0 +1,9 @@
+@import '_dependencies';
+
+.ranking-distribution {
+    flex-grow: 1;
+
+    &.skeleton {
+        flex: 1;
+    }
+}

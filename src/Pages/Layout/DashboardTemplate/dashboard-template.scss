@@ -1,0 +1,36 @@
+@import '_dependencies';
+
+body {
+    background: $background-grey;
+}
+
+.dashboard-template {
+    $nav-bar-width: 80px;
+    $container-offset: 1rem 1.8rem;
+    display: flex;
+
+    .filters {
+        margin: $container-offset;
+        margin-bottom: 0;
+    }
+
+    .dashboard-template-content {
+        flex: 0 0 calc(100% - 80px);
+        background: $background-grey;
+        overflow: hidden;
+
+        .dashboard-template-main-content {
+            padding: $container-offset;
+            padding-top: 0;
+        }
+
+        .dashboard-message {
+            padding: $container-offset;
+            padding-bottom: 0;
+        }
+    }
+
+    .dashboard-side-navbar-container {
+        flex: 0 0 $side-navbar-width;
+    }
+}

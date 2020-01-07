@@ -1,0 +1,43 @@
+@import '_dependencies';
+
+.quick-search-wrapper {
+    height: 45px;
+    background: $white;
+    @extend %flex-container;
+    position: relative;
+    .quick-search-button {
+        border: 0;
+        height: 100%;
+        width: 40px;
+        cursor: pointer;
+        padding: 0;
+        background: none;
+        @extend %flex-item-no-grow;
+        &:focus {
+            @include remove-box-shadow;
+        }
+    }
+    .search-input {
+        @extend %flex-item;
+        border: 0;
+        @include border-radius(0px);
+        @include remove-box-shadow;
+        padding-left: 0px;
+        padding-right: 0px;
+        color: $dark-blue;
+        font-weight: 600;
+        font-size: 14px;
+        background: none;
+        @include placeholder {
+            font-weight: 600;
+            color: $icon-grey;
+            font-size: 14px;
+            @include transition(color .3s ease);
+        }
+        &:focus {
+            @include placeholder {
+                color: $white;
+            }
+        }
+    }
+}

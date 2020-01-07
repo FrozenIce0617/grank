@@ -1,0 +1,24 @@
+@import '_dependencies';
+
+.base-public-page.releases-page {
+    .releases-page-content {
+        width: 100%;
+        padding: 1rem 1.8rem;
+
+        .item-changes {
+            background-color: $white;
+            border: 1px solid $border-color-medium-grey;
+            padding: 1rem 1.4rem;
+            margin-bottom: 1.4rem;
+
+            .SocialMediaShareButton {
+                display: inline-block;
+                margin-right: 5px;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+@import '_dependencies.scss';
+
+.profile {
+    .token {
+        font-family: monospace;
+    }
+
+    .refresh-token-link {
+        @include disableTextSelect;
+        cursor: pointer;
+        height: 14px;
+        vertical-align: middle;
+        margin-left: 0.6rem;
+        margin-bottom: 0.09rem;
+        fill: $control-icon-color !important;
+    }
+
+    .link {
+        color: $orange;
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

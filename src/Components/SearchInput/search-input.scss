@@ -1,0 +1,59 @@
+@import '_dependencies';
+
+.search-input{
+    position: relative;
+
+    svg {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto 10px;
+        fill: $dark-placeholder-color;
+    }
+
+    input {
+        font-family: $controls-font-family;
+        width: 290px;
+        height: 42px;
+        border-radius: 0px;
+        background: $white;
+        color: $black;
+        border: 1px solid rgb(229, 229, 232);
+        font-size: 0.9rem;
+        font-weight: 500;
+        padding-left: 35px;
+
+
+        &:focus{
+            @include remove-box-shadow;
+        }
+
+        &::placeholder{
+            color: $dark-placeholder-color;
+        }
+    }
+
+    &.dark{
+        svg {
+            fill: $white;
+            margin: auto 20px;
+        }
+
+        input {
+            width: 200px;
+            height: 42px;
+            border-radius: 21px;
+            background: $dark-input-background;
+            padding-left: 45px;
+            color: $white;
+            border: none;
+            padding-left: 45px;
+
+            &::placeholder{
+                color: $dark-placeholder-color;
+            }
+        }
+    }
+}
+

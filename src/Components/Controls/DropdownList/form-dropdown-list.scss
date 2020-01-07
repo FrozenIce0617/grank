@@ -1,0 +1,46 @@
+@import '_dependencies';
+@import '../Dropdowns/base-dropdown.scss';
+
+.form-dropdown-list {
+    .menu-toggle {
+        border: 1px solid $border-color-medium-grey;
+        padding: 0.8rem;
+        color: $font-color-medium-dark-grey;
+        font-weight: 400;
+        font-size: 0.8rem;
+        font-family: $headings-font-family;
+        position: relative;
+        line-height: inherit;
+        padding-right: 28px;
+
+        &:after {
+            content: ' ';
+            margin-top: -2px;
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 4px solid $dropdown-arrow-color;
+        }
+    }
+
+    .dropdown-menu {
+        left: 0;
+        right: 0;
+        top: auto !important;
+        transform: none !important;
+        max-height: 220px;
+        overflow: auto;
+
+        border: 1px solid $border-color-medium-grey;
+        margin-top: -1px;
+
+        .dropdown-item {
+            padding: 10px !important;
+            min-height: auto !important;
+        }
+    }
+}

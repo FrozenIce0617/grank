@@ -1,0 +1,12 @@
+@import '_dependencies';
+
+.hint {
+    svg {
+        fill: $dark-placeholder-color;
+        height: 14px;
+        margin-left: 0.6rem;
+        vertical-align: middle;
+        margin-bottom: 0.165em;
+    }
+}
+

@@ -1,0 +1,222 @@
+@import '_dependencies';
+@import '_dropdown-menu.scss';
+
+.message-button {
+    .message-icon-container {
+        display: flex;
+        position: relative;
+
+        &.add-animation {
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 100px;
+                background-color: white;
+                opacity: 0;
+                animation: flash 3s;
+            }
+        }
+
+        svg {
+            width: 40px;
+            height: 40px;
+            fill: $extra-light-grey;
+        }
+
+        .message-icon-counter {
+            display: block;
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 20px;
+            height: 20px;
+            background: $orange;
+            color: $white;
+            @include border-radius(50%);
+            font-size: 12px;
+            line-height: 1.7;
+            text-align: center;
+
+            &.animation {
+                animation: shake 0.7s 1.3s;
+            }
+        }
+    }
+
+    &.dark {
+        svg {
+            fill: $dark-blue;
+        }
+    }
+}
+
+.message-icon-counter-number {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.message-dropdown-error-message {
+    color: $icon-grey;
+    font-size: 12px;
+    text-align: center;
+}
+
+.messages-dropdown {
+    @extend .dropdown-menu-bubble;
+    transform: translateX(calc(-100% + 57px)) !important;
+    margin-top: 55px !important;
+    // overflow: hidden;
+    width: 400px;
+    padding: 0 !important;
+
+    &.dropdown-menu-right {
+        &:before {
+            left: auto;
+            right: 25px;
+        }
+
+        &:after {
+            left: auto;
+            right: 26px;
+        }
+    }
+}
+
+.messages-wrapper {
+    max-height: 50vh;
+    overflow-y: scroll;
+}
+
+.messages-header {
+    padding: 10px 0;
+    border-bottom: 1px solid $border-color-medium-grey;
+    padding-left: 65px;
+    font-weight: bold;
+}
+
+.messages-header-new {
+    background: $orange;
+    display: inline-block;
+    color: white;
+    padding: 0 8px;
+    margin-left: 4px;
+    border-radius: 100px;
+}
+
+.messages-header-check {
+    width: 25px;
+    height: 25px;
+    fill: $icon-grey;
+}
+
+.messages-sidebar {
+    display: inline-block;
+    width: 60px;
+    padding-right: 5px;
+    vertical-align: top;
+    text-align: center;
+    margin-top: 6px;
+}
+
+.messages-icon {
+    width: 35px;
+    height: 35px;
+    fill: $icon-grey;
+    stroke: white;
+    padding: 6px;
+    border-radius: 100px;
+    background-color: $extra-light-grey;
+
+    &.orange {
+        fill: $orange;
+    }
+    &.red {
+        fill: $red;
+    }
+}
+
+.messages-main {
+    display: inline-block;
+    width: calc(100% - 60px);
+    padding-right: 22px;
+    color: black;
+    font-size: 0.8rem;
+}
+
+.messages-el {
+    border-bottom: 1px solid $border-color-medium-grey;
+    white-space: initial;
+    padding: 10px 5px;
+    position: relative;
+}
+
+.messages-timestamp {
+    margin: 2px 0 7px;
+    color: $grey;
+}
+
+.messages-markRead {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding-left: 10px;
+    cursor: pointer;
+
+    svg {
+        width: 25px;
+        height: 25px;
+        fill: $icon-grey;
+        border-radius: 100px;
+        opacity: 0.4;
+        transition: 0.3s;
+    }
+
+    &:hover {
+        svg {
+            opacity: 1;
+            @include box-shadow(0, 2px, 16px, 0, $shadow-default);
+        }
+
+        .messages-markRead-text {
+            opacity: 0.5;
+        }
+    }
+}
+
+.messages-markRead-text {
+    position: absolute;
+    top: 3px;
+    right: 35px;
+    font-size: 12px;
+    font-weight: normal;
+    white-space: nowrap;
+    color: $grey;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.messages-all-wrapper {
+    // border-top: 1px solid $border-color-medium-grey;
+    @include box-shadow(0, -5px, 20px, -3px, $shadow-default);
+
+    .sub-item {
+        text-align: center;
+        padding: 12px 10px;
+        cursor: pointer;
+        font-size: 14px;
+        color: rgba($orange, 0.6);
+        transition: 0.3s;
+
+        &:hover {
+            background-color: $extra-light-grey !important;
+            color: $orange;
+        }
+    }
+}

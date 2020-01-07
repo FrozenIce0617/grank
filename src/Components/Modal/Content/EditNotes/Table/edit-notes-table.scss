@@ -1,0 +1,8 @@
+@import '_dependencies';
+
+.table.edit-notes-table {
+    table-layout: fixed;
+    .note {
+        width: 50%;
+    }
+}

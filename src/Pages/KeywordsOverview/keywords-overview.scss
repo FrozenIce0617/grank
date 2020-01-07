@@ -1,0 +1,78 @@
+@import '_dependencies';
+
+$legend-width: 210px;
+
+:export {
+    legendWidth: $legend-width;
+}
+
+.keywords-overview {
+    .share-of-voice-stats {
+        padding: 1rem;
+    }
+
+    .share-of-voice-without-pro {
+        margin-bottom: 0;
+    }
+
+    .ranking-distribution {
+        min-width: 0;
+    }
+
+    .unknown-competitors {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .share-of-voice-pro {
+        margin-bottom: 0;
+        padding: 1rem 0;
+
+        &.blurry-overlay-collapsed {
+            margin-top: -1rem;
+        }
+
+        .flex-row {
+            display: flex;
+            flex-wrap: wrap;
+
+            > .flex-cell {
+                flex: 1;
+                display: flex;
+                justify-content: flex-start;
+                height: 260px;
+                align-items: center;
+
+                &.flex-grow {
+                    flex-grow: 1;
+                }
+            }
+        }
+
+        @media screen and (min-width: 1600px) {
+            .flex-row {
+                flex-wrap: nowrap;
+            }
+        }
+
+        @media screen and (min-width: 1105px) and (max-width: 1599px) {
+            padding-bottom: 3rem;
+
+            .share-of-voice-landing-pages {
+                padding-top: 3rem;
+            }
+        }
+
+        @media screen and (max-width: 1105px) {
+            padding-bottom: 5rem;
+
+            .share-of-voice-landing-pages {
+                padding-top: 6rem;
+            }
+
+            .share-of-voice-tags {
+                padding-top: 3rem;
+            }
+        }
+    }
+}

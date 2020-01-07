@@ -1,0 +1,53 @@
+.sentry-error-embed-wrapper {
+    .sentry-error-embed {
+        color: black;
+        padding: 20px;
+
+        .form-field {
+            textarea {
+                height: 150px;
+            }
+        }
+
+        .form-submit {
+            display: flex;
+            flex-direction: row-reverse;
+
+            .btn {
+                background: $brand-color-orange;
+                border: none;
+                box-shadow: 3.5px 3.5px 9px 0 rgba(0, 0, 0, 0.08);
+                border-radius: 0.25rem;
+                text-transform: none;
+                font-weight: 700;
+                font-family: 'Raleway', sans-serif;
+                font-size: 0.8rem;
+                margin: 0 0 0 10px;
+                padding: 11px 18px;
+
+                &:hover {
+                    background-color: #f37b09;
+                }
+            }
+
+            .close {
+                display: flex;
+                align-items: center;
+                background: $brand-color-grey-dark;
+                box-shadow: 3.5px 3.5px 9px 0 rgba(0, 0, 0, 0.08);
+                border-radius: 0.25rem;
+                text-transform: none;
+                font-weight: 700;
+                font-family: 'Raleway', sans-serif;
+                font-size: 0.8rem;
+                padding: 11px 18px;
+                color: black;
+                text-shadow: none;
+            }
+
+            .powered-by {
+                flex: 1;
+            }
+        }
+    }
+}

@@ -1,0 +1,196 @@
+.rows-select-wrapper {
+    @extend %flex-item-no-grow;
+    .Select {
+        display: block;
+        @include media('phone') {
+            margin-left: 10px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+}
+//select style
+.Select {
+    * {
+        font-size: 13px;
+        font-weight: 300;
+        color: $font-color-medium-light-grey;
+        &:focus {
+            outline: none;
+            border: none;
+            @include remove-box-shadow;
+        }
+    }
+
+    .Select-multi-value-wrapper {
+        display: flex;
+
+        .Select-placeholder,
+        .Select-value {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .Select-control {
+        border: 1px solid $border-color-medium-grey;
+        border-radius: 0;
+        padding: 5px 0;
+        .Select {
+            &-placeholder {
+                color: $font-color-placeholder;
+                line-height: 40px;
+            }
+            &-input {
+                line-height: 35px;
+                input {
+                    color: $font-color-dark-blue;
+                }
+            }
+            &-value {
+                line-height: 40px;
+            }
+        }
+
+        .Select-clear-zone {
+            padding-right: 13px;
+        }
+        .Select-loading-zone {
+            padding-right: 9px;
+        }
+    }
+    &.is-open {
+        .Select-value {
+            .Select-value-label {
+                color: $font-color-placeholder !important;
+            }
+        }
+    }
+    &.is-focused:not(.is-open) > .Select-control {
+        border-color: $border-color-dark-grey;
+    }
+    &-menu-outer {
+        z-index: 4;
+        border: 1px solid $border-color-medium-grey;
+
+        .Select-option {
+            position: relative;
+            color: $font-color-medium-light-grey;
+            background: $white;
+            padding: 12px 10px;
+            border-top: 1px solid $border-color-medium-grey;
+
+            &:first-child {
+                border-top: none;
+            }
+            &.is-selected {
+                background-color: $medium-grey;
+                color: $font-color-medium-light-grey;
+            }
+
+            &.is-focused {
+                background-color: $medium-grey;
+                color: $font-color-medium-light-grey;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    height: 100%;
+                    width: 2px;
+                    background-color: $orange;
+                }
+            }
+
+            &.is-disabled {
+                background-color: $white;
+
+                &:hover {
+                    background-color: $white;
+                }
+            }
+
+            &:hover {
+                background-color: $medium-grey;
+            }
+
+            .inline-icon {
+                margin-right: 20px;
+            }
+
+            strong,
+            .bold {
+                font-weight: bold;
+            }
+        }
+    }
+
+    .Select-arrow-zone {
+        .Select-arrow {
+            border: none;
+            top: 10px;
+            position: absolute;
+            right: 20px;
+            @extend %icomoon-default-css;
+            &:before {
+                content: '\e904';
+                position: absolute;
+                top: -4px;
+            }
+            &:after {
+                content: '\e903';
+                position: absolute;
+                top: 6px;
+            }
+        }
+    }
+    &.loading {
+        .Select-control {
+            .Select-value {
+                padding-right: 40px;
+            }
+        }
+    }
+    &.options-select {
+        * {
+            color: $icon-grey !important;
+        }
+        min-width: 90px;
+        .Select-control {
+            @include border-radius(0px);
+            border: 0;
+        }
+        &.is-open {
+            @include box-shadow(0, 2px, 16px, 0, $shadow-default);
+        }
+        .Select-menu-outer {
+            @include border-radius(0px);
+            border: 0;
+            @include box-shadow(0, 5px, 5px, 0, $shadow-default);
+            .Select-option {
+                border: 0;
+                color: $icon-grey;
+                @include transition(all 0.3s ease);
+                &.is-selected {
+                    background-color: $white;
+                    color: $icon-grey;
+                }
+                &.is-focused {
+                    background-color: $white;
+                    color: $dark-blue !important;
+                }
+            }
+        }
+    }
+}
+
+.Select-option-quickEl {
+    font-weight: bold;
+    word-break: break-all;
+    // white-space: nowrap;
+}
+
+.Select-menu-outer {
+    @include box-shadow(0, 3px, 7px, 0px, $shadow-default);
+}

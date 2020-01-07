@@ -1,0 +1,18 @@
+//_____ Coloring _____//
+
+.u-textGreen {
+    color: $green;
+}
+.u-textRed {
+    color: $red;
+}
+
+.u-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.u-pointerEventsNone {
+    pointer-events: none;
+}

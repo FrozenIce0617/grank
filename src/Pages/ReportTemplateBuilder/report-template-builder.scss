@@ -1,0 +1,42 @@
+@import '_dependencies';
+
+.report-template-builder {
+    @extend %flex-row;
+    padding: 20px;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+
+    .column-left {
+        display: flex;
+        flex-direction: column;
+        max-width: 240px;//at 1040
+
+        @media (min-width: 1240px) {
+            max-width: 440px;
+        }
+
+        @media (min-width: 1440px) {
+            max-width: 660px;
+        }
+
+        .back-button {
+            align-self: flex-end;
+            margin-right: 24px;
+        }
+    }
+
+    .column-right {
+        flex-grow: 1;
+    }
+
+    .instructions {
+        font-size: 0.8rem;
+        font-weight: 500;
+        font-family: $controls-font-family;
+        color: $font-color-medium-dark-grey;
+    }
+
+    .row-top {
+        height: 60px;
+    }
+}

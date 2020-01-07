@@ -1,0 +1,27 @@
+@import '_dependencies';
+
+header.nav-bar-top {
+    background: $dark-blue;
+    padding: 16px 0;
+    .logo {
+        width: 173px;
+        margin: 0 auto;
+        @include media('tablet') {
+            width: 201px;
+        }
+        a {
+            display: block;
+            height: 100%;
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+
+    .development-button-wrapper {
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        width: 200px;
+    }
+}

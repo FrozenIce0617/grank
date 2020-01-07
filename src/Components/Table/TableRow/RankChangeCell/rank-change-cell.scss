@@ -1,0 +1,28 @@
+@import '_dependencies';
+
+.rank-change-cell {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+
+    .icon {
+        height: 16px;
+        width: 16px;
+        margin-right: 8px;
+
+        &.small {
+            width: 8px;
+            height: 8px;
+            margin-bottom: 2px;
+            margin-right: 2px;
+        }
+    }
+
+    &.increase {
+        fill: $increase-color;
+    }
+
+    &.decrease {
+        fill: $decrease-color;
+    }
+}

@@ -1,0 +1,147 @@
+@import '_dependencies';
+
+$animate-in-duration: 1s;
+$animate-main-duration: 4s;
+
+$startScale: 0;
+$endScale: 1;
+$animateInBezier: cubic-bezier(0.64, 0.57, 0.67, 1.53);
+
+$inbetweenRotateStart: 0deg;
+$inbetweenRotatePause: 180deg;
+$inbetweenRotateEnd: 360deg;
+$inbetweenScaleStart: 1;
+$inbetweenScalePause: 0.7;
+$inbetweenScaleEnd: 1;
+
+$exposerWidth: 0px;
+$exposerVisibleWidth: 92px;
+$exposerHeight: 92px;
+
+$spinnerSize: 60px;
+$spinnerTop: calc(50% - #{$spinnerSize});
+$spinnerLeft: calc(50% - #{$spinnerSize} / 2);
+
+$innerContainerSize: 200px;
+$innerContainerOffset: calc(50% - #{$innerContainerSize} / 2);
+
+$loadingBarBouncingDuration: 2s;
+$loadingBarResizeDuration: 1s;
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.loader-inner-container {
+    width: $innerContainerSize;
+    height: $innerContainerSize;
+    position: absolute;
+    top: $innerContainerOffset;
+    left: $innerContainerOffset;
+    text-align: center;
+    padding-top: 40px;
+    .loading-logo-container {
+        transform: rotate($inbetweenRotateStart) scale($inbetweenScaleStart);
+        animation: animate-in-for-start $animate-in-duration $animateInBezier,
+            animate-in-between $animate-main-duration $animate-in-duration infinite ease-in-out;
+        width: $spinnerSize;
+        border-radius: 14px;
+        .animation-exposer {
+            fill: $white;
+            width: $exposerWidth;
+            height: $exposerHeight;
+            @include translate(4px, 4px);
+            animation: animate-graph-drawing $animate-main-duration $animate-in-duration ease-in-out
+                infinite;
+        }
+    }
+    .loading-bar-outer {
+        background: $border-color-medium-grey;
+        width: 80%;
+        height: 5px;
+        margin: 15px auto;
+        position: relative;
+        .loading-bar-inner {
+            background: $brand-color-orange;
+            height: 3px;
+            display: block;
+            width: 30%;
+            top: 1px;
+            position: absolute;
+            animation: animate-loader-bouncing $loadingBarBouncingDuration ease-in-out infinite,
+                animate-loader-resize $loadingBarResizeDuration ease-in-out infinite;
+        }
+    }
+    .loading-text {
+        color: $black;
+        font-size: 13px;
+        font-weight: 300;
+
+        &.has-backdrop {
+            color: $white;
+        }
+    }
+}
+
+@keyframes animate-in-for-start {
+    0% {
+        @include scale($startScale);
+    }
+    100% {
+        @include scale($endScale);
+    }
+}
+
+@keyframes animate-in-between {
+    50% {
+        transform: rotate($inbetweenRotateStart) scale($inbetweenScaleStart);
+    }
+    75% {
+        transform: rotate($inbetweenRotatePause) scale($inbetweenScalePause);
+    }
+    100% {
+        transform: rotate($inbetweenRotateEnd) scale($inbetweenScaleEnd);
+    }
+}
+
+@keyframes animate-graph-drawing {
+    0% {
+        @include translate(4px, 4px);
+        width: $exposerWidth;
+    }
+    25% {
+        width: $exposerVisibleWidth;
+        @include translate(4px, 4px);
+    }
+    50% {
+        @include translate(94px, 4px);
+        width: $exposerWidth;
+    }
+}
+
+@keyframes animate-loader-bouncing {
+    0% {
+        left: 1px;
+        right: calc(70% - 1px);
+    }
+    50% {
+        left: calc(70% - 1px);
+        right: 1px;
+    }
+    100% {
+        left: 1px;
+        right: calc(70% - 1px);
+    }
+}
+
+@keyframes animate-loader-resize {
+    0% {
+        width: 30%;
+    }
+    50% {
+        width: 45%;
+    }
+    100% {
+        width: 30%;
+    }
+}

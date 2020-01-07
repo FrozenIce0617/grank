@@ -1,0 +1,22 @@
+@import '_dependencies';
+
+.url-status {
+    cursor: pointer;
+
+    svg {
+        width: 8px;
+        height: 8px;
+
+        &.status-up {
+            fill: $increase-color;
+        }
+
+        &.status-down {
+            fill: $decrease-color;
+        }
+
+        &.status-unknown {
+            fill: $yellow;
+        }
+    }
+}

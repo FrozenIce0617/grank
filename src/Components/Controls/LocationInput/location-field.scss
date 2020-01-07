@@ -1,0 +1,23 @@
+@import '_dependencies';
+
+.autocomplete-container {
+    box-shadow: 0 6px 8.73px 0.27px rgba(71, 77, 90, 0.24);
+    z-index: 2;
+}
+
+.autocomplete-item {
+    font-family: $controls-font-family;
+    border-bottom: 1px solid $dropdown-border-color;
+    color: $font-color-medium-dark-grey;
+    font-weight: 500;
+    font-size: 0.8rem;
+    padding: 0.7rem 1.25rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-bottom: 1px solid $dropdown-border-color;
+
+    &:hover {
+        background: $light-grey;
+    }
+}

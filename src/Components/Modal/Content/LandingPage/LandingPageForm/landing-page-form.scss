@@ -1,0 +1,9 @@
+.set-landing-page-form .Select- {
+  &value,
+  &placeholder,
+  &input {
+    &::before {
+      content: '/';
+    }
+  }
+}

@@ -1,0 +1,105 @@
+@import '_dependencies';
+
+.data-table {
+    margin-bottom: 0;
+
+    thead {
+        tr {
+            &.sticky {
+                position: fixed;
+                top: 0;
+                z-index: 4;
+                background: $white;
+                border: none;
+            }
+            th {
+                padding: 10px 10px;
+                font-weight: 500;
+                color: $font-color-medium-light-grey;
+                font-size: 0.7rem;
+                border-top: none;
+                border-bottom: 3px solid $brand-color-grey;
+            }
+        }
+    }
+
+    td {
+        position: relative;
+        padding: 10px 10px;
+        font-size: 0.8rem;
+        color: $font-color-medium-dark-grey;
+        vertical-align: middle;
+        border-top: none;
+
+        a {
+            color: $blue;
+        }
+    }
+
+    tr {
+        border-bottom: 1px solid $brand-color-grey;
+    }
+
+    .thin-cell {
+        padding: 10px 0;
+    }
+
+    .table-icon-indicator.ignored svg {
+        fill: $flat-red;
+    }
+
+    .sortable {
+        cursor: pointer;
+        @include disableTextSelect;
+        &.sorted {
+            &:after {
+                display: inline-block;
+                width: 0;
+                height: 0;
+                margin-left: 4px;
+                vertical-align: middle;
+                content: '';
+                border-top: 4px solid;
+                border-right: 4px solid transparent;
+                border-left: 4px solid transparent;
+            }
+            &.desc {
+                &:after {
+                    border-bottom: 4px solid;
+                    border-top: 0;
+                    border-right: 4px solid transparent;
+                    border-left: 4px solid transparent;
+                }
+            }
+        }
+    }
+
+    &.with-upsell {
+        min-height: 170px;
+    }
+
+    .advanced-plan-td-upsell {
+        padding: 0 10px 0 10px;
+
+        a {
+            width: 100px;
+        }
+
+        .advanced-plan-td-upsell-right {
+            float: right;
+        }
+
+        &.td-upsell-big {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            text-align: center;
+            background-color: #ededed;
+
+            a {
+                width: 210px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+@import '_dependencies';
+
+.advanced-plan-upsell-chart {
+    text-align: center;
+    padding: 50px;
+
+    a.advanced-plan-upsell-show-link {
+        color: $font-color-medium-dark-grey;
+        text-transform: none;
+        cursor: pointer;
+        &:hover {
+            color: $brand-color-orange;
+        }
+    }
+}

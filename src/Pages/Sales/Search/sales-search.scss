@@ -1,0 +1,24 @@
+@import '_dependencies';
+@import '_table';
+
+.sales-search {
+    td {
+        p {
+            margin: 0;
+        }
+    }
+
+    .form-check-label {
+        padding-left: 0;
+        margin-top: 3px;
+        cursor: default;
+    }
+
+    .row-check {
+        padding-left: 35px;
+    }
+
+    .form-check-inline + .form-check-inline {
+        margin-left: 2rem;
+    }
+}

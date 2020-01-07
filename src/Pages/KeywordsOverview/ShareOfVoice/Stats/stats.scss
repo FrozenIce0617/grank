@@ -1,0 +1,87 @@
+@import '_dependencies';
+
+.overview-share-of-voice-stats {
+    font-family: $headings-font-family;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+
+    .stats-item {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 0.5rem;
+
+        .device-icon {
+            height: 30px;
+            width: 30px;
+            fill: $dark-placeholder-color;
+            margin-right: 0.5rem;
+            margin-top: 7px;
+            vertical-align: middle;
+        }
+
+        .values {
+            display: flex;
+            flex-direction: column;
+
+            .label {
+                font-size: 0.7rem;
+                font-weight: 400;
+                margin-bottom: 0.5rem;
+            }
+
+            .main-value {
+                font-size: 1.7rem;
+                line-height: 1;
+                font-weight: normal;
+                margin-bottom: 3px;
+                white-space: nowrap;
+
+                &.decrease {
+                    color: $decrease-color;
+                }
+                &.increase {
+                    color: $increase-color;
+                }
+            }
+
+            .delta-value {
+                font-size: 1.6rem;
+                line-height: 1;
+                font-weight: normal;
+                margin-bottom: 3px;
+                white-space: nowrap;
+
+                .percent {
+                    margin-left: 0.6rem;
+                    font-size: 0.8rem;
+                }
+
+                .icon {
+                    height: 16px;
+                    vertical-align: middle;
+                    margin-right: 3px;
+                    margin-bottom: 0.1em;
+                }
+
+                &.decrease {
+                    fill: $decrease-color;
+
+                    .percent,
+                    .delta {
+                        color: $decrease-color;
+                    }
+                }
+
+                &.increase {
+                    fill: $increase-color;
+
+                    .percent,
+                    .delta {
+                        color: $increase-color;
+                    }
+                }
+            }
+        }
+    }
+}

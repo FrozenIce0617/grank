@@ -1,0 +1,18 @@
+@import '_dependencies';
+@import '_table';
+
+.report-templates-overview-container {
+    &.content-container {
+        margin-bottom: 50px;
+    }
+}
+
+.report-templates-table {
+    .report-elements-cell {
+        @include word-wrap();
+    }
+
+    .table-container {
+        overflow: visible;
+    }
+}

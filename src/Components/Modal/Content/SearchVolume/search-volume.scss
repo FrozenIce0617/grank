@@ -1,0 +1,10 @@
+@import '_dependencies';
+
+.search-volume-modal {
+    width: 1100px;
+    margin: auto;
+
+    .highcharts-background {
+        fill: transparent;
+    }
+}

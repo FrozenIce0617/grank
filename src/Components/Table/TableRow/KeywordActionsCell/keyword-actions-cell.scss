@@ -1,0 +1,30 @@
+@import '_dependencies';
+
+.keyword-actions-cell {
+    .table-icon-indicator {
+        margin-right: 5px;
+        height: 18px;
+        margin-top: auto;
+        margin-bottom: auto;
+        cursor: pointer;
+
+        &:hover {
+            svg {
+                fill: #000000;
+            }
+        }
+    }
+
+    .refreshing {
+        svg {
+            animation: spin-icon 1s linear infinite;
+            display: inline-block;
+        }
+    }
+}
+
+@keyframes spin-icon {
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="16px" viewBox="0 0 22 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1">
+        <g id="Icons" transform="translate(-1290.000000, -2174.000000)">
+            <g id="Group" transform="translate(1290.000000, 2174.000000)">
+                <path d="M5,14 L5,2 L17,2 L17.001,14 L5,14 Z M17,0 L5,0 C3.897,0 3,0.897 3,2 L3,14 C3,15.103 3.897,16 5,16 L17,16 C18.103,16 19,15.103 19,14 L19,2 C19,0.897 18.103,0 17,0 L17,0 Z" id="Fill-3127"></path>
+                <polygon id="Fill-3128" points="20 14 22 14 22 2 20 2"></polygon>
+                <polygon id="Fill-3129" points="0 14 2 14 2 2 0 2"></polygon>
+                <polygon id="Fill-3049" points="10.4203604 11.3193061 8.65803453 8.49131661 6 12.7800002 16.7178812 12.7800002 13.115142 7"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

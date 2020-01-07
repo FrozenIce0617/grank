@@ -1,0 +1,50 @@
+@import '_dependencies';
+
+.main-navbar {
+    background: $dark-blue;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 1.8rem;
+    display: flex;
+    height: $header-height;
+
+    .black-friday {
+        opacity: 0.75;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    .search-input {
+        margin: 0 1rem;
+    }
+
+    .logo {
+        height: 35px;
+    }
+
+    .spacer {
+        flex-grow: 1;
+    }
+
+    > *:not(:first-child) {
+        margin-left: 1rem;
+    }
+
+    .btn {
+        display: inline-flex;
+
+        height: 40px;
+        line-height: 18px;
+
+        svg {
+            fill: $white;
+            height: 100%;
+        }
+
+        > *:not(:last-child) {
+            margin-right: 10px;
+        }
+    }
+}

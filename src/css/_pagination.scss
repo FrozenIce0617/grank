@@ -1,0 +1,29 @@
+.pagination-wrapper {
+    @extend %flex-item-no-grow;
+    .pagination-buttons {
+        background: $white;
+        padding: 8px 0;
+        display: block;
+        @include media('phone') {
+            margin-left: 10px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        button {
+            border: 0;
+            background: transparent;
+            cursor: pointer;
+            padding: 0 16px;
+            color: $icon-grey;
+            @include transition(all .3s ease);
+            border-right: 1px solid $medium-grey-secondary;
+            &:hover {
+                color: $dark-blue;
+            }
+            &:last-child {
+                margin-right: 0;
+                border-right: 0;
+            }
+        }
+    }
+}

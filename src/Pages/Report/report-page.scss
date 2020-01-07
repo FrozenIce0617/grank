@@ -1,0 +1,37 @@
+@import '_dependencies.scss';
+
+.report-page {
+    background: white;
+    color: black;
+
+    h5 {
+        font-weight: 500;
+        font-size: 1.5rem;
+    }
+
+    .date-range {
+        font-size: 0.8rem;
+    }
+
+    hr {
+        border: 2px solid $brand-color-orange;
+    }
+
+    .data-table {
+        td {
+            color: black;
+        }
+
+        thead {
+            display: table-row-group;
+            th {
+                color: black;
+                font-weight: 700;
+            }
+        }
+
+        .table-icon-indicator svg {
+            fill: black;
+        }
+    }
+}

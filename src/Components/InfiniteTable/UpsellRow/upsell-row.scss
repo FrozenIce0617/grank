@@ -1,0 +1,11 @@
+@import '_dependencies';
+
+.upsell-row {
+    height: $upsell-row-height;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border-bottom: 1px solid $border-color-medium-grey;
+    font-size: 12px;
+}

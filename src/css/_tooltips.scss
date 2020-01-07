@@ -1,0 +1,25 @@
+.tooltip {
+    font-family: $headings-font-family;
+    font-size: 12px;
+    z-index: 10000;
+
+    &.show {
+        opacity: 1;
+    }
+
+    .tooltip-inner {
+        background: $tooltip-background;
+        border-radius: 0px;
+        border: 1px solid $border-color-medium-grey;
+        box-shadow: 0px 3px 6.79px 0.21px rgba(0, 0, 0, 0.19);
+        max-width: 600px;
+
+        &:before {
+            border: none;
+        }
+
+        &.error-tip {
+            background: $error-color;
+        }
+    }
+}

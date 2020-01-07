@@ -1,0 +1,45 @@
+@import '_dependencies.scss';
+
+.pagination-options {
+    @extend %flex-row;
+    padding: 1rem 0;
+    align-items: center;
+
+    .dropdown {
+        background: $white;
+        width: 140px;
+
+        .dropdown-menu {
+            max-height: 280px;
+        }
+    }
+
+    .spacer {
+        @extend %flex-item;
+    }
+
+    .show-label {
+        font-size: 0.825rem;
+        font-weight: 600;
+        font-family: $controls-font-family;
+        color: $font-color-medium-light-grey;
+        margin-right: 0.5rem;
+    }
+
+    &.sticky {
+        position: fixed;
+        z-index: 5;
+        background: $white;
+        padding: 0.5rem 3rem 0.5rem 0.5rem;
+        border-top: 3px solid $brand-color-grey;
+
+        .menu-toggle {
+            padding: 5px;
+        }
+
+        .pagination .btn {
+            height: 30px;
+            padding-top: 8px;
+        }
+    }
+}

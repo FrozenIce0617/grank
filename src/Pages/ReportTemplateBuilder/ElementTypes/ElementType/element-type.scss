@@ -1,0 +1,52 @@
+@import '_dependencies';
+
+.element-type {
+    width: 200px;
+    height: 160px;
+    border-radius: 3px;
+    background-color: #fff;
+    border: 1px solid $border-color-medium-grey;
+    margin: 0px 18px 18px 0px;
+    @extend %flex-column;
+    padding: 1.2rem;
+
+    .title {
+        font-size: 1rem;
+        font-family: $controls-font-family;
+        color: $font-color-medium-dark-grey;
+        font-weight: 500;
+    }
+
+    .description {
+        margin-top: 0.5rem;
+        font-size: 0.8rem;
+        font-weight: 500;
+        font-family: $controls-font-family;
+        color: $control-icon-color;
+        @extend %flex-item;
+    }
+
+    .actions {
+        text-align: right;
+
+        .btn {
+            padding: 10px 15px;
+        }
+    }
+
+    .add-button-label {
+        display: flex;
+        align-items: center;
+        text-transform: none;
+        font-size: 0.8rem;
+        font-family: $controls-font-family;
+        font-weight: 500;
+        margin: 0px 10px;
+    }
+
+    .arrow-icon {
+        margin-left: 8px;
+        width: 16px;
+        height: 16px;
+    }
+}

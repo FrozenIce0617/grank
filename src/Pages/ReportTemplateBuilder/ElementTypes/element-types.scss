@@ -1,0 +1,7 @@
+@import '_dependencies';
+
+.element-types {
+    .element-type-list {
+        @extend %flex-row;
+    }
+}

@@ -1,0 +1,11 @@
+.landing-pages-infinite-table {
+    &.infinite-table {
+        .ReactVirtualized__Table__row {
+            .ReactVirtualized__Table__rowColumn {
+                a {
+                    text-overflow: initial;
+                }
+            }
+        }
+    }
+}

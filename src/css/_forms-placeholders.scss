@@ -1,0 +1,37 @@
+%form-label {
+    display: block;
+    font-size: 11px;
+    line-height: 14px;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-bottom: 7px;
+    color: $font-color-dark-blue;
+    justify-content: initial;
+    &.inline-with-image {
+        margin: 0 20px 0 0;
+    }
+}
+
+%form-input {
+    padding: 12px;
+    background: $white;
+    border: 1px solid $border-color-medium-grey;
+    color: $font-color-dark-blue;
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 300;
+    border-radius: 0;
+    @include placeholder {
+        color: $font-color-placeholder;
+    }
+    &:focus {
+        border-color: $border-color-dark-grey;
+    }
+    &.input-small {
+        width: 100px;
+    }
+
+    &.disabled {
+        background: #ebebe4;
+    }
+}

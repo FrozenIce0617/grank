@@ -1,0 +1,1191 @@
+schema {
+  query: Query
+  mutation: Mutations
+}
+
+type AddDomain {
+  domain: DomainNode
+  errors: [String]
+}
+
+# Based on AddDomainForm
+input AddDomainInput {
+  domain: String
+  includeSubdomains: Boolean
+  exactMatch: Boolean
+  displayName: String
+  defaultCountrylocale: ID
+  defaultLocation: String
+  client: Int
+  googleBusinessName: String
+}
+
+type AddKeywords {
+  keywords(page: Int = 1, resultsPerPage: Int = 25, orderBy: String = "keyword", searchQuery: String, searchType: Int): KeywordListNode
+  errors: [String]
+}
+
+# Based on AddManyKeywordsForm
+input AddKeywordsInput {
+  domainId: ID
+  keywords: String
+  countrylocale: Int
+  location: [String]
+  searchEngines: [Int]
+  searchType: Int
+  ignoreLocalResults: Boolean
+  ignoreFeaturedSnippet: Boolean
+  starred: Boolean
+  tags: String
+}
+
+type BillingCycleNode implements GrapheneNode {
+  # The ID of the object.
+  id: ID!
+  months: Int!
+  short: String
+  long: String
+}
+
+type CalculatePriceMutation {
+  success: Boolean
+  price: Float
+  receivable: Float
+  upgrade: Boolean
+  downgrade: Boolean
+  signonDiscount: Float
+  couponDiscount: Float
+  purseCredit: Float
+  totalBeforeVat: Float
+  vat: Float
+  vatRate: Int
+  total: Float
+  startDate: DateTime
+  endDate: DateTime
+}
+
+type CheckVAT {
+  success: Boolean
+}
+
+type ClientListNode implements PaginationNode {
+  page: Int
+  resultsPerPage: Int
+  results: Int
+  orderBy: String
+  searchQuery: String
+  clients: [ClientNode]
+}
+
+type ClientNode implements GrapheneNode {
+  # The ID of the object.
+  id: ID!
+  organization: OrganizationNode!
+  name: String!
+  dateAdded: DateTime!
+  slug: String!
+  viewkey: String!
+  domainSet(before: String, after: String, first: Int, last: Int, id: ID, domain: String, displayName: String, includeSubdomains: Boolean, dateAdded: String, lastScraped: String): DomainNodeConnection
+  domainList(page: Int = 1, resultsPerPage: Int = 25, orderBy: String = "domain", searchQuery: String, organizationId: Int, searchType: Int): DomainListNode
+}
+
+type ClientNodeConnection {
+  pageInfo: PageInfo!
+  edges: [ClientNodeEdge]!
+}
+
+type ClientNodeEdge {
+  # The item at the end of the edge
+  node: ClientNode
+
+  # A cursor for use in pagination
+  cursor: String!
+}
+
+type CountryNode {
+  id: ID @fake(type: countryCode)
+  name: String @fake(type:country)
+  isEu: Boolean
+  vatCode: String
+}
+
+type CountryLocaleNode {
+  id: ID!
+  countryCode: String @fake(type: countryCode)
+  locale: String @examples(values: ["Danish", "English", "Russian"])
+  localeShort: String @fake(type: locale)
+  googleSupport: Boolean,
+  bingSupport: Boolean,
+  yahooSupport: Boolean
+}
+
+type DailyDomainStatsNode implements GrapheneNode {
+  # The ID of the object.
+  id: ID!
+  domain: DomainNode!
+  createdAt: DateTime!
+  numberOfKeywords: Int!
+  numberOfKeywordsRanking: Int
+  averageRank: Float
+  top3: Int
+  top5: Int
+  top10: Int
+  top20: Int
+  top50: Int
+  desktopNumberOfKeywords: Int!
+  desktopNumberOfKeywordsRanking: Int
+  desktopAverageRank: Float
+  desktopTop3: Int
+  desktopTop5: Int
+  desktopTop10: Int
+  desktopTop20: Int
+  desktopTop50: Int
+  mobileNumberOfKeywords: Int!
+  mobileNumberOfKeywordsRanking: Int
+  mobileAverageRank: Float
+  mobileTop3: Int
+  mobileTop5: Int
+  mobileTop10: Int
+  mobileTop20: Int
+  mobileTop50: Int
+  shareOfVoiceTotal: Int!
+  shareOfVoiceDesktop: Int!
+  shareOfVoiceMobile: Int!
+}
+
+type DailyDomainStatsNodeConnection {
+  pageInfo: PageInfo!
+  edges: [DailyDomainStatsNodeEdge]!
+}
+
+type DailyDomainStatsNodeEdge {
+  # The item at the end of the edge
+  node: DailyDomainStatsNode
+
+  # A cursor for use in pagination
+  cursor: String!
+}
+
+type DailyDomainStatsWrapperNode {
+  days: [DailyDomainStatsNode]
+  numberOfKeywordsRankingPercentageChange: Float
+  top3PercentageChange: Float
+  top5PercentageChange: Float
+  top10PercentageChange: Float
+  top20PercentageChange: Float
+  top50PercentageChange: Float
+  numberOfKeywordsRankingChange: Float
+  top3Change: Float
+  top5Change: Float
+  top10Change: Float
+  top20Change: Float
+  top50Change: Float
+  desktopNumberOfKeywordsRankingPercentageChange: Float
+  desktopTop3PercentageChange: Float
+  desktopTop5PercentageChange: Float
+  desktopTop10PercentageChange: Float
+  desktopTop20PercentageChange: Float
+  desktopTop50PercentageChange: Float
+  desktopNumberOfKeywordsRankingChange: Float
+  desktopTop3Change: Float
+  desktopTop5Change: Float
+  desktopTop10Change: Float
+  desktopTop20Change: Float
+  desktopTop50Change: Float
+  mobileNumberOfKeywordsRankingPercentageChange: Float
+  mobileTop3PercentageChange: Float
+  mobileTop5PercentageChange: Float
+  mobileTop10PercentageChange: Float
+  mobileTop20PercentageChange: Float
+  mobileTop50PercentageChange: Float
+  mobileNumberOfKeywordsRankingChange: Float
+  mobileTop3Change: Float
+  mobileTop5Change: Float
+  mobileTop10Change: Float
+  mobileTop20Change: Float
+  mobileTop50Change: Float
+  shareOfVoiceTotalPercentageChange: Float
+  shareOfVoiceDesktopPercentageChange: Float
+  shareOfVoiceMobilePercentageChange: Float
+  shareOfVoiceTotalChange: Float
+  shareOfVoiceDesktopChange: Float
+  shareOfVoiceMobileChange: Float
+}
+
+type DailyLandingPageDeviceStatsNode implements GrapheneNode {
+  # The ID of the object.
+  id: ID!
+  analyticsDesktop(before: String, after: String, first: Int, last: Int, id: ID): DailyLandingPageStatsNodeConnection
+  analyticsMobile(before: String, after: String, first: Int, last: Int, id: ID): DailyLandingPageStatsNodeConnection
+  data: JSONString
+}
+
+type DailyLandingPageStatsListNode implements PaginationNode {
+  page: Int
+  resultsPerPage: Int
+  results: Int
+  orderBy: String
+  searchQuery: String
+  stats: [DailyLandingPageStatsNode]
+  startDate: DateTime
+  endDate: DateTime
+  landingPage: Int
+}
+
+type DailyLandingPageStatsNode implements GrapheneNode {
+  # The ID of the object.
+  id: ID!
+  landingPage: LandingPageNode!
+  createdAt: DateTime!
+  searchVolume: Int
+  numberOfKeywords: Int!
+  numberOfKeywordsRanking: Int
+  averageRank: Float
+  top3: Int
+  top5: Int
+  top10: Int
+  top20: Int
+  top50: Int
+  desktopNumberOfKeywords: Int!
+  desktopNumberOfKeywordsRanking: Int
+  desktopAverageRank: Float
+  desktopTop3: Int
+  desktopTop5: Int
+  desktopTop10: Int
+  desktopTop20: Int
+  desktopTop50: Int
+  mobileNumberOfKeywords: Int!
+  mobileNumberOfKeywordsRanking: Int
+  mobileAverageRank: Float
+  mobileTop3: Int
+  mobileTop5: Int
+  mobileTop10: Int
+  mobileTop20: Int
+  mobileTop50: Int
+  shareOfVoiceTotal: Int!
+  shareOfVoiceDesktop: Int!
+  shareOfVoiceMobile: Int!
+  analyticsMobile: [DailyLandingPageDeviceStatsNode]
+  analyticsDesktop: [DailyLandingPageDeviceStatsNode]
+}
+
+type DailyLandingPageStatsNodeConnection {
+  pageInfo: PageInfo!
+  edges: [DailyLandingPageStatsNodeEdge]!
+}
+
+type DailyLandingPageStatsNodeEdge {
+  # The item at the end of the edge
+  node: DailyLandingPageStatsNode
+
+  # A cursor for use in pagination
+  cursor: String!
+}
+
+# The `DateTime` scalar type represents a DateTime
+# value as specified by
+# [iso8601](https://en.wikipedia.org/wiki/ISO_8601).
+scalar DateTime
+
+enum DomainDomainType {
+  # Standard
+  A_1
+
+  # YouTube
+  A_2
+}
+
+type DomainListNode implements PaginationNode {
+  page: Int
+  resultsPerPage: Int
+  results: Int
+  orderBy: String
+  searchQuery: String
+  domains: [DomainNode]
+  organizationId: Int
+  searchType: Int
+}
+
+type DomainNode implements GrapheneNode {
+  # The ID of the object.
+  id: ID!
+  client: ClientNode!
+
+  # No http:// or www. You can enter a path that must be found. Eg.
+  # example.com/path. Search result must then begin with your path to match.
+  domain: String! @fake(type:domainName)
+
+  # <strong>Optional.</strong> If set this will display instead of the domain name. Automatically set for YouTube videos.
+  displayName: String
+  sortName: String
+  domainType: DomainDomainType!
+  dateAdded: DateTime!
+  dateOfFirstRank: DateTime
+  slug: String!
+
+  # This should only be used if you target a specific area. Bing only supports locations in the US.
+  defaultLocation: String
+
+  # Include results from sub.domain.com.
+  includeSubdomains: Boolean!
+
+  # Only include results where the URL found is an exact match to what is entered in domain name
+  exactMatch: Boolean!
+  lastScraped: DateTime!
+  viewkey: String!
+
+  # Put updates on hold. This will free up the keywords the domain is using. Note
+  # that you can not un-pause the domain for 7 days.
+  paused: Boolean!
+  pausedChangeDate: DateTime
+
+  # For some local results Google does not include a link to the website. To make
+  # sure we can still find the domain on the search result page, please enter the
+  # exact name of the Google Business page here.
+  googleBusinessName: String
+  gaAccountId: String
+  gaPropertyId: String
+  gaProfileId: String
+  gaTimezone: String
+  gscSiteId: String
+  keywordSet(before: String, after: String, first: Int, last: Int, id: ID, keyword: String, location: String, preferredUrl: String): KeywordNodeConnection
+  landingpageSet(before: String, after: String, first: Int, last: Int, id: ID): LandingPageNodeConnection
+  dailydomainstatsSet(before: String, after: String, first: Int, last: Int): DailyDomainStatsNodeConnection
+  faviconUrl: String
+  keywordList(page: Int = 1, resultsPerPage: Int = 25, orderBy: String = "keyword", searchQuery: String, searchType: Int): KeywordListNode
+  dailyStats(startDate: DateTime!, endDate: DateTime!): DailyDomainStatsWrapperNode
+  notificationList(page: Int = 1, resultsPerPage: Int = 25, orderBy: String = "id", searchQuery: String): NotificationListNode
+}
+
+type DomainNodeConnection {
+  pageInfo: PageInfo!
+  edges: [DomainNodeEdge]!
+}
+
+type DomainNodeEdge {
+  # The item at the end of the edge
+  node: DomainNode
+
+  # A cursor for use in pagination
+  cursor: String!
+}
+
+type EditDomain {
+  domain: DomainNode
+  errors: [String]
+}
+
+# Based on EditDomainForm
+input EditDomainInput {
+  id: ID
+  domain: String
+  includeSubdomains: Boolean
+  exactMatch: Boolean
+  displayName: String
+  defaultCountrylocale: Int
+  defaultLocation: String
+  googleBusinessName: String
+  paused: Boolean
+}
+
+interface GrapheneNode {
+  # The ID of the object.
+  id: ID!
+}
+
+
+# JSON String
+scalar JSONString
+
+type KeywordFilter {
+  domain: ID
+}
+
+# Based on KeywordFilterForm
+input KeywordFilterInput {
+  starred: Boolean
+  tags: String
+  keyword: String
+  searchType: Int
+  searchEngines: String
+  countrylocales: String
+  locations: String
+  rankFrom: Int
+  rankTo: Int
+  landingPages: String
+  domain: ID!
+  periodFrom: DateTime!
+  periodTo: DateTime!
+}
+
+type KeywordFilterList {
+  keywords: [KeywordNode]
+  filter: KeywordFilter
+  pagination: Pagination
+}
+
+type KeywordListNode implements PaginationNode {
+  page: Int
+  resultsPerPage: Int
+  results: Int
+  orderBy: String
+  searchQuery: String
+  keywords: [KeywordNode]
+  domainId: Int
+  searchType: Int
+}
+
+type KeywordNode implements GrapheneNode {
+  # The ID of the object.
+  id: ID!
+  domain: DomainNode!
+  keyword: String! @fake(type:lorem, options:{loremSize: word})
+  location: String
+  ignoreLocalResults: Boolean!
+  ignoreVideoResults: Boolean!
+  ignoreFeaturedSnippet: Boolean!
+  ignoreInShareOfVoice: Boolean!
+  dateAdded: DateTime!
+  slug: String!
+  starred: Boolean!
+  tags: [String]
+  preferredUrl: String
+  landingPage: LandingPageNode
+  searchVolume: Int
+  searchVolumeUpdatedAt: DateTime
+  searchVolumeCompetition: Float
+  keywordrankSet(before: String, after: String, first: Int, last: Int, id: ID): KeywordRankNodeConnection
+  keywordrankalertSet(before: String, after: String, first: Int, last: Int, id: ID, type: String, createdAt: String): NotificationNodeConnection
+  notificationList(page: Int = 1, resultsPerPage: Int = 25, orderBy: String = "id", searchQuery: String): NotificationListNode
+  latestRank: KeywordRankNode
+  firstRank: KeywordRankNode
+  searchType: Int
+}
+
+type KeywordNodeConnection {
+  pageInfo: PageInfo!
+  edges: [KeywordNodeEdge]!
+}
+
+type KeywordNodeEdge {
+  # The item at the end of the edge
+  node: KeywordNode
+
+  # A cursor for use in pagination
+  cursor: String!
+}
+
+enum KeywordRankAlertType {
+  # Goal hit
+  A_10
+
+  # Major jump
+  A_20
+
+  # Started ranking
+  A_30
+
+  # Stopped ranking
+  A_40
+
+  # Major drop
+  A_50
+
+  # Goal missed
+  A_60
+
+  # Preferred URL started ranking
+  A_70
+
+  # Preferred URL stopped ranking
+  A_80
+}
+
+type KeywordRankNode implements GrapheneNode {
+  # The ID of the object.
+  id: ID!
+  keyword: KeywordNode!
+  searchDate: DateTime!
+  rank: Int
+  highestRankingPage: String
+  analyticsVisitors: Int
+  analyticsAvgRevenue: Float
+  analyticsPotential: Float
+  hasExtraRanks: Boolean!
+  extraRanks: [[String]]
+  isLocalResult: Boolean
+  isFeaturedSnippet: Boolean
+  hasSitelinks: Boolean
+  hasVideo: Boolean
+  hasReviews: Boolean
+  previousKeywordrankalert(before: String, after: String, first: Int, last: Int, id: ID, type: String, createdAt: String): NotificationNodeConnection
+  currentKeywordrankalert(before: String, after: String, first: Int, last: Int, id: ID, type: String, createdAt: String): NotificationNodeConnection
+}
+
+type KeywordRankNodeConnection {
+  pageInfo: PageInfo!
+  edges: [KeywordRankNodeEdge]!
+}
+
+type KeywordRankNodeEdge {
+  # The item at the end of the edge
+  node: KeywordRankNode
+
+  # A cursor for use in pagination
+  cursor: String!
+}
+
+type LandingPageListNode implements PaginationNode {
+  page: Int
+  resultsPerPage: Int
+  results: Int
+  orderBy: String
+  searchQuery: String
+  landingPages: [LandingPageNode]
+  domain: Int
+}
+
+type LandingPageNode implements GrapheneNode {
+  # The ID of the object.
+  id: ID!
+  dateAdded: DateTime!
+  domain: DomainNode!
+  path: String
+  active: Boolean!
+  starred: Boolean!
+  tags: [String]
+  keywordSet(before: String, after: String, first: Int, last: Int, id: ID, keyword: String, location: String, preferredUrl: String): KeywordNodeConnection
+  dailylandingpagestatsSet(before: String, after: String, first: Int, last: Int, id: ID): DailyLandingPageStatsNodeConnection
+  stats(page: Int = 1, resultsPerPage: Int = 25, orderBy: String = "created_at", searchQuery: String, startDate: DateTime!, endDate: DateTime!): DailyLandingPageStatsListNode
+}
+
+type LandingPageNodeConnection {
+  pageInfo: PageInfo!
+  edges: [LandingPageNodeEdge]!
+}
+
+type LandingPageNodeEdge {
+  # The item at the end of the edge
+  node: LandingPageNode
+
+  # A cursor for use in pagination
+  cursor: String!
+}
+
+type Login {
+  success: Boolean
+  token: String
+  user: UserNode
+}
+
+type MessageListNode implements PaginationNode {
+  page: Int
+  resultsPerPage: Int
+  results: Int
+  orderBy: String
+  searchQuery: String
+  messages: [MessageNode]
+  read: Boolean
+}
+
+type MessageNode implements GrapheneNode {
+  # The ID of the object.
+  id: ID!
+  organization: OrganizationNode!
+  createdAt: DateTime!
+  readAt: DateTime
+  href: String
+  hrefText: String!
+  textId: MessageTextId!
+  textParams: [String]!
+  text: String
+  level: String
+  levelId: Int
+}
+
+type MessageNodeConnection {
+  pageInfo: PageInfo!
+  edges: [MessageNodeEdge]!
+}
+
+type MessageNodeEdge {
+  # The item at the end of the edge
+  node: MessageNode
+
+  # A cursor for use in pagination
+  cursor: String!
+}
+
+enum MessageTextId {
+  # We tried sending: {} to: {} however it failed. Please make sure you are using valid emails as report recipients.
+  A_1
+
+  # We tried sending an email to: {} however it failed.
+  A_2
+}
+
+type MultiAccountLinkListNode implements PaginationNode {
+  page: Int
+  resultsPerPage: Int
+  results: Int
+  orderBy: String
+  searchQuery: String
+  multiAccountLinks: [MultiAccountLinkNode]
+}
+
+type MultiAccountLinkNode implements GrapheneNode {
+  # The ID of the object.
+  id: ID!
+  fromOrganization: OrganizationNode
+  toOrganization: OrganizationNode
+  toEmail: String
+  isOrgAdmin: Boolean!
+  createdAt: DateTime!
+}
+
+type UpdatePasswordResponse {
+  success: Boolean!
+  errors: [Error]
+}
+
+# if settings.DEBUG:
+#     debug = graphene.Field(DjangoDebug, name='__debug')
+type Mutations {
+  addDomain(data: AddDomainInput!): GenericResponse
+  editDomain(data: EditDomainInput!): EditDomain
+  addKeywords(data: AddKeywordsInput!): AddKeywords
+  userLogin(username: String!, password: String!): Login
+  checkVat(number: String!, prefix: String!): CheckVAT
+  setPaymentContact(countryIso: String!, street: String!, emailInvoiceTo: String, state: String, zipcode: String!, companyName: String!, paymentNonce: String, vatNumber: String, vatPrefix: String, planId: String, billingCycleId: Int, city: String!): PaymentContactMutation
+  setPaymentMethod(paymentNonce: String!): PaymentMethodMutation
+  calculatePrice(validVat: Boolean, countryId: String, billingCycle: Int!, planId: String!): CalculatePriceMutation
+  updateRead(data: UpdateReadInput!): UpdateRead
+
+
+
+  updateUserPassword(data: UpdatePasswordInput!): UpdatePasswordResponse
+  updateAccount(data: UpdateAccountInput!): GenericResponse
+  inviteUser(data: InviteUserInput!): GenericResponse
+  editUser(data: EditUserInput!): GenericResponse
+  editProfile(data: EditProfileInput!): GenericResponse
+  resetAPIToken: TokenResponse
+
+  requestAccess(data: RequestAccessInput!): GenericResponse
+  removeAccessRequest(data: RemoveAccessRequestInput!): Boolean!
+  removeAccess(data: RemoveAccessInput!): Boolean!
+
+  addGroup(data: AddGroupInput): GenericResponse
+
+  addNote(data: AddNoteInput!): GenericResponse
+  editNote(data: EditNoteInput!): GenericResponse
+}
+
+input AddNoteInput {
+  date: DateTime!
+  note: String!
+  keywords: [ID!]
+  domain: ID!
+}
+
+input EditNoteInput {
+  date: DateTime!
+  note: String!
+  keywords: [ID!]
+  id: ID!
+}
+
+input UpdatePasswordInput {
+  oldPassword: String!
+  newPassword: String!
+}
+
+input UpdateAccountInput {
+  accountName: String!
+  isPartner: Boolean!
+}
+
+input InviteUserInput {
+  fullName: String!
+  email: String!
+  isAdmin: Boolean!
+}
+
+input EditUserInput {
+  fullName: String!
+  email: String!
+  isAdmin: Boolean!
+}
+
+input EditProfileInput {
+  fullName: String!
+  email: String!
+  language: String!
+}
+
+input RequestAccessInput{
+	fromOrganization: ID!
+  toEmail: String!
+  subject: String!
+  message: String
+  accessAsAdmin: Boolean!
+  sendCopyToSelf: Boolean!
+}
+
+input RemoveAccessRequestInput {
+  id: ID!
+}
+
+input RemoveAccessInput {
+  id: ID!
+}
+
+input AddGroupInput {
+  groupName: String!
+}
+
+
+type TokenResponse {
+  token: String! @fake(type:uuid)
+}
+
+type GenericResponse {
+  success: Boolean!
+  errors: [Error]
+}
+
+type PendingRequestResponse {
+  success: Boolean!
+  errors: [Error]
+  pendingRequest: PendingRequest
+}
+
+type Error {
+  field: String! @examples(values: ["oldPassword", "password", "email", "fullName", "phone", "language", "name", "logo"])
+  messages: [String!]!
+}
+
+
+type NotificationListNode implements PaginationNode {
+  page: Int
+  resultsPerPage: Int
+  results: Int
+  orderBy: String
+  searchQuery: String
+  notifications: [NotificationNode]
+  keywordId: Int
+  domainId: Int
+}
+
+type NotificationNode implements GrapheneNode {
+  # The ID of the object.
+  id: ID!
+  keyword: KeywordNode!
+  currentKeywordRank: KeywordRankNode!
+  previousKeywordRank: KeywordRankNode!
+  type: KeywordRankAlertType!
+  createdAt: DateTime!
+}
+
+type NotificationNodeConnection {
+  pageInfo: PageInfo!
+  edges: [NotificationNodeEdge]!
+}
+
+type NotificationNodeEdge {
+  # The item at the end of the edge
+  node: NotificationNode
+
+  # A cursor for use in pagination
+  cursor: String!
+}
+
+type OrganizationListNode implements PaginationNode {
+  page: Int
+  resultsPerPage: Int
+  results: Int
+  orderBy: String
+  searchQuery: String
+  organizations: [OrganizationNode]
+  impersonate: Boolean
+}
+
+type OrganizationNode implements GrapheneNode {
+  # The ID of the object.
+  id: ID! @examples(values: [1,2,3,4,5,6,7,8,9])
+
+  # The name of your organization/department. This will show up on reports.
+  name: String! @fake(type:companyName)
+  slug: String!
+
+  # This is the email address from which your clients will receive their reports.
+  fromEmail: String
+  parent: OrganizationNode
+  logo: String @fake(type:imageUrl)
+  dateAdded: DateTime!
+  active: Boolean!
+  activeChanged: DateTime
+  autoCancelled: Boolean!
+  autoCancelledChanged: DateTime
+  cancelOnFirstPaymentFail: Boolean!
+  createdByOrg: OrganizationNode
+  createdByUser: UserNode
+  createdByIp: String
+  createdByCountry: String
+  phoneNumber: String
+  campaignId: String
+  referer: String
+  lft: Int!
+  rght: Int!
+  treeId: Int!
+  level: Int!
+  organizationSet(before: String, after: String, first: Int, last: Int, id: ID): OrganizationNodeConnection
+  grankuserSet(before: String, after: String, first: Int, last: Int, id: ID, email: String, isOrgAdmin: Boolean, organization: ID): UserNodeConnection
+  paymentcontact: PaymentContactNode
+  organizationplanSet(before: String, after: String, first: Int, last: Int): OrganizationPlanNodeConnection
+  clientSet(before: String, after: String, first: Int, last: Int, id: ID): ClientNodeConnection
+  children(before: String, after: String, first: Int, last: Int, id: ID): OrganizationNodeConnection
+  messageSet(before: String, after: String, first: Int, last: Int, id: String): MessageNodeConnection
+  activePlan: OrganizationPlanNode
+  numberOfDomains: Int
+  numberOfDomainsWithGa: Int
+  numberOfDomainsWithGwt: Int
+  numberOfKeywords: Int
+  type: String
+
+  isPartner: Boolean! @examples(values:[true])
+  invoices: [Invoice!]!
+}
+
+type Invoice {
+  id: ID! @fake(type:uuid)
+  createdDate: DateTime! @fake(type: pastDate)
+  downloadLink: String! @fake(type: uuid)
+  dueDate: DateTime! @fake(type:futureDate)
+  totalBeforeVat: Float! @fake(type:money)
+  vat: Float! @fake(type:money)
+  total: Float! @fake(type:money)
+  paid: Float! @fake(type:money)
+  currency: OrganizationPlanCurrency!
+}
+
+type OrganizationNodeConnection {
+  pageInfo: PageInfo!
+  edges: [OrganizationNodeEdge]!
+}
+
+type OrganizationNodeEdge {
+  # The item at the end of the edge
+  node: OrganizationNode
+
+  # A cursor for use in pagination
+  cursor: String!
+}
+
+enum OrganizationPlanCurrency {
+  # USD
+  USD
+
+  # DKK
+  DKK
+}
+
+type OrganizationPlanNode implements GrapheneNode {
+  # The ID of the object.
+  id: ID!
+  name: String!
+  priceMonthly: Float!
+  priceYearly: Float!
+  currency: OrganizationPlanCurrency!
+  isFree: Boolean!
+  isTrial: Boolean!
+  maxKeywords: Int!
+  maxDomains: Int!
+  maxUsers: Int!
+  maxCompetitors: Int!
+  signonDiscount: Float
+  signonDiscountMonths: Int
+  featureApiAccess: Boolean!
+  featureCompetitorMonitoring: Boolean!
+  featureAnalyticsIntegration: Boolean!
+  featureSearchVolume: Boolean!
+  featureWhitelabel: Boolean!
+  featureReporting: Boolean!
+  featureKeywordRefresh: Boolean!
+  featureAdvancedReporting: Boolean!
+  featureCanPause: Boolean!
+  featureSocial: Boolean!
+  organization: OrganizationNode!
+  originPlan: PricingPlanNode
+  startDate: DateTime!
+  endDate: DateTime!
+  active: Boolean!
+  signonDiscountMonthsUsed: Int!
+  billingCycleInMonths: Int!
+  billingRetryDate: DateTime
+
+  # Used for manual customer retries
+  billingLastRetryDate: DateTime
+  billingRetries: Int!
+  billingFailReason: String
+
+  # Used to allow customers to access data / dashboard when they have failed payments.
+  billingFailedCanAccess: DateTime
+}
+
+type OrganizationPlanNodeConnection {
+  pageInfo: PageInfo!
+  edges: [OrganizationPlanNodeEdge]!
+}
+
+type OrganizationPlanNodeEdge {
+  # The item at the end of the edge
+  node: OrganizationPlanNode
+
+  # A cursor for use in pagination
+  cursor: String!
+}
+
+type PageInfo {
+  # When paginating forwards, are there more items?
+  hasNextPage: Boolean!
+
+  # When paginating backwards, are there more items?
+  hasPreviousPage: Boolean!
+
+  # When paginating backwards, the cursor to continue.
+  startCursor: String
+
+  # When paginating forwards, the cursor to continue.
+  endCursor: String
+}
+
+type Pagination {
+  totalPages: Int
+  totalResults: Int
+}
+
+input PaginationInput {
+  page: Int!
+  resultsPerPage: Int!
+}
+
+interface PaginationNode {
+  page: Int
+  resultsPerPage: Int
+  results: Int
+  orderBy: String
+  searchQuery: String
+}
+
+type PaymentContactMutation {
+  success: Boolean!
+  error: String
+}
+
+type PaymentContactNode implements GrapheneNode {
+  # The ID of the object.
+  id: ID!
+  companyName: String!
+  street: String!
+  zipcode: String!
+  city: String!
+  state: String
+  emailInvoiceTo: String
+  paymentMethod: PaymentContactPaymentMethod
+  country: CountryNode
+  braintreeToken: String
+  vatPrefix: String
+  vatNumber: String
+}
+
+enum PaymentContactPaymentMethod {
+  # Invoice
+  A_1
+
+  # Credit Card
+  A_2
+
+  # PayPal
+  A_3
+}
+
+type PaymentMethodMutation {
+  success: Boolean!
+  error: String
+}
+
+type PricingPlanCalculatedNode {
+  id: ID
+  price: Float
+  receivable: Float
+  upgrade: Boolean
+  downgrade: Boolean
+  signonDiscount: Float
+  signonDiscountMonths: Float
+  couponDiscount: Float
+  purseCredit: Float
+  totalBeforeVat: Float
+  vat: Float
+  vatRate: Int
+  total: Float
+  startDate: DateTime
+  endDate: DateTime
+  message: String
+  dealStartDate: DateTime
+  dealEndDate: DateTime
+  showCountdown: Boolean
+}
+
+enum PricingPlanNewCurrency {
+  # USD
+  USD
+
+  # DKK
+  DKK
+}
+
+type PricingPlanNode implements GrapheneNode {
+  # The ID of the object.
+  id: ID!
+  name: String!
+  priceMonthly: Float!
+  priceYearly: Float!
+  currency: PricingPlanNewCurrency!
+  maxKeywords: Int!
+  maxDomains: Int!
+  maxUsers: Int!
+  maxCompetitors: Int!
+  unavailable: Boolean
+  unavailableReasons: [PricingPlanUnavailableReasonNode]
+  category: String
+}
+
+type PricingPlanUnavailableReasonNode {
+  field: String!
+  message: String!
+}
+
+# if settings.DEBUG:
+#     debug = graphene.Field(DjangoDebug, name='__debug')
+type Query {
+  domain(id: ID!): DomainNode
+  domainList(page: Int = 1, resultsPerPage: Int = 25, orderBy: String = "-domain", searchQuery: String, organizationId: Int, searchType: Int): DomainListNode
+  keyword(id: ID!): KeywordNode
+  keywordList(page: Int = 1, resultsPerPage: Int = 25, orderBy: String = "keyword", searchQuery: String, domainId: Int, searchType: Int): KeywordListNode
+  keywordFilterList(filter: KeywordFilterInput!, pagination: PaginationInput!): KeywordFilterList
+  user: UserNode
+  users(before: String, after: String, first: Int, last: Int, id: ID, email: String, isOrgAdmin: Boolean, organization: ID): UserNodeConnection
+  country(id: String!): CountryNode
+  countries: [CountryNode]
+
+  # The ID of the object
+  pricingPlan(id: ID!): PricingPlanNode
+  pricingPlans: [PricingPlanNode]
+  pricingPlanCalculated(id: ID!, billingCycle: Int!, validVat: Boolean, countryId: String): PricingPlanCalculatedNode
+  paymentContact: PaymentContactNode
+
+  # The ID of the object
+  billingCycle(id: ID!): BillingCycleNode
+  organization(id: ID!): OrganizationNode
+  organizationList(page: Int = 1, resultsPerPage: Int = 25, orderBy: String = "name", searchQuery: String): OrganizationListNode
+  impersonateOrganizationList(page: Int = 1, resultsPerPage: Int = 25, orderBy: String = "name", searchQuery: String): OrganizationListNode
+  multiAccountList(page: Int = 1, resultsPerPage: Int = 25, orderBy: String = "name", searchQuery: String): MultiAccountLinkListNode
+  client(id: ID!): ClientNode
+  clientList(page: Int = 1, resultsPerPage: Int = 25, orderBy: String = "name", searchQuery: String): ClientListNode
+  message(id: ID!): OrganizationNode
+  messagesList(page: Int = 1, resultsPerPage: Int = 25, orderBy: String = "id", searchQuery: String, read: Boolean): MessageListNode
+  landingPage(id: ID!): LandingPageNode
+  landingPageList(page: Int = 1, resultsPerPage: Int = 25, orderBy: String = "id", searchQuery: String, domain: Int!): LandingPageListNode
+
+  userByID(id: ID): UserNode
+  APIToken: TokenResponse
+
+  pendingRequests: [PendingRequest]!
+  availableAccounts: [MultiAccount]!
+
+  countrylocales: [CountryLocaleNode!]!
+
+  notes(domain: ID!): [Note!]!
+  note(id: ID!): Note
+
+  goaAccounts: [GOAAccount!]!
+  gscWebsites(input: GSCWebsitesInput!): [GSCWebsite!]!
+
+}
+
+type Note {
+  date: DateTime! @fake(type:pastDate)
+  note: String! @fake(type: lorem)
+  keywords: [KeywordNode!]
+}
+
+type PendingRequest {
+  id: ID! @fake(type:uuid)
+  sentTo: String! @fake(type:email)
+  isOrgAdmin: Boolean!
+  created: DateTime @fake(type:recentDate)
+}
+
+type MultiAccount {
+  id: ID! @fake(type:uuid)
+  organization: OrganizationNode!
+  isOrgAdmin: Boolean!
+  invoices: [String!]!
+}
+
+type UpdateRead {
+  errors: [String]
+}
+
+input UpdateReadInput {
+  id: ID
+  read: Boolean
+}
+
+type UserNode implements GrapheneNode {
+  # The ID of the object.
+  id: ID! @examples(values: ["1", "2", "3", "4", "5", "6"])
+  email: String! @fake(type: email)
+  fullName: String @fake(type: fullName)
+  dateJoined: DateTime! @fake(type: pastDate)
+  isOrgAdmin: Boolean!
+  profile: JSONString @examples(values: ["{\"disable_search_volume\": true}", "{\"disable_search_volume\": false}", "undefined"])
+  permissions: JSONString
+  language: String @examples(values: ["en", "da"])
+  organization: OrganizationNode
+  organizations: [OrganizationNode]
+  intercomHash: String @examples(values: ["0c1668a07c2099c91d87a5d13594738f4fb821fb5ada6f2dba948405fb06ddaf"])
+  isAuthenticated: Boolean! @examples(values: [true])
+}
+
+type UserNodeConnection {
+  pageInfo: PageInfo!
+  edges: [UserNodeEdge]!
+}
+
+type UserNodeEdge {
+  # The item at the end of the edge
+  node: UserNode
+
+  # A cursor for use in pagination
+  cursor: String!
+}
+
+# -------------------------------------
+
+type GOAAccount	{
+	id: ID!
+	description: String! @fake(type:lorem, options:{loremSize: word})
+	addedBy: UserNode!
+	linkedAt: DateTime! @fake(type: pastDate)
+	timesUsedForAnalytics: Int!
+	timesUsedForSearchConsole: Int!
+}
+
+type GSCWebsite	{
+  url: String!@fake(type:url)
+}
+
+input GSCWebsitesInput {
+  goaAccountID: ID!
+}

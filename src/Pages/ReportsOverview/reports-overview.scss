@@ -1,0 +1,33 @@
+@import '_dependencies';
+@import '_table';
+
+.reports-table {
+    .table {
+        table-layout: fixed;
+
+        .domain-cell {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .report-type {
+            width: 50px;
+        }
+
+        .report-domain {
+            width: auto;
+        }
+
+        .report-template {
+            width: auto;
+        }
+
+        .report-schedule {
+            width: auto;
+        }
+
+        .report-actions {
+            width: 50px;
+        }
+    }
+}

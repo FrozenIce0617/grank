@@ -1,0 +1,16 @@
+.affiliate-dashboard {
+    .actions {
+        &.affiliate-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .period-filter-dropdown {
+        margin: 0;
+    }
+
+    .chart-content {
+        width: 100%;
+    }
+}

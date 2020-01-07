@@ -1,0 +1,60 @@
+@import '_dependencies';
+
+.text-input-container {
+    display: inline-flex;
+    position: relative;
+    flex-direction: row-reverse;
+    align-items: center;
+    width: 100%;
+}
+
+input.text-input-control {
+    line-height: normal;
+    width: 100%;
+    border-radius: 0;
+    border: 1px solid $border-color-medium-grey;
+    padding: 0.8rem;
+    color: $font-color-medium-dark-grey;
+    font-weight: 400;
+    font-size: 0.8rem;
+    font-family: $headings-font-family;
+
+    &:disabled {
+        background: $extra-light-grey;
+    }
+
+    &::placeholder {
+        font-weight: 400;
+        color: $control-icon-color;
+    }
+
+    &.error {
+        border-color: $error-color;
+    }
+
+    &:focus {
+        border-color: $border-color-dark-grey;
+        box-shadow: none;
+    }
+}
+
+.icon-with-tooltip {
+    &.text-input-reset {
+        position: absolute;
+        cursor: pointer;
+        margin-left: -3px;
+        margin-top: 1px;
+
+        svg {
+            fill: $control-icon-color;
+            width: 20px;
+            height: 20px;
+        }
+
+        &:hover {
+            svg {
+                fill: #000;
+            }
+        }
+    }
+}

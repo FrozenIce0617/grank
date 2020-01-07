@@ -1,0 +1,21 @@
+@import '_dependencies.scss';
+
+.select-plan {
+    .button-group-wrapper {
+        margin-bottom: 20px;
+        .btn {
+            font-weight: 400;
+        }
+    }
+
+    .hasAffiliate.col-md-2 {
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+
+    .featured {
+        .yearly-discount {
+            color: #fff !important;
+        }
+    }
+}

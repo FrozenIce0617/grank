@@ -1,0 +1,101 @@
+@import '_dependencies';
+
+.ranking-distribution-chart {
+    &-empty {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $brand-color-grey;
+    }
+
+    padding-top: 1rem;
+    &.chart-container {
+        height: 276px;
+        flex-grow: 1;
+        position: relative;
+
+        .highcharts-axis-labels {
+            text {
+                font-family: $headings-font-family;
+                font-size: 0.7rem !important;
+                fill: $font-color-medium-dark-grey !important;
+            }
+        }
+
+        .highcharts-series {
+            shape-rendering: crispEdges;
+        }
+
+        .highcharts-point-hover {
+            stroke: transparent;
+            stroke-width: 1px;
+        }
+
+        .highcharts-legend {
+            height: 100%;
+            overflow-x: hidden;
+            overflow-y: auto;
+            left: auto !important;
+            right: 0;
+            top: 20px !important;
+
+            & > * {
+                position: relative !important;
+                height: auto;
+                width: auto;
+
+                & > * {
+                    position: relative !important;
+                    height: auto;
+                    width: auto;
+
+                    .highcharts-legend-item {
+                        height: 26px;
+                        width: auto;
+                        position: relative !important;
+                        top: 0 !important;
+
+                        & > span {
+                            position: relative !important;
+                            width: auto;
+                            display: flex;
+                            justify-content: space-between;
+
+                            .legend-item-name-wrapper {
+                                display: flex;
+                            }
+
+                            span {
+                                display: block;
+                                padding-left: 10px;
+                                padding-right: 10px;
+                                font-family: $headings-font-family;
+                                fill: $font-color-medium-light-grey !important;
+                                font-size: 0.8rem !important;
+                                font-weight: 500 !important;
+                            }
+                        }
+
+                        .legend-item-pointer-circle {
+                            border-radius: 6px;
+                            width: 12px;
+                            height: 12px;
+                            overflow: hidden;
+                            margin-top: 1px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .highcharts-legend-item-hidden text {
+            fill: lighten($font-color-medium-light-grey, 40%) !important;
+        }
+
+        .highcharts-background {
+            fill: transparent;
+        }
+    }
+}

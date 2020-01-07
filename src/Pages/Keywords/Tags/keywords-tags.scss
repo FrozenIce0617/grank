@@ -1,0 +1,102 @@
+@import '_dependencies';
+@import '_table';
+
+.keywords-tags {
+    padding: 1rem 0 0;
+
+    .graph-select-container {
+        z-index: 1;
+        position: absolute;
+        right: 50px;
+        width: 210px;
+        padding-top: 30px;
+
+        .simple-dropdown {
+            .dropdown-menu {
+                min-width: 160px;
+            }
+        }
+    }
+
+    .hide-domain-cell {
+        .domain-cell {
+            display: none;
+        }
+
+        .tags-cell {
+            padding-left: 10px;
+        }
+    }
+
+    th {
+        white-space: nowrap;
+    }
+
+    td {
+        white-space: nowrap;
+        vertical-align: middle;
+    }
+
+    .td-upsell {
+        height: 100%;
+        width: 100%;
+        background-color: orange;
+        position: absolute;
+        top: 0;
+        padding: 20px;
+
+        .text-container {
+            text-align: center;
+            max-width: 250px;
+            margin: auto;
+            h3 {
+                margin-bottom: 0;
+            }
+
+            .btn-brand-orange {
+                color: #ffffff;
+            }
+        }
+    }
+
+    .value-bar {
+        float: right;
+    }
+
+    .flex-row {
+        display: flex;
+    }
+
+    .flex-row-right {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .spacer {
+        flex-grow: 1;
+    }
+
+    .more-icons {
+        margin-left: 5px;
+        text-decoration: underline;
+    }
+
+    .table-container {
+        overflow: visible;
+        border-top: 1px solid $border-color-medium-grey;
+    }
+
+    .td-tag-container {
+        display: inline-flex;
+        padding: 2px 0;
+
+        .td-tag {
+            border: 1px solid $control-icon-color;
+            border-radius: 20px;
+            color: #494f5d;
+            padding: 2px 10px;
+            margin: 5px;
+            align-items: center;
+        }
+    }
+}

@@ -1,0 +1,76 @@
+@import '_dependencies';
+
+.share-of-voice {
+    h6 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        font-family: $controls-font-family;
+    }
+
+    &.skeleton {
+        display: flex;
+    }
+
+    .menu {
+        display: flex;
+        align-items: flex-end;
+
+        .bottom-part {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+        }
+
+        .btn {
+            width: 146px;
+        }
+    }
+
+    .share-of-voice-chart {
+        &.chart-container {
+            height: inherit;
+        }
+    }
+
+    .content {
+        display: flex;
+
+        .chart-export-container {
+            display: flex;
+            width: 100%;
+            min-width: 0;
+            padding: 1rem 0;
+            min-height: 330px;
+            background-color: white;
+
+            &-chart {
+                flex: 1;
+                width: 100%;
+                min-width: 0;
+            }
+
+            &-legend {
+                flex: 0 0 240px;
+                min-height: 330px;
+            }
+
+            .spacer {
+                flex-grow: 1;
+            }
+            .highcharts-background {
+                fill: transparent;
+            }
+        }
+
+        .stats {
+            padding-top: 1rem;
+            flex: 0 0 240px;
+            display: flex;
+            justify-content: flex-end;
+
+            .main-value {
+                font-size: 2.4rem;
+            }
+        }
+    }
+}

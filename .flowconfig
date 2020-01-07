@@ -1,0 +1,12 @@
+[ignore]
+
+[include]
+
+[libs]
+
+[options]
+module.name_mapper='.*\(.s?css\)' -> 'empty/object'
+module.name_mapper='.*\.svg.*' -> 'empty/object'
+module.name_mapper='config' -> 'empty/object'
+module.system.node.resolve_dirname=node_modules
+module.system.node.resolve_dirname=src

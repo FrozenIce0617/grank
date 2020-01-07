@@ -1,0 +1,54 @@
+@import '../../node_modules/typeface-raleway/index.css';
+@import '../../node_modules/typeface-open-sans/index.css';
+@import './_fonts';
+
+
+body {
+    color: $font-color-medium-dark-grey;
+    font-family: $headings-font-family;
+    p {
+        margin: 0 0 12.5px;
+    }
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: $headings-font-family;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 25px;
+    line-height: 35px;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+    color: $font-color-dark-blue;
+    margin: 0 0 21px;
+    @include media('tablet') {
+        font-size: 43px;
+        line-height: 54px;
+        letter-spacing: -1px;
+        margin: 0 0 17px;
+    }
+    &.content-title {
+        font-size: 28px;
+        font-weight: 200;
+    }
+}
+
+h3 {
+    font-size: 15px;
+    line-height: 23px;
+    color: #23272f;
+    text-transform: uppercase;
+    margin: 0 0 15px;
+    @include media('tablet') {
+        margin: 0 0 25px;
+    }
+}
+
+.ellipsis {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

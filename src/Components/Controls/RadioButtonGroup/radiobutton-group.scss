@@ -1,0 +1,5 @@
+@import '_dependencies';
+
+.radiobutton-group {
+    @extend %flex-column;
+}

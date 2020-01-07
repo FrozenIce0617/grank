@@ -1,0 +1,18 @@
+@import '_dependencies';
+
+.keywords-competitors-rankings{
+    .table-container {
+        th {
+            white-space: nowrap;
+        }
+
+        td {
+            white-space: nowrap;
+            vertical-align: middle;
+
+            &.keyword-cell {
+                width: 50%;
+            }
+        }
+    }
+}

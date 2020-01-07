@@ -1,0 +1,60 @@
+@import '_dependencies';
+
+.edit-form {
+    min-width: 300px;
+    font-weight: 400;
+    padding: 15px;
+    .title {
+        font-family: $controls-font-family;
+        font-size: 1rem;
+        font-weight: 400;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        color: $font-color-dark-blue;
+
+        svg {
+            width: 16px;
+            height: 16px;
+            fill: $control-icon-color;
+            margin-right: 0.5rem;
+        }
+    }
+
+    .error-message {
+        font-size: 0.8rem;
+        color: $error-color;
+    }
+
+    .action-buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 5px 0px;
+
+        .spacer {
+            width: 100%;
+        }
+
+        .btn {
+            min-width: 80px;
+            margin-left: 0.5rem;
+            font-weight: 400;
+            font-size: 0.8rem;
+            padding: 11px 14px;
+            text-transform: none;
+        }
+
+        .icn-button{
+            padding: 0;
+            display: flex;
+
+            &:hover {
+                color: $brand-color-orange;
+                svg {
+                    fill: $brand-color-orange;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+@import '_dependencies';
+
+.rank-distribution {
+    display: flex;
+
+    svg {
+        background: $brand-color-grey;
+        margin-bottom: 40px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

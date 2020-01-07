@@ -1,0 +1,39 @@
+@import '_dependencies';
+
+.locale-select {
+    .flag-icon {
+        margin-right: 0.5rem;
+    }
+    &.Select.is-open .Select-control {
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+    }
+
+    .option {
+        color: $font-color-medium-dark-grey;
+        font-weight: 400;
+        font-size: 0.8rem;
+        font-family: $headings-font-family;
+    }
+
+    .Select-control {
+        width: 100%;
+        border-radius: 0px;
+        border: 1px solid $border-color-medium-grey;
+        color: $font-color-medium-dark-grey;
+        font-weight: 400;
+        font-size: 0.8rem;
+        font-family: $headings-font-family;
+    }
+
+    .Select-menu-outer {
+        border-radius: 0px;
+        border: 1px solid $border-color-medium-grey;
+    }
+
+    &.error {
+        .Select-control {
+            border-color: $error-color;
+        }
+    }
+}

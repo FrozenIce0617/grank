@@ -1,0 +1,49 @@
+@import '_dependencies';
+
+.highcharts-series-opacity {
+    &-0 {
+        path {
+            opacity: 1;
+        }
+    }
+    &-1 {
+        path {
+            opacity: 0.5;
+        }
+    }
+    &-2 {
+        path {
+            opacity: 0.6;
+        }
+    }
+    &-3 {
+        path {
+            opacity: 0.4;
+        }
+    }
+    &-4 {
+        path {
+            opacity: 0.2;
+        }
+    }
+}
+
+.line-chart {
+    .chart-tooltip-evolution {
+        background-color: red;
+        border-radius: 10px;
+        color: darken($icon-grey, 10%);
+        background-color: rgba($icon-grey, 0.25);
+        padding: 1px 6px;
+
+        &.red {
+            color: darken($red, 10%);
+            background-color: rgba($red, 0.25);
+        }
+
+        &.green {
+            color: darken($green, 10%);
+            background-color: rgba($green, 0.25);
+        }
+    }
+}

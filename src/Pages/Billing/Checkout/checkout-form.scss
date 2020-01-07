@@ -1,0 +1,98 @@
+@import '_dependencies';
+
+.checkout-container {
+    counter-reset: checks;
+    position: relative;
+    overflow: visible;
+    padding: 60px 0 0;
+    background: $white;
+    &.on-subscriptions-page {
+        .form-group {
+            &.indented-form-group {
+                padding-left: 0;
+            }
+        }
+
+        .confirmation-button-wrapper {
+            margin-bottom: 0;
+        }
+    }
+    @include media('tablet') {
+        padding: 80px 0 0;
+    }
+    @extend %flex-item-auto;
+    .form-title {
+        counter-increment: checks;
+        font-size: 15px;
+        line-height: 18px;
+        color: $black;
+        font-weight: 600;
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 17px;
+        &:not(.not-numbered):before {
+            content: counter(checks);
+            width: 40px;
+            height: 40px;
+            border: 2px solid $brand-color-green;
+            display: inline-block;
+            text-align: center;
+            line-height: 36px;
+            font-size: 19px;
+            font-weight: normal;
+            vertical-align: middle;
+            margin-right: 18px;
+            @include border-radius(50%);
+        }
+    }
+
+    .form-group {
+        &.indented-form-group {
+            padding-left: 0;
+            margin-bottom: 23px;
+            @include media('laptop') {
+                padding-left: 60px;
+            }
+            div[class*="col-"] {
+                &:first-of-type {
+                    margin-bottom: 23px;
+                    @include media('laptop') {
+                        margin-bottom: 0;
+                    }
+                }
+                &:only-of-type {
+                    margin-bottom: 0;
+                }
+            }
+            &.no-margin-bottom {
+                @include media('laptop', 'max-width') {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    .help-info {
+        display: block;
+        font-size: 11px;
+        line-height: 14px;
+        color: $font-color-medium-dark-grey;
+        padding: 0 15px;
+        margin: -15px 0 25px;
+        @include media('laptop') {
+            margin: 10px 0 0;
+        }
+    }
+    .required-fields-info {
+        display: block;
+        color: $brand-color-purple;
+        font-size: 13px;
+        line-height: 16px;
+    }
+
+    .confirmation-button-wrapper {
+        line-height: 16px;
+        color: $black;
+        padding: 20px 0;
+        margin-bottom: 35px;
+    }
+}

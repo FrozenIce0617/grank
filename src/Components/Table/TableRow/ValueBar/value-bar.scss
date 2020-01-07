@@ -1,0 +1,48 @@
+@import '_dependencies';
+
+.value-bar {
+    width: 50px;
+    height: 3px;
+    background: $medium-grey-secondary;
+    display: flex;
+    position: relative;
+
+    .value-indicator {
+        height: 3px;
+        position: absolute;
+
+        &.info {
+            background: $light-blue;
+        }
+
+        &.danger {
+            background: $decrease-color;
+        }
+
+        &.warning {
+            background: $yellow;
+        }
+
+        &.success {
+            background: $increase-color;
+        }
+    }
+}
+
+.value-indicator-checkmark {
+    &.info {
+        fill: $light-blue;
+    }
+
+    &.danger {
+        fill: $decrease-color;
+    }
+
+    &.warning {
+        fill: $yellow;
+    }
+
+    &.success {
+        fill: $increase-color;
+    }
+}

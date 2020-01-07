@@ -1,0 +1,128 @@
+@import '_dependencies';
+
+.add-keywords-form {
+    font-family: $controls-font-family;
+
+    .columns-container {
+        @extend %flex-row;
+    }
+
+    .import-buttons {
+        margin: 15px 0 10px;
+
+        .btn {
+            width: 100%;
+            margin-bottom: 0.5rem;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+    }
+
+    .keywords-column {
+        width: 50%;
+        padding-right: 0.5rem;
+
+        textarea {
+            height: 200px;
+        }
+
+        p {
+            font-family: $headings-font-family;
+            font-size: 0.8rem;
+        }
+    }
+
+    .settings-column {
+        width: 50%;
+        padding-left: 0.5rem;
+
+        .flag-icon {
+            margin-right: 0.5rem;
+        }
+
+        .locations {
+            margin-bottom: 1rem;
+        }
+
+        .settings-label {
+            font-family: $headings-font-family;
+            font-size: 0.8rem;
+            margin-bottom: 0;
+
+            a {
+                color: $blue;
+                text-decoration: underline;
+            }
+        }
+
+        .add-keywords-settings {
+            @extend %flex-row;
+
+            .checkbox {
+                width: 50%;
+            }
+        }
+    }
+
+    .form-footer {
+        border-top: 1px solid $light-grey;
+        @extend %flex-row;
+        @extend %align-center;
+        padding-top: 1rem;
+
+        .keywords-count {
+            @extend %flex-item;
+        }
+
+        .btn {
+            font-weight: 500;
+            margin-left: 0.5rem;
+        }
+    }
+}
+
+.add-keywords-suggestion-list {
+    margin: 20px 0 40px;
+}
+
+.add-keywords-suggestion-input {
+    width: 100%;
+
+    &.hide {
+        opacity: 0;
+        height: 0;
+        padding: 0;
+    }
+}
+
+.add-keywords-suggestion-disclaimer {
+    color: $grey;
+    font-size: 12px;
+    font-style: italic;
+    margin: 5px 0 10px;
+}
+
+.add-keywords-suggestion-tag {
+    display: inline-block;
+    padding: 4px 8px;
+    margin: 3px;
+    background-color: $background-grey;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+        background-color: darken($background-grey, 10%);
+    }
+
+    &.disabled {
+        cursor: default;
+        opacity: 0.4;
+
+        &:hover {
+            background-color: $background-grey;
+        }
+    }
+}

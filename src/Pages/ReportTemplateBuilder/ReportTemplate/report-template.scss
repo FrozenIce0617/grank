@@ -1,0 +1,23 @@
+@import '_dependencies';
+
+.report-template {
+    background: $white;
+
+    .title {
+        font-size: 1rem;
+        font-family: $headings-font-family;
+        font-weight: 400;
+    }
+
+    .actions {
+        @extend %flex-row;
+        justify-content: flex-end;
+        padding: 10px 0px;
+        border-top: 1px solid $border-color-medium-grey;
+
+        .btn {
+            width: 130px;
+            margin-left: 10px;
+        }
+    }
+}

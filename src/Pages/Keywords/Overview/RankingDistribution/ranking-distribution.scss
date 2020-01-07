@@ -1,0 +1,40 @@
+.ranking-distribution-container {
+    flex: 1;
+    display: flex;
+    min-width: 0;
+
+    .latest-ranking-distribution {
+        .label-value-list {
+            margin-top: 30px;
+        }
+
+        .label-value-item {
+            white-space: nowrap;
+            font-size: 12px;
+            display: flex;
+            padding: 6px 0;
+            border-bottom: 1px solid #DFE0E2;
+            align-items: center;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            .marker {
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                margin-right: 8px;
+            }
+
+            .label {
+                flex-grow: 1;
+            }
+
+            .value {
+                margin-left: 1rem;
+                font-weight: bold;
+            }
+        }
+    }
+}

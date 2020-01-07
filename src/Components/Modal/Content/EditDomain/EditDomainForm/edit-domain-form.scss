@@ -1,0 +1,23 @@
+@import '_dependencies';
+
+.edit-domain-form {
+    font-family: $controls-font-family;
+    padding: 0;
+
+    .form-label {
+        font-size: 0.8rem;
+        font-weight: normal;
+    }
+
+    .confirmation-button-wrapper {
+        justify-content: space-between;
+    }
+
+    .google-connect-buttons {
+        .btn {
+            &:not(:last-child) {
+                margin-right: 10px;
+            }
+        }
+    }
+}

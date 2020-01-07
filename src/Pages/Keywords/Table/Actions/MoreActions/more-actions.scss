@@ -1,0 +1,23 @@
+@import '_dependencies';
+
+.more-actions {
+    display: flex;
+    align-items: center;
+
+    svg {
+        cursor: default;
+        width: 20px;
+        height: 20px;
+        position: relative;
+        margin-right: 0.5rem;
+        fill: $control-icon-color;
+    }
+
+    &.disabled {
+        cursor: default;
+
+        .simple-dropdown .menu-toggle {
+            cursor: default;
+        }
+    }
+}

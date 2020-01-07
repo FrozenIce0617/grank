@@ -1,0 +1,13 @@
+@import '_dependencies';
+
+.serp-info-modal {
+  .serp-info-modal-content {
+    display: flex;
+    flex-direction: column;
+    img {
+      align-self: center;
+      border: 1px solid $border-color-light-grey;
+      margin-bottom: 20px;
+    }
+  }
+}

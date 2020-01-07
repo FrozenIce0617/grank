@@ -1,0 +1,57 @@
+@import '_dependencies.scss';
+
+.quicksearch-dropdown {
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    background: $white;
+    z-index: 1;
+    @include box-shadow(0, 2px, 16px, 0, $shadow-default);
+    padding: 5px 0;
+    ul {
+        margin-bottom: 0;
+        list-style: none;
+        padding: 0 10px;
+        max-height: 150px;
+        overflow-y: auto;
+        .selected + li {
+            border-top: 0;
+        }
+        li {
+            border-top: 1px solid $border-grey;
+            &:first-child {
+                border-top: 0;
+            }
+            &.selected {
+                background: $border-grey;
+                padding: 0 10px;
+                margin: 0 -10px;
+                border-top: 0;
+            }
+            a {
+                display: block;
+                padding: 5px 0;
+                color: $blue;
+                font-size: 13px;
+                span.matched {
+                    font-weight: 600;
+                    text-decoration: underline;
+                }
+                img {
+                    margin-right: 5px;
+                    height: 15px;
+                    padding-right: 5px;
+                    border-right: 1px solid $border-grey;
+                }
+                div {
+                    display: inline-block;
+                }
+                &:hover {
+                    div {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}

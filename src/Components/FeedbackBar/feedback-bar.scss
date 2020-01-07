@@ -1,0 +1,88 @@
+@import '_dependencies';
+
+$bar-height: 105px;
+
+.feedback-bar {
+    background-image: linear-gradient(306deg, #464c8f, #9b6cc9);
+    text-align: center;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $white;
+    height: $bar-height;
+    position: relative;
+    overflow: hidden;
+
+    &-animation-leave {
+        opacity: 1;
+        height: $bar-height;
+
+        &.feedback-bar-animation-leave-active {
+            opacity: 0.8;
+            height: 0;
+            transition: opacity 0.3s ease-in-out, height 0.3s ease-in-out;
+        }
+    }
+
+    .feedback-question-rate,
+    .feedback-question-social {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 0 15px;
+        overflow: hidden;
+    }
+
+    .feedback-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+
+        &.feedback-social-animation-enter {
+            opacity: 0;
+
+            &.feedback-social-animation-enter-active {
+                opacity: 1;
+                transition: opacity 0.3s ease-in-out;
+            }
+        }
+
+        &.feedback-social-animation-leave {
+            opacity: 1;
+
+            &.feedback-social-animation-leave-active {
+                opacity: 0;
+                transition: opacity 0.3s ease-in-out;
+            }
+        }
+
+        &.feedback-rate-animation-leave {
+            opacity: 1;
+
+            &.feedback-rate-animation-leave-active {
+                opacity: 0;
+                transition: opacity 0.3s ease-in-out;
+            }
+        }
+
+        .feedback-rate-scale {
+            width: 400px;
+        }
+
+        .feedback-ask {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .feedback-question-social-content {
+            text-align: center;
+            font-size: 18px;
+        }
+    }
+}

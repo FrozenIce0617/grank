@@ -1,0 +1,91 @@
+@import '_dependencies';
+
+.winners-and-losers {
+    .flex-row {
+        display: flex;
+
+        .flex-cell {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem 0;
+            margin-right: 1rem;
+
+            .pie-chart-empty {
+                height: 260px;
+                width: 260px;
+            }
+        }
+    }
+
+    .stats {
+        display: flex;
+        flex-direction: column;
+        font-family: $headings-font-family;
+        font-weight: 300;
+        line-height: initial;
+
+        .icon {
+            height: 14px;
+            width: 14px;
+            margin-right: 5px;
+            margin-top: 15px;
+
+            &.increase {
+                fill: $increase-color;
+            }
+
+            &.decrease {
+                fill: $decrease-color;
+            }
+        }
+
+        .suffix {
+            font-size: 1.1rem;
+        }
+
+        .stats-column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stats-row {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .main-value,
+        .delta-value {
+            line-height: 1;
+            font-weight: normal;
+            margin-bottom: 3px;
+
+            span {
+                line-height: 1;
+            }
+
+            &.decrease {
+                color: $decrease-color;
+            }
+            &.increase {
+                color: $increase-color;
+            }
+        }
+
+        .main-value {
+            font-size: 2.4rem;
+        }
+        .delta-value {
+            font-size: 1.7rem;
+        }
+
+        .label {
+            font-size: 0.7rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+    }
+}

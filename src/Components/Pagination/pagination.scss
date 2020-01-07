@@ -1,0 +1,46 @@
+@import '_dependencies';
+
+.pagination {
+    display: flex;
+    align-items: center;
+    font-family: $headings-font-family;
+    font-size: 0.875rem;
+    color: $font-color-medium-dark-grey;
+    margin-left: auto;
+
+    .page-selector {
+        margin-right: 1rem;
+    }
+
+    .btn {
+        border-radius: 0;
+        height: 45px;
+        width: 45px;
+        border-color: $brand-color-grey;
+
+        &:last-child {
+            border-left: none;
+            position: relative;
+
+            &::before {
+                content: '';
+                width: 1px;
+                height: 27px;
+                background-color:  $brand-color-grey;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translate(0, -50%);
+            }
+        }
+    }
+
+    .label {
+        margin-right: 1rem;
+    }
+
+    .icon {
+        height: 10px;
+        fill: $icon-grey;
+    }
+}

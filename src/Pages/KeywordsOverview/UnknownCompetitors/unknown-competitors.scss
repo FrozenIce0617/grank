@@ -1,0 +1,81 @@
+@import '_dependencies';
+
+.unknown-competitors-chart {
+    // width: 30%;
+
+    .flex-row {
+        display: flex;
+        align-self: left;
+        flex-direction: row;
+
+        .flex-grow {
+            flex-grow: 1;
+        }
+
+        .flex-cell {
+            margin-right: 30px;
+        }
+
+        .piechart {
+            margin-right: 20px;
+        }
+    }
+
+    .competitors-table {
+        .loader-container {
+            position: relative;
+        }
+
+        .no-data-message {
+            height: 250px;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            font-size: 14px;
+        }
+    }
+
+    .data-table {
+        width: 400px;
+
+        th {
+            &.selection {
+                width: 24px;
+            }
+
+            &.weight {
+                width: 80px;
+            }
+
+            padding: 3px 10px;
+        }
+
+        td {
+            padding: 3px 10px;
+
+            .competitor-color {
+                width: 12px;
+                height: 12px;
+                border-radius: 6px;
+                display: inline-block;
+                margin-right: 5px;
+                background-color: #ccc;
+            }
+
+            .competitor-name {
+                color: #000000;
+
+                &.selected {
+                    color: #000000;
+                }
+            }
+
+            .add-button-wrapper {
+                display: inline-block;
+                position: relative;
+                top: 5px;
+            }
+        }
+    }
+}

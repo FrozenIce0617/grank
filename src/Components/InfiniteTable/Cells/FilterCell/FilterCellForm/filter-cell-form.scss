@@ -1,0 +1,106 @@
+@import '_dependencies';
+
+.filter-cell-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > div {
+        width: 100%;
+    }
+
+    height: 38px;
+
+    &.active {
+        .menu-toggle,
+        input {
+            background: $orange-light;
+        }
+    }
+
+    &.small-icon .filter-button .menu-toggle {
+        svg {
+            width: 14px;
+            height: 14px;
+        }
+    }
+
+    .text-input-control,
+    .dropdown .menu-toggle {
+        font-size: 0.8rem;
+        padding: 5px;
+        height: 100%;
+        min-height: 30px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form-field-error-details {
+        display: none;
+    }
+
+    .form-field {
+        margin-bottom: 0;
+        display: flex;
+        align-items: center;
+        position: static;
+
+        &-help-text {
+            margin-top: 0;
+        }
+    }
+
+    // hide numbers spinner
+    input[type='number']::-webkit-inner-spin-button,
+    input[type='number']::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input[type='number'] {
+        max-width: 35px;
+    }
+
+    input[type='text'] {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .number-filter-row {
+        .text-input-control {
+            border-left: none;
+        }
+    }
+
+    .dropdown {
+        background-color: #fff;
+        min-width: 30px;
+        &.show {
+            position: absolute;
+        }
+
+        .menu-toggle {
+            &:after {
+                display: none;
+            }
+            svg {
+                width: 12px;
+                height: 12px;
+
+                &:hover {
+                    path,
+                    circle,
+                    .content {
+                        fill: $font-color-medium-dark-grey;
+                    }
+                }
+            }
+
+            &:hover {
+                svg {
+                    fill: $font-color-medium-dark-grey;
+                }
+            }
+        }
+    }
+}

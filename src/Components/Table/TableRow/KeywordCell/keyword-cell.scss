@@ -1,0 +1,50 @@
+@import '_dependencies';
+
+.keyword-cell {
+    width: 100%;
+    padding: 10px 0;
+
+    .keyword-and-options {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    a {
+        word-wrap: none;
+        min-width: 0;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    .table-icon-indicator svg {
+        fill: $red;
+    }
+
+    .badge-tag {
+        cursor: pointer;
+
+        .loading-spinner {
+            margin-left: 5px;
+            width: 10px;
+            height: 10px;
+            path {
+                fill: white;
+            }
+        }
+
+        .delete-tag-icon {
+            margin-left: 5px;
+
+            svg {
+                width: 9px;
+                height: 9px;
+                fill: white;
+
+                &:hover {
+                    fill: $font-color-medium-dark-grey;
+                }
+            }
+        }
+    }
+}

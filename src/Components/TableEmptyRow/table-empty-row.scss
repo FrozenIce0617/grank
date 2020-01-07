@@ -1,0 +1,26 @@
+.table-empty-row {
+    .title {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .sub-title {
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    button {
+        margin-top: 20px
+    }
+
+    .sub-btn {
+        margin-top: 10px;
+        cursor: pointer;
+        font-size: 11px;
+        display: inline-block;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

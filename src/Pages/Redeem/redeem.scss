@@ -1,0 +1,60 @@
+@import '_dependencies';
+
+.redeem-page {
+    .add-voucher-icon-container {
+        position: absolute;
+        right: 2px;
+        top: 24px;
+        cursor: pointer;
+        background-color: #f5f7fa;
+        height: 44px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        border-left: 2px solid #e2e5f1;
+        opacity: 0.75;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    svg.add-voucher-icon {
+        fill: #6bc197;
+        width: 40px;
+        position: relative;
+        top: 2px;
+    }
+
+    .voucher-item-container {
+        display: flex;
+        position: relative;
+
+        .voucher-item {
+            flex: 1;
+            padding: 12px 14px;
+            margin-top: 10px;
+            font-size: 0.8rem;
+            border-radius: 5px;
+            border: 2px solid #e2e5f1;
+            background-color: #f5f7fa;
+        }
+
+        .voucher-spacer {
+            flex: 0 1 120px;
+        }
+
+        svg.remove-voucher-icon {
+            fill: darken(#e2e5f1, 15);
+            width: 22px;
+            position: absolute;
+            height: 22px;
+            right: 11px;
+            top: 23px;
+            cursor: pointer;
+
+            &:hover {
+                fill: #2b2f33;
+            }
+        }
+    }
+}

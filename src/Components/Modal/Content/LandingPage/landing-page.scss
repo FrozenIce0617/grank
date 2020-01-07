@@ -1,0 +1,46 @@
+@import '_dependencies';
+
+.landing-page {
+    width: 600px;
+    margin: auto;
+
+    &.Select.is-open .Select-control {
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+    }
+
+    .Select-control {
+        width: 100%;
+        border-radius: 0px;
+        border: 1px solid $border-color-medium-grey;
+        color: $font-color-medium-dark-grey;
+        font-weight: 400;
+        font-size: 0.8rem;
+        font-family: $headings-font-family;
+    }
+
+    .Select-menu-outer {
+        border-radius: 0px;
+        border: 1px solid $border-color-medium-grey;
+        .Select-option {
+            .option {
+                padding-left: 2em;
+                color: $font-color-medium-dark-grey;
+                font-weight: 400;
+                font-size: 0.8rem;
+                font-family: $headings-font-family;
+            }
+        }
+
+        .Select-option.is-disabled {
+            .option {
+                cursor: default;
+                padding-left: 1em;
+                font-weight: bold;
+                color: $font-color-medium-dark-grey;
+                font-size: 0.8rem;
+                font-family: $headings-font-family;
+            }
+        }
+    }
+}

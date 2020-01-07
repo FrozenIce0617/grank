@@ -1,0 +1,91 @@
+@import '_dependencies';
+
+.status {
+    cursor: pointer;
+
+    .status-badge {
+        &.status-ok {
+            &:after {
+                border-color: white;
+            }
+        }
+
+        &.status-warning {
+            &:after {
+                border-color: $orange;
+                animation: statusProcessing 1.2s infinite ease-in-out;
+            }
+
+            .confirmation-icon {
+                fill: $orange;
+            }
+        }
+
+        &.status-bad {
+            &:after {
+                border-color: $red;
+                animation: statusProcessing 1.2s infinite ease-in-out;
+            }
+
+            .confirmation-icon {
+                fill: $red;
+            }
+        }
+
+        &.read {
+            &:after {
+                animation: none;
+                border: none;
+            }
+        }
+
+        position: relative;
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        border-radius: 50%;
+        vertical-align: middle;
+        background-color: white;
+
+        &:after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            content: '';
+        }
+
+        .confirmation-icon {
+            width: 22px;
+            height: 22px;
+            margin-left: 9px;
+            margin-top: 8px;
+        }
+    }
+
+    .status-text {
+        cursor: pointer;
+        padding-left: 10px;
+        color: #ffffff;
+        display: inline-block;
+        opacity: 0.85;
+        font-size: 14px;
+
+        .status-text-small {
+            font-size: 0.6rem;
+            display: block;
+            position: relative;
+            top: 5px;
+        }
+    }
+
+    &:hover {
+        @include box-shadow(0, 2px, 16px, 0, $shadow-default);
+        .status-text {
+            opacity: 1;
+        }
+    }
+}

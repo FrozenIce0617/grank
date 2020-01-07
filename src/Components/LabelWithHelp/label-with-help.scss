@@ -1,0 +1,31 @@
+@import '_dependencies';
+
+.label-with-help {
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: $controls-font-family;
+
+    svg {
+        fill: $dark-placeholder-color;
+        height: 14px;
+        margin-left: 0.6rem;
+        vertical-align: middle;
+        margin-bottom: 0.165em;
+        cursor: pointer;
+    }
+}
+
+.label-with-help-pop-over {
+    padding: 20px;
+    border: 1px solid #e0e0e7;
+    border-radius: 0;
+
+    font-family: $headings-font-family;
+    font-weight: normal;
+    font-size: 0.7rem;
+
+    h3 {
+        padding-bottom: 10px;
+        margin: 0;
+    }
+}

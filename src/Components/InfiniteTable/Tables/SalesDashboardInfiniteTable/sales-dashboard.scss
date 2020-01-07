@@ -1,0 +1,52 @@
+@import '_dependencies';
+
+.sales-dashboard {
+    .pipedrive-active {
+        svg {
+            fill: green;
+        }
+    }
+
+    .organization-cell {
+        .icon-with-tooltip {
+            svg {
+                margin-right: 5px;
+            }
+            a {
+                position: relative;
+                top: -3px;
+            }
+            padding-bottom: 5px;
+        }
+
+        padding-bottom: 5px;
+    }
+
+    .react-gravatar {
+        border-radius: 50%;
+    }
+
+    .account-blocked {
+        background-color: $red !important;
+
+        &:hover {
+            .ReactVirtualized__Table__rowColumn {
+                background-color: $red !important;
+            }
+        }
+    }
+
+    .sub-account {
+        background-color: $light-blue !important;
+
+        &:hover {
+            .ReactVirtualized__Table__rowColumn {
+                background-color: $light-blue !important;
+            }
+        }
+    }
+
+    a {
+        color: #444 !important;
+    }
+}

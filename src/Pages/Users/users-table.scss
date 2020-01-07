@@ -1,0 +1,93 @@
+@import '_dependencies';
+@import '_table';
+
+.actions-menu .actions .something {
+    color: $orange;
+}
+
+.users-table-wrapper {
+    background: $white;
+
+    border-left: 1px solid $border-color-medium-grey;
+    border-right: 1px solid $border-color-medium-grey;
+    border-bottom: 1px solid $border-color-medium-grey;
+
+    .users-table-tab-content {
+        padding: 8px 19px;
+        background: $white;
+        @include media('laptop') {
+            padding: 28px 39px;
+        }
+    }
+    .full-width-column {
+        width: 100%;
+    }
+}
+
+.users-table {
+    background: $white;
+    padding: 0;
+
+    .hide-domain-cell {
+        .domain-cell {
+            display: none;
+        }
+
+        .tags-cell {
+            padding-left: 10px;
+        }
+    }
+
+    th {
+        white-space: nowrap;
+        &.icon-header {
+            width: 50px;
+        }
+    }
+
+    td {
+        white-space: nowrap;
+        vertical-align: middle;
+    }
+
+    .flex-row {
+        display: flex;
+    }
+
+    .flex-row-right {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .spacer {
+        flex-grow: 1;
+    }
+
+    .more-icons {
+        margin-left: 5px;
+        text-decoration: underline;
+    }
+
+    .table-container {
+        overflow: auto;
+        overflow-y: hidden;
+    }
+
+    .ico-wrapper {
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        background: $gravatar-background;
+        @include border-radius(50%);
+        vertical-align: middle;
+        line-height: 40px;
+        text-align: center;
+        overflow: hidden;
+        img.react-gravatar {
+            z-index: 2;
+            position: relative;
+            height: 40px;
+            width: 40px;
+        }
+    }
+}

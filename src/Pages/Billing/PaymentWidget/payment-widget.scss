@@ -1,0 +1,230 @@
+@import '_dependencies';
+
+#payment-form {
+    position: relative;
+    margin: 0px 0px 30px 0px;
+    min-height: 210px;
+    @include media('laptop') {
+        margin: 0px 0px 30px 60px;
+    }
+    &.standalone {
+        margin: 0 0 50px !important;
+    }
+    &:empty {
+        &:before {
+            //fake loading container
+            background: $extra-light-grey;
+            height: 136px;
+            width: 100%;
+            position: absolute;
+            top: 32px;
+            left: 0px;
+            content: attr(data-text); // 'Setting up connection with payment provider';
+            text-align: center;
+            @include border-radius(3px);
+            border: 1px solid $border-color-medium-grey;
+            line-height: 134px;
+        }
+    }
+    & > [id*='braintree--dropin__'] {
+        & > .braintree-dropin {
+            font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            .braintree-heading {
+                color: $font-color-dark-blue;
+                font-size: 11px;
+                font-weight: normal;
+                text-transform: uppercase;
+            }
+            & > .braintree {
+                &-upper-container {
+                    &:before {
+                        background: $extra-light-grey;
+                        border: 1px solid $border-color-medium-grey;
+                    }
+                    & > .braintree-methods {
+                        & > .braintree-methods--active {
+                            & > .braintree-method {
+                                border: 1px solid $border-color-medium-grey;
+                                @include disableTextSelect;
+                                width: 100%;
+                                &:focus {
+                                    outline: none;
+                                }
+                                &:first-child {
+                                    border-bottom: 0;
+                                    @include border-radii(5px, 5px, 0px, 0px);
+                                }
+                                &:last-child {
+                                    border-top: 0;
+                                    @include border-radii(0px, 0px, 5px, 5px);
+                                }
+                                &:only-child {
+                                    @include border-radius(5px);
+                                    border: 1px solid $border-color-medium-grey;
+                                }
+                                &--active {
+                                    width: 100%;
+                                    @include remove-box-shadow;
+                                    @include border-radius(0px);
+                                    background: $extra-light-grey;
+                                    margin-top: 0;
+                                    margin-bottom: 0;
+                                }
+                                .braintree-method {
+                                    &__logo {
+                                        padding-right: 10px;
+                                    }
+                                    &__label {
+                                        color: $font-color-medium-dark-grey;
+                                        font-weight: initial;
+                                        word-wrap: break-word;
+                                        overflow: hidden;
+                                        border-left: 1px solid $border-color-light-grey;
+                                        margin-left: 0;
+                                        padding: 0px 20px;
+                                        font-size: 14px;
+                                        &--small {
+                                            text-transform: uppercase;
+                                        }
+                                    }
+                                    &__check-container {
+                                        margin-left: 20px;
+                                        &:before {
+                                            background: transparent;
+                                        }
+                                        .braintree-method__check {
+                                            @include border-radius(0px);
+                                            background: transparent;
+                                            text-align: center;
+                                            padding-top: 4px;
+                                            font-size: 30px;
+                                            color: $brand-color-orange;
+                                            &:before {
+                                                content: url('../../../icons/check-rounded-2.svg');
+                                            }
+                                            svg {
+                                                display: none;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    & > .braintree-sheet__container {
+                        & > .braintree-sheet {
+                            border: 1px solid $border-color-medium-grey;
+                            @include border-radius(3px);
+                            .braintree-sheet {
+                                &__header {
+                                    border-bottom: 1px solid $border-color-medium-grey;
+                                    color: $font-color-dark-blue;
+                                    font-weight: normal;
+                                    text-transform: uppercase;
+                                    background: $extra-light-grey;
+                                    * {
+                                        font-size: 14px;
+                                    }
+                                }
+                            }
+                            &.braintree-card {
+                                .braintree-sheet {
+                                    &__header {
+                                        &-label {
+                                            & > .braintree-sheet {
+                                                &__logo--header {
+                                                    display: none;
+                                                }
+                                                &__text {
+                                                    margin-left: 0;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    &__content--form {
+                                        .braintree-form {
+                                            &__field-group {
+                                                &--has-error {
+                                                }
+                                                & > .braintree-form {
+                                                    &__label {
+                                                        @extend %form-label;
+                                                    }
+                                                    &__field {
+                                                        .braintree-form__hosted-field {
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            &.braintree-paypal {
+                                .braintree-sheet {
+                                    &__header {
+                                        &-label {
+                                            justify-content: space-between;
+                                            & > .braintree-sheet {
+                                                &__logo--header {
+                                                    order: 2;
+                                                    width: initial;
+                                                }
+                                                &__label {
+                                                    order: 1;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    & > .braintree-options {
+                        & > .braintree-options-list {
+                            @extend %tab-container;
+                            & .braintree-option {
+                                @extend %tab-item;
+                                &__logo {
+                                    display: none;
+                                }
+                                &__label {
+                                    width: initial;
+                                    margin-left: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+                &-options {
+                    & > .braintree-options {
+                        & > .braintree-options-list {
+                            @extend %tab-container;
+                            & > .braintree-option {
+                                @extend %tab-item;
+                                & > .braintree-option {
+                                    &__logo {
+                                        display: none;
+                                    }
+                                    &__label {
+                                        width: initial;
+                                        margin-left: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &-toggle {
+                    @extend %btn;
+                    @extend %btn-rounded;
+                    @extend %btn-brand-orange;
+                    width: 100%;
+                    @include media('tablet') {
+                        width: 300px;
+                    }
+                }
+            }
+        }
+    }
+}

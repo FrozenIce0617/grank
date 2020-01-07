@@ -1,0 +1,16 @@
+@import '_dependencies';
+
+.invoices-table-wrapper {
+    .invoice-paid-icon {
+        height: 18px;
+        display: flex;
+
+        svg {
+            fill: $brand-color-green;
+            width: 16px;
+            height: 16px;
+            margin: 1px 2px;
+            cursor: pointer;
+        }
+    }
+}

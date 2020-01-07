@@ -1,0 +1,79 @@
+@import '_dependencies';
+
+.side-navbar {
+    height: 100%;
+    width: $side-navbar-width;
+    position: fixed;
+    background-color: #313445;
+    top: 0;
+    z-index: 11;
+
+    .logo {
+        width: 35px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        display: block;
+    }
+
+    .item {
+        display: block;
+        padding: 10px;
+        cursor: pointer;
+
+        .ico {
+            width: 25px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            opacity: 0.75;
+
+            svg {
+                fill: #ffffff;
+            }
+
+            img.grumpy {
+                width: 60px;
+                left: -17px;
+                position: relative;
+            }
+        }
+
+        &.full {
+            padding: 0px;
+            opacity: 0.75;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        span {
+            margin-top: 0;
+            color: #ffffff;
+            text-align: center;
+            display: block;
+            font-size: 10px;
+            opacity: 0.75;
+        }
+
+        &.active {
+            background-color: rgba(0, 0, 0, 0.3);
+            span,
+            .ico {
+                opacity: 1;
+            }
+        }
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.15);
+            text-decoration: none;
+
+            span,
+            .ico {
+                opacity: 1;
+            }
+        }
+    }
+}

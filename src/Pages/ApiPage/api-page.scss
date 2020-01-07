@@ -1,0 +1,64 @@
+@import '_dependencies';
+
+.base-public-page.api-page {
+    .content {
+        .main-content {
+            display: block;
+
+            .redoc-wrap {
+                > div {
+                    &:nth-child(2) {
+                        @media screen and (max-width: 800px) {
+                            left: 20px;
+                            right: auto;
+                            bottom: 20px;
+                        }
+                    }
+                }
+            }
+
+            .menu-content {
+                .search-input {
+                    &:focus {
+                        outline: none !important;
+                        border: none !important;
+                        border-bottom: 1px solid #e1e1e1 !important;
+                        box-shadow: none !important;
+                    }
+                }
+            }
+
+            .api-content {
+                .api-info {
+                    padding-bottom: 0;
+                }
+
+                div[data-section-id^='tag'] > div > div {
+                    padding-bottom: 0;
+                    margin-bottom: -10px;
+
+                    @media screen and (min-width: 1361px) {
+                        margin-bottom: -30px;
+                    }
+                }
+
+                div[data-section-id^='operation'] > div > div {
+                    &:not(:first-child) {
+                        h3 {
+                            color: white;
+                            margin: 15px 0;
+                        }
+                    }
+
+                    padding-bottom: 20px;
+                }
+
+                .redoc-json {
+                    .hoverable.collapsed {
+                        margin-top: -5px;
+                    }
+                }
+            }
+        }
+    }
+}

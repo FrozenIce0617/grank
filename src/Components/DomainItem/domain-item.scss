@@ -1,0 +1,15 @@
+@import '_dependencies';
+
+.domain-item {
+    display: flex;
+    p {
+        margin-bottom: 0;
+    }
+    .favicon-wrapper {
+        margin: auto 18px auto 0;
+        .favicon {
+            height: 16px;
+            width: 16px;
+        }
+    }
+}

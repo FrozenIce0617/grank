@@ -1,0 +1,90 @@
+@import '_dependencies';
+
+.keywords-overview {
+    .ranking-distribution {
+        min-width: 0;
+    }
+
+    .sov-avgrank-row {
+        > div {
+            width: 50%;
+        }
+    }
+
+    .unknown-competitors {
+        min-width: 0;
+        width: 100%;
+    }
+
+
+  .stats-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+    .label {
+      font-size: 0.7rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+
+    .main-value {
+      font-size: 1.4rem;
+      line-height: 1;
+      font-weight: normal;
+      margin-bottom: 3px;
+      white-space: nowrap;
+
+      &.decrease {
+        color: $decrease-color;
+      }
+      &.increase {
+        color: $increase-color;
+      }
+    }
+
+    .delta-percent {
+        font-size: 0.6rem;
+    }
+
+    .delta-value {
+      font-size: 1rem;
+      line-height: 1;
+      font-weight: normal;
+      margin-bottom: 3px;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+      white-space: nowrap;
+
+      .percent {
+        margin-left: 0.6rem;
+        font-size: 0.8rem;
+      }
+
+      .icon {
+        height: 16px;
+        vertical-align: middle;
+        margin-right: 3px;
+        margin-bottom: 0.1em;
+      }
+
+      &.decrease {
+        fill: $decrease-color;
+
+        .percent,
+        .delta {
+          color: $decrease-color;
+        }
+      }
+
+      &.increase {
+        fill: $increase-color;
+
+        .percent,
+        .delta {
+          color: $increase-color;
+        }
+      }
+    }
+  }
+}

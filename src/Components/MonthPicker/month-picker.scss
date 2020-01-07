@@ -1,0 +1,80 @@
+@import '_dependencies';
+
+.month-picker {
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+    border: 1px $border-color-medium-grey solid;
+
+    .years-selector {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        color: #000;
+        font-weight: bold;
+        font-size: 0.944rem;
+        align-items: center;
+        padding: 8px 0 6px;
+        border-bottom: 1px #aeaeae solid;
+
+        .navigation {
+            background: none;
+            text-align: center;
+            cursor: pointer;
+            position: absolute;
+            width: 0;
+            padding: 0;
+            border: 0.45rem solid transparent;
+            z-index: 1;
+
+            &.left {
+                border-right-color: #ccc;
+                left: 10px;
+            }
+
+            &.right {
+                border-left-color: #ccc;
+                right: 10px;
+            }
+        }
+    }
+
+    .month-picker-calendar {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        padding: 10px;
+
+        .month-picker-item {
+            $item-padding: 10px;
+            $item-side-margin: 1px;
+
+            justify-content: center;
+            display: flex;
+            width: calc(25% - #{$item-padding / 2} - #{$item-side-margin});
+            flex: 1;
+            padding: $item-padding;
+            margin: 2px $item-side-margin;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #f0f0f0;
+            }
+
+            &.disabled {
+                color: #ccc;
+                cursor: not-allowed;
+                &:hover {
+                    background-color: transparent;
+                }
+            }
+            &.selected {
+                color: #fff;
+                background-color: $orange;
+                &:hover {
+                    background-color: $orange;
+                }
+            }
+        }
+    }
+}

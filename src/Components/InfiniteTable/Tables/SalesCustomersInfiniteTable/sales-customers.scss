@@ -1,0 +1,16 @@
+@import '_dependencies';
+
+.sales-customers-unassign {
+    padding: 0 5px;
+    margin-left: 5px;
+    color: $red;
+    background-color: $orange-light;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+        color: darken($red, 20%);
+        background-color: darken($orange-light, 10%);
+    }
+}

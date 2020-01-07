@@ -1,0 +1,45 @@
+@import "_dependencies";
+
+.share-of-voice {
+  .header {
+    display: flex;
+    align-items: flex-end;
+
+    .stats-row {
+        margin-left: auto;
+    }
+  }
+
+  .share-of-voice-chart {
+    &.chart-container {
+      height: inherit;
+    }
+  }
+
+  .content {
+    display: flex;
+
+    .chart-export-container {
+      display: flex;
+      width: 100%;
+      min-width: 0;
+      padding: 1rem 0;
+      min-height: 330px;
+      background-color: white;
+
+      &-chart {
+        flex: 1;
+        width: 100%;
+        min-width: 0;
+      }
+
+      .spacer {
+        flex-grow: 1;
+      }
+
+      .highcharts-background {
+        fill: transparent;
+      }
+    }
+  }
+}

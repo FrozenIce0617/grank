@@ -1,0 +1,46 @@
+@import '_dependencies';
+
+.special-offer-timer-wrapper {
+    position: relative;
+    padding: 14px;
+    font: 13px/19px Verdana, Geneva, sans-serif;
+    background: $extra-light-grey;
+    border: 1px solid $border-color-medium-grey;
+    @include border-radius(4px);
+    @extend %flex-container;
+    margin-bottom: 20px;
+    align-items: center;
+    .holder {
+        overflow: hidden;
+        width: 300px;
+        text-align: center;
+        margin: 0 auto;
+        h3 {
+            font-size: 20px;
+            text-transform: initial;
+            font-weight: 400;
+            color: $font-color-medium-dark-grey;
+            margin-bottom: 0;
+        }
+        .special-offer-timer {
+            margin: 10px 0;
+            @extend %flex-container;
+            .time-segment {
+                background: white;
+                display: inline-block;
+                margin-right: 3px;
+                @extend %flex-item-equal-size;
+                font-size: 25px;
+                padding: 10px 10px 6px;
+                &:last-child {
+                    margin-right: 0;
+                }
+                .time-segment-description {
+                    display: block;
+                    font-size: 11px;
+                    margin-top: 2px;
+                }
+            }
+        }
+    }
+}

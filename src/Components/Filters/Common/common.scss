@@ -1,0 +1,14 @@
+@import '_dependencies';
+
+.icon {
+    &.no-filter {
+        fill: $control-icon-color;
+
+        &:hover {
+            &,
+            path {
+                fill: $control-icon-color-dark;
+            }
+        }
+    }
+}

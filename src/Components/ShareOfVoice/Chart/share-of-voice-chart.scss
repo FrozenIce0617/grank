@@ -1,0 +1,46 @@
+@import '_dependencies';
+
+.chart-responsive-container {
+    width: 100%;
+}
+
+.share-of-voice-chart-empty {
+    background: $brand-color-grey;
+
+    p {
+        text-align: center;
+        vertical-align: middle;
+    }
+}
+
+.share-of-voice-chart {
+    &.chart-container {
+        height: 200px;
+        flex-grow: 1;
+        background-color: white;
+        position: relative;
+
+        .chart-area {
+            width: 100%;
+        }
+
+        .current-seria {
+            .highcharts-point {
+                stroke: transparent;
+                stroke-width: 1px;
+            }
+        }
+
+        .highcharts-axis-labels {
+            text {
+                font-family: $headings-font-family;
+                font-size: 0.7rem !important;
+                fill: $font-color-medium-dark-grey !important;
+            }
+        }
+
+        .chart-tooltip-table-th {
+            padding-right: 20px;
+        }
+    }
+}

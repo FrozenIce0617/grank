@@ -1,0 +1,24 @@
+.change-log {
+    .modal-header {
+        display: none;
+    }
+
+    .modal-body {
+        padding-top: 1rem;
+
+        .SocialMediaShareButton {
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        .title {
+            font-size: 21px;
+        }
+
+        .markdown {
+            img {
+                width: 100%;
+            }
+        }
+    }
+}

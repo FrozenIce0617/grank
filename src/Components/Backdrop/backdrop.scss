@@ -1,0 +1,73 @@
+@import '_dependencies';
+
+.overlay-backdrop {
+    background: $loader-backdrop-dark;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 12;
+    overflow-y: auto;
+
+    .overlay-content {
+        display: flex;
+        justify-content: center;
+    }
+
+    &.light {
+        background: $loader-backdrop-light;
+    }
+
+    .logo {
+        width: 173px;
+        margin: 16px auto;
+        @include media('tablet') {
+            width: 201px;
+        }
+        a {
+            display: block;
+            height: 100%;
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+.popup {
+    &-enter {
+        opacity: 0.01;
+
+        .overlay-content {
+            transform: scale(0, 0);
+        }
+
+        &.popup-enter-active {
+            opacity: 1;
+            transition: opacity 300ms ease-in;
+
+            .overlay-content {
+                transform: scale(1, 1);
+                transition: transform 300ms ease-in;
+            }
+        }
+    }
+    &-leave {
+        opacity: 1;
+
+        .overlay-content {
+            transform: scale(1, 1);
+        }
+
+        &.popup-leave-active {
+            opacity: 0.01;
+            transition: opacity 200ms ease-out;
+
+            .overlay-content {
+                transform: scale(0, 0);
+                transition: transform 200ms ease-out;
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+.copy-to-clipboard-form {
+    .title {
+        margin-bottom: 10px;
+        span {
+            display: inline-flex;
+        }
+
+        .shortcut {
+            margin: 0 5px;
+        }
+    }
+
+    textarea.text-area-control {
+        margin-top: 5px;
+        height: 200px;
+    }
+}

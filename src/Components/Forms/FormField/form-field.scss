@@ -1,0 +1,41 @@
+@import '_dependencies';
+
+.form-field {
+    margin-bottom: 0.5rem;
+    position: relative;
+
+    .remove-icon {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        cursor: pointer;
+    }
+
+    .form-field-error-details {
+        @extend %flex-row;
+        margin-bottom: 5px;
+
+        .error-message {
+            position: initial;
+            color: $error-color;
+            font-size: 0.7rem;
+            @extend %flex-item;
+            text-align: right;
+        }
+    }
+
+    .form-field-help-text {
+        margin-top: 5px;
+        color: $font-color-medium-light-grey;
+        font-size: 0.7rem;
+        @extend %flex-row;
+        @extend %align-center;
+
+        svg {
+            width: 10px;
+            height: 10px;
+            fill: $control-icon-color;
+            margin-left: 10px;
+        }
+    }
+}

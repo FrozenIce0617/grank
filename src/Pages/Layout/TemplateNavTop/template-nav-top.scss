@@ -1,0 +1,5 @@
+@import '_dependencies.scss';
+
+.checkout-page-wrapper {
+    @extend %flex-column;
+}

@@ -1,0 +1,35 @@
+@import "_dependencies";
+
+.average-rank {
+  .header {
+    display: flex;
+    align-items: flex-end;
+
+    .stats-row {
+      margin-left: auto;
+    }
+  }
+
+  .content {
+    padding-left: 0;
+    padding-right: 0;
+
+    .chart-area {
+      display: flex;
+      width: 100%;
+      min-width: 0;
+      padding: 1rem 0;
+      min-height: 330px;
+      background-color: white;
+
+      // force chart to take all space
+      div[data-highcharts-chart] {
+        width: 100%;
+      }
+    }
+
+    .highcharts-background {
+      fill: transparent;
+    }
+  }
+}

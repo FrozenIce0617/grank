@@ -1,0 +1,54 @@
+@import '_dependencies';
+
+.rank-cell {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    .icon-with-tooltip {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 3px;
+        width: 14px;
+        height: 14px;
+        path {
+            fill: $control-icon-color;
+        }
+    }
+
+    .float-right {
+        margin-left: auto;
+        display: inline-flex;
+
+        .icons {
+            display: inline-flex;
+        }
+    }
+
+    .loading-spinner {
+        margin-right: 4px;
+        width: 16px;
+        height: 16px;
+        path {
+            fill: #000000;
+        }
+    }
+
+    .extra-rank-btn {
+        line-height: 0;
+        cursor: pointer;
+
+        svg {
+            fill: rgba(0, 0, 0, 0.6);
+            width: 24px;
+            height: 24px;
+        }
+
+        &:hover {
+            svg {
+                fill: #000000;
+            }
+        }
+    }
+}

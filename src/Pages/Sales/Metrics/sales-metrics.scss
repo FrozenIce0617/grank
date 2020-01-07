@@ -1,0 +1,24 @@
+@import '_dependencies';
+
+.SalesMetrics-mrrActions {
+    position: relative;
+    margin-bottom: 10px;
+
+    @include media('desktop') {
+        position: absolute;
+        right: 15px;
+        top: 0;
+        margin-bottom: 0;
+        z-index: 1;
+    }
+}
+
+.row-hidden-graph {
+    position: relative;
+    left: -40px;
+    width: calc(100% - 30px);
+    padding: 30px 70px 40px 40px;
+    margin: 15px 0 30px;
+    background-color: $medium-grey;
+    box-sizing: content-box;
+}

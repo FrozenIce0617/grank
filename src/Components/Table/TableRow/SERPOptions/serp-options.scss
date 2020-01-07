@@ -1,0 +1,24 @@
+@import '_dependencies';
+
+.serp-icons {
+    display: flex;
+
+    .serp-icon {
+        border-right: 1px solid $brand-color-grey;
+        padding-right: 5px;
+        margin-right: 5px;
+        height: 18px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .table-icon-indicator {
+        cursor: pointer;
+    }
+
+    .table-icon-indicator:hover {
+        svg {
+            fill: rgba(0, 0, 0, 0.75);
+        }
+    }
+}

@@ -1,0 +1,38 @@
+.google-analytics-chart {
+    .flex-row {
+        display: flex;
+        flex-wrap: wrap;
+
+        .flex-cell {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            height: 260px;
+            align-items: center;
+            padding: 1rem 0;
+        }
+    }
+
+    @media screen and (min-width:1600px) {
+        .flex-row {
+            flex-wrap: nowrap;
+        }
+    }
+
+    @media screen and (min-width:1300px) and (max-width:1600px) {
+        .flex-row {
+            flex-wrap: nowrap;
+
+            .flex-cell {
+                margin-left: -10px;
+
+                .chart-pie-legend-container {
+                    .chart-pie-legend {
+                        flex: 1 0 50px;
+                        max-width: 50px;
+                    }
+                }
+            }
+        }
+    }
+}

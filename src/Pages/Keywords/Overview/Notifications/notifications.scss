@@ -1,0 +1,9 @@
+@import '_dependencies';
+
+.notifications {
+    .table-actions {
+        display: flex;
+        justify-content: flex-start;
+        padding: 10px;
+    }
+}

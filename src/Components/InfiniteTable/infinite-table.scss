@@ -1,0 +1,201 @@
+@import '_dependencies';
+
+.infinite-table {
+    min-height: 300px;
+
+    &.first-load {
+        .ReactVirtualized__Grid__innerScrollContainer {
+            height: 100% !important;
+            max-height: none !important;
+        }
+    }
+
+    &.no-data {
+        min-height: 0;
+    }
+
+    .sticky-item {
+        position: relative;
+        &.has-upsell-row {
+            margin-bottom: $upsell-row-height;
+        }
+    }
+
+    .ReactVirtualized__Grid__innerScrollContainer {
+        // fix for Safari fixed columns to define new coordinates system (oh that creepy Safari)
+        transform: translate(0, 0);
+
+        .infinite-table-body {
+            // This is hack to basically hide unwanted scrollbar
+            height: calc(100% + 20px);
+            overflow-x: auto;
+            overflow-y: hidden;
+            width: 1000px;
+            position: relative;
+        }
+    }
+
+    .infinite-table-header-container {
+        z-index: 9;
+        overflow: visible !important;
+        .ReactVirtualized__Table__headerRow {
+            background-color: #fff;
+            border-bottom: 2px solid $border-color-medium-grey;
+            display: flex;
+            overflow-x: hidden;
+
+            .ReactVirtualized__Table__headerColumn {
+                display: inline-flex;
+                flex-shrink: 0 !important;
+
+                &.column-responsive {
+                    flex-grow: 1 !important;
+                }
+            }
+        }
+    }
+
+    .ReactVirtualized__Table__row {
+        border-bottom: 1px solid $border-color-medium-grey;
+        display: flex;
+
+        &:hover {
+            .ReactVirtualized__Table__rowColumn {
+                background-color: $extra-light-grey !important;
+            }
+
+            .infinite-table-column-grey {
+                background-color: $light-grey;
+            }
+        }
+
+        .ReactVirtualized__Table__rowColumn {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px;
+            font-size: 0.8rem;
+            color: $font-color-medium-dark-grey;
+            flex-shrink: 0 !important;
+
+            &:not(:last-child) {
+                border-right: 1px dashed $border-color-medium-grey;
+            }
+
+            a {
+                color: $blue;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .value-indicator-checkmark {
+                width: 15px;
+                height: 15px;
+            }
+
+            .cell-column {
+                display: flex;
+                flex-direction: column;
+            }
+
+            &.no-border {
+                border-right: 1px solid transparent;
+            }
+
+            &.cell-center {
+                display: flex;
+                justify-content: center;
+            }
+
+            &.cell-end {
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            &.column-responsive {
+                flex-grow: 1 !important;
+            }
+
+            &.cell-start {
+                display: flex;
+                justify-content: flex-start;
+            }
+
+            &.no-left-padding {
+                padding-left: 0;
+            }
+
+            &.no-right-padding {
+                padding-right: 0;
+            }
+
+            .table-icon-indicator {
+                margin-top: auto;
+                margin-bottom: auto;
+            }
+
+            .badge-tag {
+                background-color: #a3a6b4;
+                padding: 4px 5px;
+                font-size: 10px;
+                border-radius: 0;
+            }
+        }
+    }
+}
+
+.infinite-table-footer-container {
+    .fake-horizontal-scroll {
+        height: 100%;
+        overflow: auto;
+    }
+
+    .infinite-table-footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background: #fff;
+        border-top: 2px solid $border-color-medium-grey;
+        z-index: 9;
+        padding: 10px;
+        font-size: 0.8rem;
+
+        .back-to-top {
+            margin-right: 30px;
+        }
+
+        color: #444;
+    }
+}
+
+.infinite-table-loader {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .loader-inner-container {
+        .loading-text {
+            color: $font-color-medium-dark-grey;
+        }
+    }
+}
+
+.infinite-table-select {
+    background: none;
+    border: none;
+    font-size: 0.8rem;
+
+    &:hover {
+        color: $orange;
+    }
+
+    &:active {
+        color: black;
+    }
+}
+
+.infinite-table-column-grey {
+    background-color: $extra-light-grey;
+}

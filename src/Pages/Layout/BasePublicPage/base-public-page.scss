@@ -1,0 +1,66 @@
+@import '_dependencies';
+
+.base-public-page {
+    width: 100%;
+
+    &.with-side-navbar {
+        .main-content {
+            padding-left: $side-navbar-width;
+        }
+
+        .header {
+            position: static;
+        }
+    }
+
+    .header {
+        width: 100%;
+        z-index: 10;
+        position: fixed;
+        top: 0;
+        background-color: #313445;
+        height: $header-height;
+        padding-left: 23px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+
+        .logo {
+            width: 35px;
+            display: block;
+            margin-right: 18px;
+        }
+
+        .navigation {
+            width: 100%;
+
+            &.not-auth {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+            }
+
+            .sign-in {
+                align-self: center;
+                margin-right: 20px;
+            }
+        }
+    }
+
+    .header-placeholder {
+        height: $header-height;
+        width: 100%;
+    }
+
+    .content {
+        width: 100%;
+        justify-content: center;
+
+        .main-content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}

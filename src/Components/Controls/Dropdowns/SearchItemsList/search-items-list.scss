@@ -1,0 +1,39 @@
+@import '_dependencies';
+
+.search-items-list {
+    .title {
+        font-family: $controls-font-family;
+        font-size: 0.85rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+    }
+
+    .header {
+        border-bottom: 1px solid $dropdown-border-color;
+        padding: 1.25rem;
+    }
+
+    .items {
+        max-height: 400px;
+
+        .empty {
+            display: block;
+            padding: 10px 20px;
+        }
+    }
+
+    .footer {
+        padding: 0.7rem 1rem;
+        border-top: 1px solid $dropdown-border-color;
+
+        .icn-button {
+            font-size: 0.8rem;
+            color: $font-color-medium-dark-grey;
+            display: flex;
+        }
+
+        &.selected {
+            background: $light-grey;
+        }
+    }
+}

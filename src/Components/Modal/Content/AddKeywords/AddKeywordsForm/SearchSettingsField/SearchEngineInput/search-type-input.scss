@@ -1,0 +1,27 @@
+@import '_dependencies';
+
+.search-type-input {
+    @extend %flex-row;
+    align-items: center;
+
+    .search-engine-name {
+        text-transform: capitalize;
+        font-family: $headings-font-family;
+        font-size: 0.8rem;
+        margin-right: 10px;
+        min-width: 80px;
+    }
+
+    .checkbox {
+        margin-right: 1rem;
+
+        &:first-child {
+            min-width: 100px;
+        }
+    }
+
+    .icon {
+        fill: $control-icon-color;
+        height: 20px;
+    }
+}

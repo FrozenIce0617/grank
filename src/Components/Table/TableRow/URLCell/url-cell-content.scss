@@ -1,0 +1,48 @@
+@import '_dependencies';
+
+.url-cell-content {
+    display: flex;
+    align-items: center;
+
+    svg {
+        fill: $control-icon-color;
+        margin-right: 5px;
+    }
+}
+
+.url-tooltip {
+
+    .show {
+        opacity: 1;
+    }
+
+    &.tooltip {
+        .tooltip-inner {
+            background: $white;
+            max-width: 540px;
+            text-align: left;
+            padding: 0.5rem;
+
+            &:before {
+                border: none;
+            }
+
+            .title {
+                font-family: $headings-font-family;
+                font-size: 1.125rem;
+                color: #1a0dab;
+            }
+
+            .url {
+                color: #006621;
+                font-size: 0.875rem;
+            }
+
+            .text {
+                color: $font-color-medium-dark-grey;
+                font-size: 0.8125rem;
+                color: #545454;
+            }
+        }
+    }
+}

@@ -1,0 +1,42 @@
+@import '_dependencies';
+
+.color-picker {
+    .color-picker-toggle {
+        border: 1px solid $light-grey;
+        @extend %flex-row;
+        cursor: pointer;
+
+        .color-value {
+            width: 38px;
+            height: 38px;
+        }
+
+        .dropdown-button {
+            background: white;
+            width: 38px;
+            height: 38px;
+            @extend %flex-row;
+            @extend %align-center;
+            justify-content: center;
+
+            svg {
+                width: 9px;
+                height: 15px;
+                fill: $control-icon-color;
+            }
+        }
+
+    }
+
+    .dropdown-menu {
+        padding: 0;
+        border: none;
+        margin: 0;
+
+        input {
+            padding: 5px 0px;
+            margin: 0;
+            font-weight: 400;
+        }
+    }
+}

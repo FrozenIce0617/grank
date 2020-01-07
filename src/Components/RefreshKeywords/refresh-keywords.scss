@@ -1,0 +1,26 @@
+@import '_dependencies';
+
+.refresh-keywords {
+    font-family: $headings-font-family;
+    font-size: 0.7rem;
+    color: $dropdown-arrow-color;
+    margin-right: 0;
+    font-weight: 300;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+
+    .icn-button-container {
+        .icn-button.icn-brand-orange {
+            margin-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+    }
+
+    .confirmation-icon {
+        width: 24px;
+        height: 24px;
+        fill: $orange;
+        margin-right: 0.5rem;
+    }
+}

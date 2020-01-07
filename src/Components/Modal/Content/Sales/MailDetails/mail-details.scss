@@ -1,0 +1,37 @@
+@import '_dependencies';
+
+.sales-mail-details {
+    .details-item {
+        display: flex;
+        padding: 10px 0;
+        font-family: $headings-font-family;
+        font-size: 0.8rem;
+
+        .details-item-title {
+            flex: 0 0 180px;
+            color: $font-color-medium-dark-grey;
+            font-weight: 600;
+        }
+
+        .details-bool {
+            height: 20px;
+            width: 20px;
+
+            &.details-bool-true {
+                svg {
+                    fill: $green;
+                }
+            }
+
+            &.details-bool-false {
+                svg {
+                    fill: red;
+                }
+            }
+        }
+
+        &:not(:last-child) {
+            border-bottom: 1px solid $border-color-medium-grey;
+        }
+    }
+}

@@ -1,0 +1,75 @@
+.skeleton-wrapper {
+    overflow: hidden;
+    .skeleton {
+        &-line {
+            background: $skeleton-background;
+            height: 12px;
+            width: 100%;
+            margin-bottom: 10px;
+            position: relative;
+            background-size: 100%;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            // &:after {
+            //     content: '';
+            //     background: linear-gradient(to right, $skeleton-background 0%,#eeeeee 8%, #dddddd 18%, #eeeeee 33%, $skeleton-background 100%);
+            //     background-size: 100%;
+            //     height: 100%;
+            //     width: 100%;
+            //     display: block;
+            //     position: absolute;
+            //     left: 0;
+            //     top: 0;
+            // }
+        }
+        &-title {
+            height: 20px;
+            margin-bottom: 15px;
+        }
+        &-subtitle {
+            height: 15px;
+            margin-bottom: 10px;
+        }
+        &-spacer {
+            background: none;
+            margin-bottom: 10px;
+        }
+        &-spacer-underline {
+            background: none;
+            border-bottom: 1px solid $skeleton-background;
+            margin-bottom: 10px;
+        }
+        &-input {
+            height: 40px;
+        }
+        &-button {
+            height: 40px;
+        }
+        &-icon {
+            vertical-align: middle;
+            margin-right: 10px;
+            &-sm {
+                width: 20px;
+                height: 20px;
+            }
+        }
+        &-chart {
+            height: 100px;
+        }
+        &-pie-chart {
+            height: 100px;
+        }
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        left: -100%;
+        top: 0;
+    }
+    100% {
+        left: 100%;
+        top: 0;
+    }
+}

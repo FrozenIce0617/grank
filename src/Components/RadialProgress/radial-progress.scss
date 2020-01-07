@@ -1,0 +1,80 @@
+@import '_dependencies';
+
+@keyframes circle-loader {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+$circle-size: 30px;
+$circle-background: #ffffff;
+$circle-color: #f89537;
+$inset-size: 20px;
+$inset-color: #313445;
+$transition-length: 0.5s;
+$rotationIncrement: (360 / 100) / 2;
+
+.circle-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: auto;
+    height: $circle-size;
+    width: $circle-size;
+    clip: rect(0, $circle-size, $circle-size, 16px);
+    border: 5px solid darken($circle-color, 10%);
+    border-radius: 50%;
+    animation: circle-loader 1.2s cubic-bezier(0.37, 0, 0.175, 1) infinite;
+}
+
+.radial-progress {
+    width: $circle-size;
+    height: $circle-size;
+    background-color: darken($circle-color, 5%);
+    border-radius: 50%;
+
+    .mask,
+    .fill {
+        -moz-backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        width: ($circle-size + 0px);
+        height: ($circle-size + 0px);
+        position: absolute;
+        border-radius: 50%;
+        overflow: hidden;
+        clip: rect(0, ($circle-size + 0px), ($circle-size + 0px), ($circle-size + 0px) / 2);
+        transition: $transition-length;
+    }
+
+    .fill {
+        background: white;
+        clip: rect(0, ($circle-size + 0px) / 2, ($circle-size + 0px), 0);
+    }
+
+    &:after {
+        content: '';
+        $circle-size: $circle-size - 5px * 2;
+        background: $circle-color;
+        border-radius: 50%;
+        height: $circle-size;
+        line-height: $circle-size;
+        margin: 5px;
+        position: absolute;
+        text-align: center;
+        width: $circle-size;
+    }
+
+    @for $step from 1 through 100 {
+        &[data-progress='#{$step}'] {
+            .mask.full,
+            .fill {
+                transform: rotate($step * $rotationIncrement#{deg});
+                transition: $transition-length;
+            }
+        }
+    }
+}

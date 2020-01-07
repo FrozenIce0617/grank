@@ -1,0 +1,109 @@
+label, label.custom-label {
+    @extend %form-label;
+    &.required {
+        &:after {
+            content: ' *';
+            font-size: 15px;
+            vertical-align: middle;
+        }
+    }
+}
+.form-label {
+    &.required {
+        &:after {
+            content: ' *';
+            font-size: 15px;
+            vertical-align: middle;
+        }
+    }
+
+    .link {
+        text-decoration: underline !important;
+    }
+}
+
+input, .custom-form-control {
+    @extend %form-input;
+    &.loading {
+        padding-right: 40px;
+    }
+}
+
+.form-group {
+    position: relative;
+    &.hidden {
+        display: none;
+    }
+    .Select + .loading-spinner {
+        position: absolute;
+        top: 30px;
+        right: 40px;
+        color: $brand-color-orange;
+    }
+    .error-message {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        color: $flat-red;
+        font-size: 11px;
+        line-height: 14px;
+        text-align: right;
+        pointer-events: none;
+    }
+    [class*="col-"] {
+        .error-message {
+            right: 15px;
+        }
+    }
+    .no-label {
+        @include media('laptop') {
+            padding-top: 14px;
+        }
+    }
+}
+
+.no-label {
+    padding-top: 12px;
+}
+
+.invalid {
+    .error-message {
+        display: block;
+    }
+    & > input, .Select > .Select-control, & > .react-tel-input > input {
+        border-color: $flat-red !important;
+        @include box-shadow(0, 0, 0, 1px, $flat-red, true) ;
+    }
+}
+
+.confirmation-button-wrapper {
+    &.text-right {
+        justify-content: flex-end;
+
+        button {
+            margin-left: 5px;
+        }
+    }
+
+    &.text-center {
+        justify-content: center;
+    }
+
+    display: flex;
+    align-items: center;
+}
+
+.form-actions {
+    margin-top: 1rem;
+    border-top: 1px solid $light-grey;
+    @extend %flex-row;
+    justify-content: flex-end;
+    padding-top: 1rem;
+    width: 100%;
+
+    .btn {
+        font-weight: 500;
+        margin-left: 0.5rem;
+    }
+}

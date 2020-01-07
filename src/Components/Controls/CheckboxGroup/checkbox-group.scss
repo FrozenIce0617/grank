@@ -1,0 +1,21 @@
+@import '_dependencies';
+
+.filter-column-container {
+    @extend %flex-container;
+    .filter-column {
+        width: 270px;
+        border-right: 1px solid $border-color-light-grey;
+        margin-right: 20px;
+        padding-right: 20px;
+        &:last-child {
+            width: 250px;
+            padding-right: 0;
+            margin-right: 0;
+            border-right: 0;
+        }
+    }
+}
+
+.checkbox-group {
+    @extend %flex-column;
+}

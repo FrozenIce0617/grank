@@ -1,0 +1,19 @@
+@import '_dependencies';
+
+.wallet-table-wrapper {
+    .wallet-total-row {
+        td {
+            padding: 20px 10px;
+        }
+
+        .wallet-total-label-cell {
+            font-size: 1.2rem;
+        }
+
+        .wallet-total-amount-cell {
+            font-size: 1.5rem;
+            color: $brand-color-orange;
+            text-align: right;
+        }
+    }
+}

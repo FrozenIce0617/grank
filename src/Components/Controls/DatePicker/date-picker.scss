@@ -1,0 +1,71 @@
+@import '_dependencies';
+
+.DayPickerInput {
+    width: 100%;
+}
+
+.custom-date-picker-input {
+    @include border-radius(0px);
+    border-color: $border-color-medium-grey;
+    &:first-child {
+        margin-right: 20px;
+    }
+    .react-datepicker {
+        &__triangle {
+            border-bottom-color: $white !important;
+            &:before {
+                border-bottom-color: $border-color-medium-grey !important;
+            }
+        }
+        &__header {
+            @include border-radius(0px);
+            background: transparent;
+        }
+        &__day {
+            width: 1.9rem;
+            margin: 0.166rem 0.02rem;
+            @include border-radius(0px);
+
+            &--in-selecting-range {
+                background-color: lighten($brand-color-orange, 20%);
+            }
+
+            &--in-range {
+                background-color: lighten($brand-color-orange, 20%);
+            }
+
+            &--selected {
+                background-color: $brand-color-orange;
+            }
+        }
+
+        &__time-container {
+            .react-datepicker__time-box {
+                ul.react-datepicker__time-list {
+                    padding: 0;
+
+                    li.react-datepicker__time-list-item {
+                        &--selected {
+                            background-color: $brand-color-orange;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.date-picker {
+    width: 100%;
+    border-radius: 0px;
+    border: 1px solid $border-color-medium-grey;
+    padding: 0.8rem;
+    color: $font-color-medium-dark-grey;
+    font-weight: 400;
+    font-size: 0.8rem;
+    font-family: $headings-font-family;
+
+    &.error {
+        border-color: $error-color;
+    }
+}

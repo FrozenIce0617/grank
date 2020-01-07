@@ -1,0 +1,46 @@
+@import '_dependencies';
+
+.filter-button {
+    margin-right: 3px;
+
+    .icon {
+        fill: $control-icon-color;
+        width: 18px;
+        height: 18px;
+        vertical-align: middle;
+
+        &.star-filled {
+            fill: $brand-color-orange;
+        }
+
+        &.url-status {
+            &-not-set {
+                fill: #f5d76e;
+            }
+
+            &-correct {
+                fill: #27ae60;
+            }
+            &-incorrect {
+                fill: #f75b5b;
+            }
+        }
+
+        &.no-filter {
+            fill: $control-icon-color !important;
+        }
+    }
+
+    &:hover {
+        .icon {
+            fill: $black;
+        }
+    }
+
+    &.selected {
+        .menu-toggle,
+        input {
+            background: $orange-light;
+        }
+    }
+}

@@ -1,0 +1,51 @@
+@import '_dependencies';
+
+.dashboard-menu {
+    display: flex;
+    align-items: center;
+    padding: 0;
+
+    border-bottom: 2px solid $brand-color-grey;
+    background: rgba(255, 255, 255, 1);
+    padding: 15px 55px 15px 25px;
+    z-index: 9;
+
+    .filters {
+        margin-top: 0;
+        margin-bottom: 0;
+        border-bottom: 2px solid $brand-color-grey;
+    }
+
+    .simple-dropdown {
+        font-size: 0.85rem;
+        margin: 0 1rem;
+        margin-right: 3rem;
+    }
+
+    .device-icon {
+        fill: $dark-placeholder-color;
+        height: 21px;
+    }
+
+    .groups-and-domains {
+        display: flex;
+    }
+
+    .skeleton-wrapper {
+        min-width: 100px;
+        .skeleton-line {
+            background: $control-icon-color;
+        }
+    }
+
+    .title {
+        font-family: $controls-font-family;
+        font-size: 0.85rem;
+        font-weight: 500;
+    }
+
+    .header {
+        border-bottom: 1px solid $dropdown-border-color;
+        padding: 1rem;
+    }
+}

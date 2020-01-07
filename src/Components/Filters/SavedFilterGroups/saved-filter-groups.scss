@@ -1,0 +1,65 @@
+@import '_dependencies.scss';
+
+.saved-filter-groups {
+    min-width: 70px;
+    .header {
+        border-bottom: 1px solid rgba(172, 172, 172, 0.2);
+    }
+
+    .title {
+        font-family: $controls-font-family;
+        font-size: 1rem;
+        font-weight: 400;
+        margin: 1rem;
+        display: flex;
+        align-items: center;
+        color: $font-color-dark-blue;
+    }
+
+    .saved-filter-group {
+        display: flex;
+        align-items: center;
+        cursor: default !important;
+
+        .label {
+            cursor: pointer;
+            min-width: 140px;
+            padding: 0.3rem;
+            line-height: normal;
+            border: 1px solid rgba(0, 0, 0, 0);
+        }
+
+        .icn-button-container {
+            margin-right: 0.5rem;
+        }
+
+        input {
+            flex-grow: 1;
+            line-height: normal;
+            border-radius: 0px;
+            border: 1px solid $border-color-medium-grey;
+            padding: 0.3rem;
+            color: $font-color-medium-dark-grey;
+            font-weight: 500;
+            font-size: 0.8rem;
+            font-family: $controls-font-family;
+            margin: 0;
+            box-sizing: border-box;
+
+            &:focus {
+                outline: none;
+                box-shadow: none;
+            }
+        }
+
+        .icn-button {
+            margin: 0;
+            padding: 0.3rem;
+
+            svg {
+                width: 16px;
+                height: 16px;
+            }
+        }
+    }
+}

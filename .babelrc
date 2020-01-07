@@ -1,0 +1,11 @@
+{
+  "presets": [
+    ["babel-preset-env", {
+      "modules": false
+    }],
+    "stage-1",
+    "react",
+    "flow"
+  ],
+  "plugins": ["transform-flow-strip-types", "react-hot-loader/babel"]
+}

@@ -1,0 +1,133 @@
+@import '_dependencies';
+
+.filters {
+    @extend %flex-container;
+    @extend %align-top;
+    align-items: center;
+
+    background: $white;
+    min-height: 54px;
+    padding: 5px;
+
+    border: 1px solid $border-color-medium-grey;
+
+    .icn-button {
+        font-weight: 500;
+        margin: 0.5rem;
+        text-shadow: 1px 0 0 0;
+        font-family: $controls-font-family;
+
+        &:hover {
+            color: inherit;
+            text-shadow: 0.3px 0 0 currentColor;
+            svg {
+                fill: inherit;
+            }
+        }
+    }
+
+    .add-filter-icon {
+        svg {
+            fill: #ea7e0e;
+        }
+    }
+
+    .reset-filter-icon {
+        svg {
+            fill: #fa5637;
+        }
+    }
+
+    .save-filter-group-icon {
+        svg {
+            fill: #a6cb52;
+        }
+    }
+
+    .spacer {
+        @extend %flex-item;
+    }
+
+    .actions {
+        @extend %flex-row;
+        @extend %align-center;
+        @extend %justify-end;
+
+        flex-wrap: nowrap;
+        flex: 1;
+        min-height: 44px;
+
+        > .simple-dropdown {
+            margin: 0.25rem 0.5rem;
+        }
+    }
+
+    .filter-item-list {
+        @extend %flex-row;
+
+        > .simple-dropdown {
+            margin: 0.25rem 0.5rem;
+            min-width: 65px;
+
+            .dropdown-menu {
+                .dropdown-item {
+                    min-height: 36px;
+                    padding: 0.5rem 1.25rem;
+                }
+            }
+
+            &.no-dropdown-arrow {
+                .dropdown-arrow {
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .filter-item {
+            background-color: lighten($orange-light, 3%);
+            padding: 0 15px 0 5px;
+            margin: 0 5px 0 0;
+            border-radius: 5px;
+            border: 1px solid $orange-light;
+            position: relative;
+
+            &:hover {
+                background-color: $orange-light;
+            }
+
+            .icn-button-container {
+                .icn-button-content {
+                    white-space: pre-wrap;
+                }
+            }
+
+            .delete-filter-icon {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 8px;
+                cursor: pointer;
+
+                svg {
+                    width: 15px;
+                    height: 15px;
+                    fill: $font-color-medium-light-grey;
+
+                    &:hover {
+                        fill: $font-color-medium-dark-grey;
+                    }
+                }
+            }
+
+            .dropdown-arrow {
+                margin-right: 15px;
+            }
+        }
+
+        .add-filter-toggle {
+            display: flex;
+        }
+    }
+}

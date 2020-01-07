@@ -1,0 +1,28 @@
+@import '_dependencies';
+@import '_table';
+
+.scheduled-report-builder-wrapper {
+    background: $white;
+    padding: 10px 0;
+    border-left: 1px solid $border-color-medium-grey;
+    border-right: 1px solid $border-color-medium-grey;
+    border-bottom: 1px solid $border-color-medium-grey;
+
+    .filters {
+        margin: 0;
+
+        .dropdown-menu {
+            .items {
+                max-height: 180px;
+            }
+        }
+    }
+
+    .preview-header {
+        padding-right: 20px;
+    }
+
+    .empty-preview {
+        margin-right: 20px;
+    }
+}

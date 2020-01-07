@@ -1,0 +1,9 @@
+@import '_dependencies';
+
+.skeleton-cell {
+    display: block;
+    background: $skeleton-background;
+    height: 100% !important;
+    margin-top: auto;
+    margin-bottom: auto;
+}

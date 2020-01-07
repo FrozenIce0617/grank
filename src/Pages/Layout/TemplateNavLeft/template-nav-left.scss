@@ -1,0 +1,22 @@
+@import '_dependencies.scss';
+
+body {
+    background: $background-grey;
+}
+
+.content {
+    @extend %flex-item;
+    padding-top: 60px;
+    @include media('laptop') {
+        padding-top: 0px;
+    }
+    .content-wrapper {
+        padding: 32px;
+        .options-row {
+            margin-bottom: 48px;
+            .admin-bar {
+                margin-bottom: 15px;
+            }
+        }
+    }
+}

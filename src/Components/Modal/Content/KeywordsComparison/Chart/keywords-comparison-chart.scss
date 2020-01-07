@@ -1,0 +1,125 @@
+@import '_dependencies';
+
+$legendWidth: 240px;
+$legendPaddingRight: 10px;
+$chart-legend-point-non-active-color: #ccc;
+$chart-legend-item-text-color: #333;
+
+.keywords-comparison-chart {
+    width: calc(100% - #{$legendWidth + $legendPaddingRight});
+
+    .highcharts-container {
+        display: flex;
+        overflow: visible !important;
+
+        .highcharts-root {
+            flex: 1;
+        }
+
+        .highcharts-legend {
+            height: 100%;
+            width: auto;
+            overflow-x: hidden;
+            overflow-y: auto;
+            left: auto !important;
+            right: -$legendWidth - $legendPaddingRight;
+            top: 0px !important;
+
+            & > * {
+                position: relative !important;
+                height: auto;
+                width: auto;
+
+                & > * {
+                    position: relative !important;
+                    height: auto;
+                    width: auto;
+
+                    .highcharts-legend-item {
+                        height: 26px;
+                        width: auto;
+                        position: relative !important;
+                        top: 0 !important;
+
+                        font-family: $headings-font-family;
+                        color: $chart-legend-item-text-color;
+                        font-size: 0.725rem;
+                        font-weight: 500;
+                        cursor: pointer;
+                        border: none;
+
+                        & > span {
+                            position: relative !important;
+                            display: block;
+                            width: $legendWidth !important;
+
+                            & > .keywords-comparison-chart-legend-container {
+                                position: relative !important;
+                                width: auto;
+                                display: flex;
+                                justify-content: space-between;
+                                font-family: $headings-font-family;
+                                flex-direction: row;
+                                margin-bottom: 10px;
+
+                                .legend-item-name-wrapper {
+                                    display: flex;
+                                    flex-wrap: nowrap;
+                                    flex: 1;
+                                    align-items: center;
+
+                                    .legend-item-pointer-circle {
+                                        border-radius: 6px;
+                                        width: 12px;
+                                        height: 12px;
+                                        overflow: hidden;
+                                    }
+
+                                    .keywords-comparison-chart-legend {
+                                        flex: 1;
+                                        max-width: $legendWidth - 30px;
+                                        overflow: hidden;
+                                        white-space: nowrap;
+                                        text-overflow: ellipsis;
+                                        font-weight: normal;
+                                        margin-left: 10px;
+                                        font-size: 12.8px;
+                                    }
+                                }
+                            }
+                        }
+
+                        &.highcharts-legend-item-hidden {
+                            .legend-item-pointer-circle {
+                                background-color: $chart-legend-point-non-active-color !important;
+                            }
+
+                            .keywords-comparison-chart-legend {
+                                color: rgba(127, 138, 159, 0.65);
+
+                                &:hover {
+                                    color: rgba(0, 0, 0, 1);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .highcharts-legend-item {
+            text {
+                font-family: $headings-font-family;
+                font-weight: 400 !important;
+
+                tspan {
+                    font-size: 0.8rem !important;
+                }
+
+                tspan:first-child {
+                    font-size: 0.625rem !important;
+                }
+            }
+        }
+    }
+}

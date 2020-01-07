@@ -1,0 +1,36 @@
+@import '_dependencies';
+
+.add-note-form {
+    font-family: $controls-font-family;
+
+    .keywords-label {
+        font-size: 1rem;
+    }
+
+    .keywords {
+        padding-top: 4px;
+        span {
+            display: inline-block;
+            background: $background-grey;
+            border: 1px solid $border-color-medium-grey;
+            padding: 2px 6px;
+            &:not(:last-child) {
+                margin-right: 4px;
+            }
+        }
+    }
+
+    .footer {
+        margin-top: 1rem;
+        border-top: 1px solid $light-grey;
+        @extend %flex-row;
+        justify-content: flex-end;
+        padding-top: 1rem;
+        width: 100%;
+
+        .btn {
+            font-weight: 500;
+            margin-left: 0.5rem;
+        }
+    }
+}

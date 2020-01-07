@@ -1,0 +1,171 @@
+@import '_dependencies';
+
+.icn-button-container {
+    display: flex;
+    justify-content: center;
+
+    .icn-button {
+        font-family: $headings-font-family;
+        color: $font-color-medium-dark-grey;
+        font-size: 0.8rem;
+        white-space: nowrap;
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+
+        &-content {
+            display: flex;
+            flex-direction: column;
+            white-space: nowrap;
+            justify-content: center;
+
+            &-title {
+                font-size: 0.6rem;
+                color: $dropdown-placeholder-color;
+                text-align: left;
+                white-space: nowrap;
+                margin-bottom: -3px;
+            }
+        }
+
+        &.disabled {
+            opacity: 0.65;
+            user-select: none;
+            cursor: not-allowed;
+
+            &:hover {
+                color: $font-color-medium-dark-grey;
+
+                svg {
+                    fill: $font-color-medium-dark-grey;
+                }
+
+                .icn-button-content {
+                    &-title {
+                        color: $font-color-medium-dark-grey;
+                    }
+                }
+                text-decoration: none;
+            }
+        }
+
+        &.inline {
+            display: inline;
+        }
+
+        img {
+            height: 20px;
+            margin-right: 0.5rem;
+        }
+
+        &.has-text {
+            svg {
+                margin-right: 0.5rem;
+            }
+        }
+
+        svg {
+            height: 20px;
+            width: 20px;
+            fill: $control-icon-color;
+        }
+
+        &:hover {
+            color: $brand-color-orange;
+
+            svg {
+                fill: $brand-color-orange;
+            }
+
+            .icn-button-content {
+                &-title {
+                    color: $brand-color-orange;
+                }
+            }
+            text-decoration: none;
+        }
+
+        &.icn-report {
+            padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+        }
+
+        &.icn-brand-green {
+            color: $white;
+            border-radius: 14px;
+            background-color: $brand-color-green;
+            padding: 0.3rem 1rem 0.3rem 0.5rem;
+
+            transition: all 0.2s ease-in-out;
+
+            svg {
+                fill: $white;
+            }
+
+            &:hover {
+                color: $white;
+                svg {
+                    fill: $white;
+                }
+
+                .icn-button-content {
+                    &-title {
+                        color: $white;
+                    }
+                }
+                background-color: $brand-color-green-dark;
+            }
+        }
+
+        &.icn-brand-orange {
+            color: $white;
+            border-radius: 14px;
+            background-color: $orange;
+            padding: 0.3rem 1rem 0.3rem 0.5rem;
+
+            transition: all 0.2s ease-in-out;
+
+            svg {
+                fill: $white;
+            }
+
+            &:hover {
+                color: $white;
+                svg {
+                    fill: $white;
+                }
+                .icn-button-content {
+                    &-title {
+                        color: $white;
+                    }
+                }
+                background-color: $orange-dark;
+            }
+        }
+
+        &.icn-brand-grey {
+            color: $black;
+            border-radius: 14px;
+            background-color: $brand-color-grey;
+            padding: 0.3rem 1rem 0.3rem 0.5rem;
+
+            transition: all 0.2s ease-in-out;
+
+            svg {
+                fill: $black;
+            }
+
+            &:hover {
+                color: $black;
+                svg {
+                    fill: $black;
+                }
+                .icn-button-content {
+                    &-title {
+                        color: $black;
+                    }
+                }
+                background-color: $brand-color-grey-dark;
+            }
+        }
+    }
+}

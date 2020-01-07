@@ -1,0 +1,11 @@
+.keywords-summary {
+    td, th {
+        &.group-label {
+            width: 30%;
+        }
+
+        &:not(.group-label) {
+            text-align: right;
+        }
+    }
+}

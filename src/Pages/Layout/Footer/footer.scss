@@ -1,0 +1,19 @@
+@import '_dependencies';
+
+footer {
+    ul {
+        list-style: none;
+        li {
+            float: left;
+            margin-right: 20px;
+            a {
+                color: $blue !important;
+                text-transform: uppercase;
+                font-size: 11px;
+                &:hover {
+                    color: $blue;
+                }
+            }
+        }
+    }
+}

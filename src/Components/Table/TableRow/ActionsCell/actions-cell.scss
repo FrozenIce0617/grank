@@ -1,0 +1,30 @@
+@import '_dependencies';
+
+.actions-cell {
+    height: 18px;
+    display: flex;
+
+    &.inline {
+        display: inline-flex;
+    }
+
+    .icon-with-tooltip {
+        cursor: pointer;
+
+        &:not(:last-child) {
+            margin-right: 6px;
+        }
+
+        svg {
+            fill: $control-icon-color;
+            width: 16px;
+            height: 16px;
+
+            &:hover {
+                * {
+                    fill: $font-color-medium-dark-grey;
+                }
+            }
+        }
+    }
+}

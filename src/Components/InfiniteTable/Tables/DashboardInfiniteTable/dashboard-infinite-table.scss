@@ -1,0 +1,32 @@
+@import '_dependencies';
+
+.dashboard-kpi-section {
+    white-space: nowrap;
+    display: flex;
+}
+
+.dashboard-kpi {
+    display: inline-block;
+    font-size: 1.7rem !important;
+    white-space: nowrap;
+    font-weight: 300;
+    color: $purple-dark !important;
+    min-width: 100px;
+    padding-right: 20px;
+}
+
+.dashboard-evolution {
+    display: inline-flex;
+    align-items: center;
+
+    .value-delta {
+        font-size: 20px !important;
+    }
+}
+
+.dashboard-infinite-table {
+    .value-delta {
+        color: $purple-dark;
+        font-weight: 300;
+    }
+}

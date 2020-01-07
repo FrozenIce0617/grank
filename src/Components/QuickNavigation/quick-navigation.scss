@@ -1,0 +1,97 @@
+@import '_dependencies';
+
+.Select.quick-navigation-select {
+    width: 200px;
+    .option {
+        color: $font-color-medium-dark-grey;
+        font-weight: 400;
+        font-size: 0.8rem;
+        font-family: $controls-font-family;
+    }
+
+    &.expandLeft {
+        .Select-menu-outer {
+            left: auto;
+            right: 0px;
+            width: 400px;
+        }
+    }
+
+    &.Select.is-open,
+    &.Select:hover {
+        .Select-control {
+            cursor: text;
+            background-color: #ffffff;
+
+            .Select-placeholder,
+            .Select-input {
+                color: $font-color-medium-dark-grey;
+            }
+
+            .dropdown-arrow:after {
+                border-top: 4px solid $font-color-medium-dark-grey;
+            }
+        }
+    }
+
+    &.Select.is-open {
+        .Select-control {
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+    }
+
+    .Select-control {
+        width: 100%;
+        height: 40px;
+        padding: 0;
+        background-color: #fff; // lighten($dark-blue, 25%);
+        border-radius: 0.25rem;
+        border: none;
+        @include transition(all 0.3s ease);
+
+        .Select-placeholder,
+        .Select-input {
+            color: $font-color-medium-dark-grey; // #ffffff;
+            font-weight: 400;
+            font-family: $controls-font-family;
+            font-size: 0.8rem;
+        }
+
+        .Select-input {
+            line-height: 40px;
+        }
+
+        .dropdown-arrow:after {
+            border-top: 4px solid $font-color-medium-dark-grey; // 4px solid #ffffff;
+        }
+    }
+
+    .Select-menu-outer {
+        max-height: 340px;
+        border-radius: 0px;
+        border: 1px solid $border-color-medium-grey;
+
+        width: auto;
+        min-width: 100%;
+        overflow-y: visible;
+
+        .Select-menu-outer {
+            border-radius: 0 0 5px 5px;
+            overflow: hidden;
+        }
+    }
+
+    .Select-menu {
+        max-height: 338px;
+    }
+
+    .Select-option {
+        padding: 8px 10px;
+        border-top: none;
+
+        &.border-bottom {
+            border-bottom: 1px solid $border-color-medium-grey;
+        }
+    }
+}

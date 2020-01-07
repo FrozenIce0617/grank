@@ -1,0 +1,28 @@
+@import '_dependencies';
+
+textarea.text-area-control {
+    line-height: normal;
+    width: 100%;
+    height: 72px;
+    border-radius: 0px;
+    border: 1px solid $border-color-medium-grey;
+    padding: 0.8rem;
+    color: $font-color-medium-dark-grey;
+    font-weight: 400;
+    font-size: 0.8rem;
+    font-family: $headings-font-family;
+    resize: none;
+
+    &:disabled {
+        background: $extra-light-grey;
+    }
+
+    &::placeholder {
+        font-weight: 400;
+        color: $control-icon-color;
+    }
+
+    &.error {
+        border-color: $error-color;
+    }
+}
