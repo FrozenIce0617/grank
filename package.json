@@ -38,7 +38,7 @@
     "graphql": "^0.13.0",
     "jed": "^1.1.1",
     "libphonenumber-js": "^0.4.52",
-    "lodash-es": "^4.17.10",
+    "lodash-es": "^4.17.14",
     "logrocket": "^0.6.16",
     "moment": "^2.22.1",
     "mousetrap": "^1.6.1",
